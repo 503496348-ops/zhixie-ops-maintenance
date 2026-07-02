@@ -1,0 +1,19 @@
+# Runtime/generated outputs
+.runtime/
+references/repo-snapshot.json
+references/audit-report.json
+references/competitor-snapshot.json
+references/nightly-product-audit.json
+references/nightly-evolution-ledger.json
+references/nightly-verification-ledger.json
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local env / credentials
+.env
+.env.*
+*.pem
+*.key
