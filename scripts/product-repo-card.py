@@ -17,9 +17,8 @@ from pathlib import Path
 GITHUB_ORG = "503496348-ops"
 CARD_HEADER_COLOR = "indigo"
 GITHUB_API = "https://api.github.com"
-PACKAGE_ROOT = Path(__file__).resolve().parents[1]
-SNAPSHOT_PATH = os.environ.get("PRODUCT_REPO_SNAPSHOT_PATH", str(PACKAGE_ROOT / "references" / "repo-snapshot.json"))
-SENT_MARKER_PATH = os.environ.get("PRODUCT_REPO_SENT_MARKER_PATH", str(PACKAGE_ROOT / ".runtime" / "product-repo-card-sent.json"))
+SNAPSHOT_PATH = "/root/.hermes/scripts/repo-snapshot.json"
+SENT_MARKER_PATH = "/root/.hermes/scripts/product-repo-card-sent.json"
 SNAPSHOT_SCHEMA_VERSION = 2
 @lru_cache(maxsize=1)
 def get_github_token() -> str:
@@ -37,8 +36,9 @@ def get_github_token() -> str:
 
 
 # ── 单一数据源：从 product-list.md 读取 ──
-SKILL_DIR = Path(os.environ.get("ZHIXIE_OPS_SKILL_DIR", Path(__file__).resolve().parents[1]))
+SKILL_DIR = Path("/root/.hermes/shared/skills/product-repo-monitor")
 PRODUCT_LIST_MD = SKILL_DIR / "references" / "product-list.md"
+AUDIT_REPORT_PATH = SKILL_DIR / "references" / "audit-report.json"
 
 def load_products_from_md() -> list[dict]:
     """从 product-list.md 解析产品列表，返回 [{name, name_en, repo, category, branch, status}, ...]。"""
@@ -68,6 +68,28 @@ def load_products_from_md() -> list[dict]:
                     "active": ("✅" in status),
                 })
     return products
+
+def load_audit_health() -> dict:
+    """Read the latest local audit cache without triggering a second audit run."""
+    unavailable = {"available": False, "healthy": 0, "attention": 0, "attention_products": [], "audit_date": ""}
+    try:
+        report = json.loads(AUDIT_REPORT_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return unavailable
+    distribution = report.get("grade_distribution") or {}
+    attention = [
+        str(item.get("product") or item.get("repo") or "unknown")
+        for item in report.get("results") or []
+        if str(item.get("grade") or "") not in {"A", "N/A"}
+    ]
+    return {
+        "available": True,
+        "healthy": int(distribution.get("A", 0)),
+        "attention": len(attention),
+        "attention_products": attention[:8],
+        "audit_date": str(report.get("audit_date") or "")[:10],
+    }
+
 
 # 启动时自动加载
 PRODUCTS = load_products_from_md()
@@ -314,7 +336,7 @@ def fetch_github_repo(owner_repo: str) -> dict | None:
 
 # ── Build card ──
 
-def build_card(products_data: list, competitor_changes: dict, product_diffs: list, extra_repos: list, competitors_data: dict = None, is_first_run: bool = False) -> dict:
+def build_card(products_data: list, competitor_changes: dict, product_diffs: list, extra_repos: list, competitors_data: dict = None, is_first_run: bool = False, audit_health: dict | None = None) -> dict:
     date_str = datetime.now().strftime("%Y-%m-%d")
     with_repo = [p for p in products_data if p.get("has_repo")]
     without_repo = [p for p in products_data if not p.get("has_repo")]
@@ -365,6 +387,17 @@ def build_card(products_data: list, competitor_changes: dict, product_diffs: lis
         ], "header_style": {"background_style": "grey", "bold": True, "lines": 1, "text_align": "center"},
          "page_size": 20, "rows": rows},
     ]
+
+    # 最近一次产品质量审计（只读取缓存，日报不隐式触发重审）
+    if audit_health and audit_health.get("available"):
+        attention_names = "、".join(audit_health.get("attention_products") or []) or "无"
+        elements.append({"tag": "hr"})
+        elements.append({"tag": "markdown", "content": (
+            "**🩺 质量健康（最近审计）**\n"
+            f"A级：{audit_health.get('healthy', 0)} ｜需关注：{audit_health.get('attention', 0)} ｜"
+            f"审计日期：{audit_health.get('audit_date') or '未知'}\n"
+            f"关注产品：{attention_names}"
+        )})
 
     # 未建仓产品
     if without_repo:
@@ -503,7 +536,7 @@ def main():
     if "--dry-run" in sys.argv:
         os.environ["PRODUCT_MONITOR_DRY_RUN"] = "1"
 
-    chat_id = os.environ.get("FEISHU_CHAT_ID", "")
+    chat_id = os.environ.get("FEISHU_CHAT_ID", "oc_44b5962120c4c149fe672acdb59a62db")
     date_str = datetime.now().strftime("%Y-%m-%d")
 
     prev_snap = load_snapshot()
@@ -593,7 +626,8 @@ def main():
             competitor_changes[cat] = changes
 
     is_first_run = not prev_snap.get("products")
-    card = build_card(products_data, competitor_changes, product_diffs, extra_repos, competitors_data, is_first_run)
+    audit_health = load_audit_health()
+    card = build_card(products_data, competitor_changes, product_diffs, extra_repos, competitors_data, is_first_run, audit_health)
     dry_run = os.environ.get("PRODUCT_MONITOR_DRY_RUN") == "1"
     already_sent = False
     if dry_run:

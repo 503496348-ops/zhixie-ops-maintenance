@@ -26,10 +26,13 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
-SKILL_DIR = Path(os.environ.get("ZHIXIE_OPS_SKILL_DIR", Path(__file__).resolve().parents[1]))
+DEFAULT_SKILL_DIR = Path("/root/.hermes/shared/skills/product-repo-monitor")
+SKILL_DIR = Path(os.environ.get("ZHIXIE_OPS_SKILL_DIR", DEFAULT_SKILL_DIR if DEFAULT_SKILL_DIR.exists() else Path(__file__).resolve().parents[1]))
 COMPETITORS_MD = SKILL_DIR / "references" / "competitors.md"
 PRODUCT_LIST_MD = SKILL_DIR / "references" / "product-list.md"
 SNAPSHOT_FILE = SKILL_DIR / "references" / "competitor-snapshot.json"
+CANDIDATE_POOL_FILE = SKILL_DIR / "references" / "competitor-candidate-pool.json"
+HISTORY_FILE = SKILL_DIR / "references" / "competitor-history.json"
 SCHEMA_VERSION = 2
 GITHUB_API = "https://api.github.com"
 
@@ -190,6 +193,56 @@ def github_api(path_or_url: str) -> Any:
     return data
 
 
+def fetch_release_summary(repo: str) -> dict[str, str]:
+    release = github_api(f"/repos/{repo}/releases/latest")
+    if not isinstance(release, dict) or release.get("message") or release.get("_error"):
+        return {"tag": "", "published_at": ""}
+    return {"tag": str(release.get("tag_name") or ""), "published_at": str(release.get("published_at") or "")}
+
+
+def fetch_security_policy(repo: str) -> bool:
+    """Check whether the repository publishes a SECURITY.md policy."""
+    policy = github_api(f"/repos/{repo}/contents/SECURITY.md")
+    return isinstance(policy, dict) and bool(policy.get("name"))
+
+
+def _parse_time(value: str) -> datetime | None:
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except (TypeError, ValueError):
+        return None
+
+
+def trend_windows(repo: str, current_stars: int, history: list[dict[str, Any]], now_iso: str) -> dict[str, int]:
+    now = _parse_time(now_iso)
+    if now is None:
+        return {"stars_7d": 0, "stars_30d": 0}
+    result: dict[str, int] = {}
+    for days, key in ((7, "stars_7d"), (30, "stars_30d")):
+        cutoff = now.timestamp() - days * 86400
+        eligible = [entry for entry in history if (_parse_time(str(entry.get("generated_at") or "")) or now).timestamp() <= cutoff and repo in (entry.get("repos") or {})]
+        if not eligible:
+            result[key] = 0
+            continue
+        baseline = int((eligible[-1].get("repos") or {}).get(repo, {}).get("stars", current_stars) or current_stars)
+        result[key] = current_stars - baseline
+    return result
+
+
+def load_history() -> list[dict[str, Any]]:
+    try:
+        data = json.loads(HISTORY_FILE.read_text(encoding="utf-8"))
+        return data if isinstance(data, list) else []
+    except (OSError, json.JSONDecodeError):
+        return []
+
+
+def append_history(repos: dict[str, dict[str, Any]]) -> None:
+    history = load_history()
+    history.append({"generated_at": datetime.now(timezone.utc).isoformat(), "repos": repos})
+    HISTORY_FILE.write_text(json.dumps(history[-60:], ensure_ascii=False, indent=2), encoding="utf-8")
+
+
 def fetch_repo_info(repo: str) -> dict[str, Any]:
     data = github_api(f"/repos/{repo}")
     if not isinstance(data, dict) or data.get("_error") or data.get("_rate_limited"):
@@ -197,6 +250,8 @@ def fetch_repo_info(repo: str) -> dict[str, Any]:
             "error": data.get("message") or data.get("_error") or "无法获取信息",
             "source_repo": repo,
         }
+    release = fetch_release_summary(repo)
+    security_policy = fetch_security_policy(repo)
     return {
         "source_repo": repo,
         "resolved_full_name": data.get("full_name", repo),
@@ -209,6 +264,8 @@ def fetch_repo_info(repo: str) -> dict[str, Any]:
         "archived": data.get("archived", False),
         "license": (data.get("license") or {}).get("spdx_id", ""),
         "url": data.get("html_url", ""),
+        "latest_release": release,
+        "has_security_policy": security_policy,
     }
 
 
@@ -236,6 +293,59 @@ def load_snapshot() -> dict[str, dict[str, Any]]:
         return {}
 
 
+def fetch_head_sha(repo: str) -> str:
+    commits = github_api(f"/repos/{repo}/commits?per_page=1")
+    if isinstance(commits, list) and commits and isinstance(commits[0], dict):
+        return str(commits[0].get("sha") or "")
+    return ""
+
+
+def unseen_commit_shas(repo: str, baseline_sha: str, head_sha: str) -> list[str]:
+    """Return commits introduced after the prior analyzed SHA, newest first."""
+    if not head_sha or head_sha == baseline_sha:
+        return []
+    if not baseline_sha:
+        return [head_sha]
+    compared = github_api(f"/repos/{repo}/compare/{baseline_sha}...{head_sha}")
+    commits = compared.get("commits", []) if isinstance(compared, dict) else []
+    shas = [str(item.get("sha") or "") for item in commits if isinstance(item, dict)]
+    return [sha for sha in shas if sha]
+
+
+def load_candidate_pool() -> dict[str, Any]:
+    if not CANDIDATE_POOL_FILE.exists():
+        return {"schema_version": 1, "candidates": {}}
+    try:
+        data = json.loads(CANDIDATE_POOL_FILE.read_text(encoding="utf-8"))
+        if isinstance(data, dict) and isinstance(data.get("candidates"), dict):
+            return data
+    except Exception:
+        pass
+    return {"schema_version": 1, "candidates": {}}
+
+
+def save_candidate_pool(pool: dict[str, Any]) -> None:
+    CANDIDATE_POOL_FILE.parent.mkdir(parents=True, exist_ok=True)
+    CANDIDATE_POOL_FILE.write_text(json.dumps(pool, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def upsert_candidate(candidate: dict[str, Any]) -> dict[str, Any]:
+    """Persist one candidate with an append-only decision history."""
+    repo = str(candidate.get("repo") or "").strip()
+    if not repo:
+        raise ValueError("candidate repo is required")
+    pool = load_candidate_pool()
+    current = dict(pool["candidates"].get(repo) or {})
+    history = list(current.get("history") or [])
+    history.append({**candidate, "recorded_at": datetime.now(timezone.utc).isoformat()})
+    current.update(candidate)
+    current["history"] = history[-20:]
+    pool["candidates"][repo] = current
+    pool["updated_at"] = datetime.now(timezone.utc).isoformat()
+    save_candidate_pool(pool)
+    return current
+
+
 def save_snapshot(repos: dict[str, dict[str, Any]], competitors: dict[str, list[str]]) -> None:
     payload = {
         "schema_version": SCHEMA_VERSION,
@@ -251,6 +361,7 @@ def save_snapshot(repos: dict[str, dict[str, Any]], competitors: dict[str, list[
     }
     SNAPSHOT_FILE.parent.mkdir(parents=True, exist_ok=True)
     SNAPSHOT_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    append_history(repos)
 
 
 def days_since_iso(iso: str) -> int:
@@ -285,8 +396,40 @@ def is_code_only_noise(path: str) -> bool:
     return any(k in p for k in ("readme", "license", "changelog", "agents", ".github/workflows", "ci", "release", "dockerfile", "makefile", "pyproject.toml", "package.json", ".lock"))
 
 
-def commit_fusion_signal(repo: str) -> dict[str, Any]:
-    commits = github_api(f"/repos/{repo}/commits?per_page=3")
+def candidate_state(triage: str) -> str:
+    return {
+        "可融合候选": "pending_review",
+        "观察/人工复核": "watching",
+        "仅记录": "recorded",
+    }.get(triage, "recorded")
+
+
+def semantic_change_signals(files: list[dict[str, Any]]) -> dict[str, Any]:
+    """Extract deterministic semantic hints from changed paths and diff additions."""
+    tags: set[str] = set()
+    symbols: list[str] = []
+    for item in files:
+        path = str(item.get("filename") or "").lower()
+        patch = str(item.get("patch") or "")
+        if any(token in path for token in ("runtime/", "core/", "orchestr", "router")):
+            tags.add("runtime")
+        if any(token in path for token in ("schema", "openapi", "contract")):
+            tags.add("schema")
+        if any(token in path for token in ("permission", "capabilit", "auth", "policy")):
+            tags.add("permission")
+        if "/test" in path or path.startswith("test"):
+            tags.add("test_harness")
+        for match in re.finditer(r"^\+\s*(?:class|def|async\s+def)\s+([A-Za-z_]\w*)", patch, re.MULTILINE):
+            name = match.group(1)
+            if name not in symbols:
+                symbols.append(name)
+    if symbols:
+        tags.add("new_symbol")
+    return {"tags": sorted(tags), "new_symbols": symbols[:20]}
+
+
+def commit_fusion_signal(repo: str, commit_shas: list[str] | None = None) -> dict[str, Any]:
+    commits = ([{"sha": sha} for sha in commit_shas] if commit_shas else github_api(f"/repos/{repo}/commits?per_page=3"))
     if not isinstance(commits, list):
         return {
             "repo": repo,
@@ -314,6 +457,7 @@ def commit_fusion_signal(repo: str) -> dict[str, Any]:
     commit_messages: list[str] = []
     core_path_hits = 0
     noisy_only = True
+    semantic_files: list[dict[str, Any]] = []
 
     for item in commits[:3]:
         sha = item.get("sha") if isinstance(item, dict) else None
@@ -379,6 +523,7 @@ def commit_fusion_signal(repo: str) -> dict[str, Any]:
     else:
         triage = "仅记录"
 
+    semantic = semantic_change_signals(semantic_files)
     return {
         "repo": repo,
         "status": "ok",
@@ -392,6 +537,7 @@ def commit_fusion_signal(repo: str) -> dict[str, Any]:
         "triage": triage,
         "sample_paths": sample_paths[:10],
         "commit_messages": commit_messages[:5],
+        "semantic_signals": semantic,
     }
 
 
@@ -460,8 +606,13 @@ def main() -> int:
             forks_delta = info["forks"] - int(prev_info.get("forks", info["forks"]) or 0)
             pushed_days = days_since_iso(info.get("last_push", ""))
 
+            head_sha = fetch_head_sha(key)
+            history = load_history()
+            trends = trend_windows(key, int(info["stars"]), history, datetime.now(timezone.utc).isoformat())
             repo_record = {
                 **info,
+                **trends,
+                "head_sha": head_sha,
                 "category": category,
                 "stars_delta": stars_delta,
                 "forks_delta": forks_delta,
@@ -482,15 +633,26 @@ def main() -> int:
                     alerts.append(f"🆕 {key}: 最近3天有更新（{info['last_push'][:10]}）")
 
                 if not args.no_scan:
-                    triage = commit_fusion_signal(key)
-                    triage_item = {
-                        "category": category,
-                        "competitor": source_repo,
-                        "resolved_repo": key,
-                        "products": products,
-                        "triage": triage,
-                    }
-                    fusion_records.append(triage_item)
+                    unseen = unseen_commit_shas(key, str(prev_info.get("head_sha") or ""), head_sha)
+                    if unseen:
+                        triage = commit_fusion_signal(key, unseen[:3])
+                        triage_item = {
+                            "category": category,
+                            "competitor": source_repo,
+                            "resolved_repo": key,
+                            "products": products,
+                            "unseen_shas": unseen,
+                            "triage": triage,
+                        }
+                        fusion_records.append(triage_item)
+                        upsert_candidate({
+                            "repo": key, "head_sha": head_sha, "status": candidate_state(triage.get("triage", "仅记录")),
+                            "triage": triage.get("triage", "仅记录"),
+                            "category": category, "products": products, "score": triage.get("code_change_score", 0),
+                            "unseen_shas": unseen,
+                        })
+                    else:
+                        print(f"  ↪ {key}: 无未分析 commit，跳过融合分诊")
 
             time.sleep(DELAY_SECONDS)
 
