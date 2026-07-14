@@ -206,15 +206,25 @@ def days_since(date_str: str) -> int:
         return 999
 
 
-def freshness_emoji(days: int) -> str:
-    if days <= 7:
-        return "🟢"
-    elif days <= 30:
-        return "🟡"
-    elif days <= 90:
-        return "🟠"
-    return "🔴"
+def freshness_bucket(days: int) -> tuple[str, str]:
+    """Return (emoji, label)."""
+    if days <= FRESHNESS_GREEN_DAYS:
+        return "🟢", "正常"
+    if days <= FRESHNESS_YELLOW_DAYS:
+        return "🟡", "观察"
+    if days <= FRESHNESS_ORANGE_DAYS:
+        return "🟠", "关注"
+    return "🔴", "告警"
 
+
+def freshness_emoji(days: int) -> str:
+    return freshness_bucket(days)[0]
+
+
+# Freshness policy (days since last push/commit), can be overridden by env when debugging
+FRESHNESS_GREEN_DAYS = int(os.environ.get("PRODUCT_FRESHNESS_GREEN_DAYS", "7"))
+FRESHNESS_YELLOW_DAYS = int(os.environ.get("PRODUCT_FRESHNESS_YELLOW_DAYS", "30"))
+FRESHNESS_ORANGE_DAYS = int(os.environ.get("PRODUCT_FRESHNESS_ORANGE_DAYS", "90"))
 
 # ── Snapshot persistence ──
 
@@ -342,7 +352,12 @@ def build_card(products_data: list, competitor_changes: dict, product_diffs: lis
     without_repo = [p for p in products_data if not p.get("has_repo")]
     total_stars = sum(p.get("stars", 0) for p in with_repo)
     active_30d = sum(1 for p in with_repo if p.get("days", 999) <= 30)
-    alert_count = sum(1 for p in with_repo if p.get("active", True) and (p.get("days", 999) > 30 or p.get("issues", 0) > 0))
+    alert_count = sum(
+        1
+        for p in with_repo
+        if p.get("active", True)
+        and (p.get("issues", 0) > 0 or p.get("days", 999) > FRESHNESS_YELLOW_DAYS)
+    )
 
     # 有仓库的产品表格
     rows = []
@@ -351,7 +366,11 @@ def build_card(products_data: list, competitor_changes: dict, product_diffs: lis
         if not p.get("active", True):
             status = "📦 非活跃"
         else:
-            status = "🟢 正常" if p.get("issues", 0) == 0 and p.get("days", 999) <= 30 else "⚠️ 关注"
+            emoji, label = freshness_bucket(p.get("days", 999))
+            if p.get("issues", 0) > 0:
+                status = "⚠️ 关注"
+            else:
+                status = f"{emoji} {label}" if emoji != "🟢" else "🟢 正常"
         rows.append({
             "status": status,
             "product": f'[{p["name"]}]({p["url"]})' if p.get("url") else p["name"],
