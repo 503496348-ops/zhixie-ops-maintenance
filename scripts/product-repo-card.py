@@ -223,7 +223,7 @@ def freshness_emoji(days: int) -> str:
 
 # Freshness policy (days since last push/commit), can be overridden by env when debugging
 FRESHNESS_GREEN_DAYS = int(os.environ.get("PRODUCT_FRESHNESS_GREEN_DAYS", "14"))
-FRESHNESS_YELLOW_DAYS = int(os.environ.get("PRODUCT_FRESHNESS_YELLOW_DAYS", "30"))
+FRESHNESS_YELLOW_DAYS = int(os.environ.get("PRODUCT_FRESHNESS_YELLOW_DAYS", "21"))
 FRESHNESS_ORANGE_DAYS = int(os.environ.get("PRODUCT_FRESHNESS_ORANGE_DAYS", "90"))
 
 # ── Snapshot persistence ──
