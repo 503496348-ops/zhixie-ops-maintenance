@@ -64,6 +64,7 @@ COMMIT_SCORE_KEYWORDS = ("feat", "security", "contract", "runtime", "toolkit", "
 CATEGORY_ALIAS = {
     "飞书白板": ["飞书白板设计+PPT", "飞书白板设计", "飞书白板"],
     "多agent协作": ["多agent", "多Agent"],
+    "智能体上下文": ["Agent上下文", "agent上下文", "智能体上下文"],
 }
 
 
@@ -112,9 +113,11 @@ def parse_product_categories() -> dict[str, list[str]]:
         repo = cols[3]
         category = cols[4]
         status = cols[6]
-        if "归档" in status:
+        # "映射补充" 行仅用于映射补齐，不参与日报/审计计数
+        if "归档" in status and "映射补充" not in status:
             continue
         if repo and category:
+            # 映射补充行允许参与竞品映射（如 GEO / 智能体上下文）
             category_products.setdefault(category, []).append(repo)
     return category_products
 
@@ -133,6 +136,7 @@ def map_category_to_products(category: str, product_map: dict[str, list[str]]) -
     for k, v in CATEGORY_ALIAS.items():
         if k == category:
             continue
+    # 别名映射（如 Agent上下文/智能体上下文）
     for aliases in CATEGORY_ALIAS.values():
         if category in aliases:
             for a in aliases:

@@ -38,6 +38,12 @@ def load_products():
         cols = [c.strip() for c in line.split("|")]
         cols = [c for c in cols if c]
         if len(cols) >= 7:
+            status = cols[6]
+            # 跳过归档与映射补位（映射补位不计入正式日报/审计产品口径）
+            if "映射补充" in status:
+                continue
+            if "归档" in status:
+                continue
             products.append({
                 "num": cols[0],
                 "name": cols[1],
@@ -274,7 +280,7 @@ def main():
         for p in products:
             print(f"\n🔍 [{p['num']}] {p['name']} ({p['repo']})...")
 
-            if "404" in p["status"] or "归档" in p["status"]:
+            if "404" in p["status"] or "归档" in p["status"] or "映射补充" in p["status"]:
                 print(f"  ⏭️ 跳过（{p['status']}）")
                 results.append({
                     "product": p["name"], "repo": p["repo"],

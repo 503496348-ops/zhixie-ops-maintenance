@@ -62,3 +62,7 @@
 - 2026-06-22: 新增绿茵智脑-世界杯版(worldcup-predictor)，19产品。
 - 2026-06-21: 艺游未境更名(Wanderix)，新增绿茵智脑(Football Predictor)，18产品。
 - 2026-06-19: 初始版本，16 产品对齐 Bitable。
+
+|| 22a | GEO诊断映射补位 | GEO Map (临时) | minddistill | GEO诊断 | main | 映射补充 |
+|| 22b | 智能体上下文映射补位A | Memory+Context | hermes-doctor | 智能体上下文 | main | 映射补充 |
+|| 22c | 智能体上下文映射补位B | Memory+Context | pipixia-doctor | 智能体上下文 | main | 映射补充 |
