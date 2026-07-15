@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-15T12:57:41.154358",
+  "generated_at": "2026-07-15T13:25:22.641764",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 14,
+    "total_candidates": 15,
     "by_triage": {
-      "可融合候选": 7,
-      "观察/人工复核": 4,
+      "可融合候选": 9,
+      "观察/人工复核": 3,
       "仅记录": 3
     }
   },
@@ -32,6 +32,27 @@
       "evidence": [
         "huggingface/diffusers status=可融合候选 score=6",
         "products=['ideasphere']"
+      ]
+    },
+    {
+      "repo": "langgenius/dify",
+      "category": "智能体健康",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "langgenius/dify status=可融合候选 score=6",
+        "products=['hermes-doctor', 'pipixia-doctor']"
       ]
     },
     {
@@ -156,6 +177,26 @@
       ]
     },
     {
+      "repo": "huggingface/transformers",
+      "category": "内容分析",
+      "products": [
+        "minddistill"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "pending_review",
+      "audit_total": 8.3,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "huggingface/transformers status=可融合候选 score=4",
+        "products=['minddistill']"
+      ]
+    },
+    {
       "repo": "Comfy-Org/ComfyUI",
       "category": "多媒体生成",
       "products": [
@@ -221,39 +262,6 @@
       "evidence": [
         "Auriti-Labs/geo-optimizer-skill status=观察/人工复核 score=1",
         "products=['minddistill']"
-      ]
-    },
-    {
-      "repo": "huggingface/transformers",
-      "category": "内容分析",
-      "products": [
-        "aestheflow",
-        "minddistill"
-      ],
-      "triage": "观察/人工复核",
-      "score": 1,
-      "status": "watching",
-      "audit_total": 0.0,
-      "audit_tech": 0,
-      "missing_features": [
-        "API集成",
-        "数据处理",
-        "机器学习",
-        "Web框架",
-        "数据库",
-        "文件处理",
-        "CLI工具",
-        "测试"
-      ],
-      "recommended_actions": [
-        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
-        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）",
-        "补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试",
-        "补齐 CLI / 入口参数文档，增加 install/test/help 的一致性"
-      ],
-      "evidence": [
-        "huggingface/transformers status=观察/人工复核 score=1",
-        "products=['aestheflow', 'minddistill']"
       ]
     },
     {

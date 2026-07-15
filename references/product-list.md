@@ -2,7 +2,7 @@
 
 来源：Bitable `[REDACTED_BASE_TOKEN]` 项目总览表，25 个产品。此文件由 Bitable 重建，GitHub 默认分支/归档状态经 `gh api /repos/503496348-ops/<repo>` 实查。
 
-统计：✅ 活跃 24｜⏸️ 已暂停 0｜🔒 已归档 1
+统计：✅ 活跃 23｜⏸️ 已暂停 0｜🔒 已归档 2
 
 | # | 产品名 | 英文代号 | GitHub 仓库 | 分类 | 默认分支 | 状态 |
 |---|--------|---------|------------|------|---------|------|
@@ -17,7 +17,7 @@
 | 9 | 荒原序列 BarrenOrder | BarrenOrder | barren-order | 多Agent协作 | main | ✅ |
 | 10 | 艺游未境 | Wanderix | canvas-design | 视觉创作 | main | ✅ |
 | 11 | 奇点造物 | Genesisix | hermes-security-suite | 安全检测 | main | ✅ |
-| 12 | 艺术生花 | Aestheflow | aestheflow | 内容分析 | main | ✅ |
+| 12 | 艺术生花 | Aestheflow | aestheflow | 内容分析 | main | 🔒 已归档 |
 | 13 | 松弛有度 | EasyRhythm | easyrhythm | 智能客服 | main | ✅ |
 | 14 | 他山之石 | HerPeakGem | herpeakgem | 智能教育 | main | ✅ |
 | 15 | 自然良品 | PurePicks | purepicks | 电商推荐 | main | ✅ |
@@ -49,6 +49,7 @@
 
 ## 更新记录
 
+- 2026-07-15: 方案A临时执行：将 `艺术生花/Aestheflow` 标注为 `🔒 已归档`（保持产品清单行数不变），用于隔离单点缺仓噪音。
 - 2026-07-02: ClaudeTeam 桥接能力二次融合：荒原序列 BarrenOrder 新增 Agent Team Bridge Runtime（manager inbox、worker pane、稳定 drop reason、Codex device-auth 恢复计划）；智脑星河 MindRiver 新增 Agent Fleet Ops Panel（语义健康、事件流停摆、登录恢复、上下文完整性）。
 - 2026-07-02: 完成 ClaudeTeam 类研究/协作能力拆分融合：元气方程 Energsolve 新增公司研究双层 memo 与双信源验证矩阵；荒原序列 BarrenOrder 新增会前人物情报四线 manager-only 任务流；深度方略 Stratapro 新增带时间戳与原句证据的播客投资信号层。三仓均已测试、提交、推送并远端 SHA 对齐。
 - 2026-07-02: 完成 GordenSuperPPTSkills 反向融合落地：有点东西新增可编辑 PPTX 四层资产契约；破窗造视新增幻灯片图片提示词包；艺游未境新增商业信息图密度评估；妙笔生花新增演示稿内容加厚；裂变创作新增长文到演示节奏规划；召物少年新增漫画页分层布局；荒原序列新增阶段证据 manifest；智脑星河新增交付证据账本。8 仓均已测试、提交、推送并远端 SHA 对齐。
