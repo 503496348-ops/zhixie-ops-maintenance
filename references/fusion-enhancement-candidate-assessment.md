@@ -58,7 +58,7 @@
 
 ## Wave-6 启动建议（2026-07-15）
 - 已基于当前可融合候选清单生成下一批执行提案：`references/fusion-candidate-wave-6-review.md`。
-- 当前待评审清单（8项）已分出执行优先：
-  - P1：`mem0ai/mem0`、`crewAIInc/crewAI`
+- 当前待评审清单（7项）已分出执行优先：
+  - P1：`mem0ai/mem0`
   - P2：其余 6 项（`excalidraw/excalidraw`、`NVIDIA/SkillSpector`、`huggingface/diffusers`、`botpress/botpress`、`assafelovic/gpt-researcher`、`huggingface/transformers`）
 - 仍维持观察/复核 3 项与仅记录 3 项状态，不入本批执行。
