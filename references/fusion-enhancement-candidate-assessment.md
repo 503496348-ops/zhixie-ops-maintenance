@@ -54,3 +54,11 @@
 - 对应输出文件：`ideasphere/scripts/anti_ai_style_guard.py`，`ideasphere/scripts/ideasphere_api.py`。
 - 回归动作：`py_compile`、`check:syntax`、`pytest test_one_click_open_box.py`、DRY_RUN 统一脚本验证均通过。
 - 状态：**已完成（主仓库推送）**
+
+
+## Wave-6 启动建议（2026-07-15）
+- 已基于当前可融合候选清单生成下一批执行提案：`references/fusion-candidate-wave-6-review.md`。
+- 当前待评审清单（8项）已分出执行优先：
+  - P1：`mem0ai/mem0`、`crewAIInc/crewAI`
+  - P2：其余 6 项（`excalidraw/excalidraw`、`NVIDIA/SkillSpector`、`huggingface/diffusers`、`botpress/botpress`、`assafelovic/gpt-researcher`、`huggingface/transformers`）
+- 仍维持观察/复核 3 项与仅记录 3 项状态，不入本批执行。

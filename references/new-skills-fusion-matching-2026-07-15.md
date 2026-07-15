@@ -93,3 +93,11 @@
   - `doctor` 输出为 PASS（样式告警为非阻断）
 - 验收动作：`py_compile`、`check:syntax`、`pytest test_one_click_open_box`、`ops orchestrator --dry-run`、`product-repo-card --dry-run`、`audit-products` 均通过
 - 状态：**已完成（`ideasphere` 已推送主仓）**
+
+
+## 6) Wave-6 下一步计划（2026-07-15）
+- 已进入下一步可融合候选评审：从 `references/fusion-enhancement-execution-plan.json` 抽取 8 项 `pending_review` 可融合候选
+  - P1：`mem0ai/mem0`、`crewAIInc/crewAI`
+  - P2：`excalidraw/excalidraw`、`NVIDIA/SkillSpector`、`huggingface/diffusers`、`botpress/botpress`、`assafelovic/gpt-researcher`、`huggingface/transformers`
+- 观察/复核与仅记录条目暂缓执行，保持风控界限
+- 输出决策文档：`references/fusion-candidate-wave-6-review.md`
