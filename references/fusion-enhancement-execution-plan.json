@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-15T09:19:45.522162",
+  "generated_at": "2026-07-15T10:29:19.088708",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
@@ -8,8 +8,8 @@
   "summary": {
     "total_candidates": 16,
     "by_triage": {
-      "可融合候选": 9,
-      "观察/人工复核": 3,
+      "可融合候选": 8,
+      "观察/人工复核": 4,
       "仅记录": 4
     }
   },
@@ -24,13 +24,11 @@
       "triage": "可融合候选",
       "score": 6,
       "status": "pending_review",
-      "audit_total": 8.9,
-      "audit_tech": 7,
-      "missing_features": [
-        "Web框架"
-      ],
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
       "recommended_actions": [
-        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略"
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
         "langgenius/dify status=可融合候选 score=6",
@@ -135,13 +133,11 @@
       "triage": "可融合候选",
       "score": 4,
       "status": "pending_review",
-      "audit_total": 8.9,
-      "audit_tech": 7,
-      "missing_features": [
-        "Web框架"
-      ],
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
       "recommended_actions": [
-        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略"
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
         "mem0ai/mem0 status=可融合候选 score=4",
@@ -157,13 +153,11 @@
       "triage": "可融合候选",
       "score": 4,
       "status": "pending_review",
-      "audit_total": 8.9,
-      "audit_tech": 7,
-      "missing_features": [
-        "数据库"
-      ],
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
       "recommended_actions": [
-        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
         "botpress/botpress status=可融合候选 score=4",
@@ -188,39 +182,6 @@
       "evidence": [
         "assafelovic/gpt-researcher status=可融合候选 score=4",
         "products=['fission-creative']"
-      ]
-    },
-    {
-      "repo": "huggingface/transformers",
-      "category": "内容分析",
-      "products": [
-        "aestheflow",
-        "minddistill"
-      ],
-      "triage": "可融合候选",
-      "score": 4,
-      "status": "pending_review",
-      "audit_total": 0.0,
-      "audit_tech": 0,
-      "missing_features": [
-        "API集成",
-        "数据处理",
-        "机器学习",
-        "Web框架",
-        "数据库",
-        "文件处理",
-        "CLI工具",
-        "测试"
-      ],
-      "recommended_actions": [
-        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
-        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）",
-        "补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试",
-        "补齐 CLI / 入口参数文档，增加 install/test/help 的一致性"
-      ],
-      "evidence": [
-        "huggingface/transformers status=可融合候选 score=4",
-        "products=['aestheflow', 'minddistill']"
       ]
     },
     {
@@ -293,6 +254,39 @@
       "evidence": [
         "Auriti-Labs/geo-optimizer-skill status=观察/人工复核 score=1",
         "products=['minddistill']"
+      ]
+    },
+    {
+      "repo": "huggingface/transformers",
+      "category": "内容分析",
+      "products": [
+        "aestheflow",
+        "minddistill"
+      ],
+      "triage": "观察/人工复核",
+      "score": 1,
+      "status": "watching",
+      "audit_total": 0.0,
+      "audit_tech": 0,
+      "missing_features": [
+        "API集成",
+        "数据处理",
+        "机器学习",
+        "Web框架",
+        "数据库",
+        "文件处理",
+        "CLI工具",
+        "测试"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）",
+        "补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试",
+        "补齐 CLI / 入口参数文档，增加 install/test/help 的一致性"
+      ],
+      "evidence": [
+        "huggingface/transformers status=观察/人工复核 score=1",
+        "products=['aestheflow', 'minddistill']"
       ]
     },
     {

@@ -1,5 +1,5 @@
 # 产品融合增强执行清单
-生成时间：2026-07-15T09:19:45.522162
+生成时间：2026-07-15T10:29:19.088708
 
 ## 来源
 - 产品审计：`references/audit-report.json`
@@ -17,10 +17,8 @@
 - 映射产品：hermes-doctor, pipixia-doctor
 - 融合判定：可融合候选
 - 评分：6（状态：pending_review）
-- 审计信号：total=8.9, tech=7
-- 缺口特征：Web框架
-- 建议动作：
-  - 补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略
+- 审计信号：total=9.1, tech=8
+- 缺口特征：无明显缺口
 - 执行证据：
   - langgenius/dify status=可融合候选 score=6
   - products=['hermes-doctor', 'pipixia-doctor']
@@ -81,10 +79,8 @@
 - 映射产品：hermes-doctor, pipixia-doctor
 - 融合判定：可融合候选
 - 评分：4（状态：pending_review）
-- 审计信号：total=8.9, tech=7
-- 缺口特征：Web框架
-- 建议动作：
-  - 补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略
+- 审计信号：total=9.1, tech=8
+- 缺口特征：无明显缺口
 - 执行证据：
   - mem0ai/mem0 status=可融合候选 score=4
   - products=['hermes-doctor', 'pipixia-doctor']
@@ -94,10 +90,8 @@
 - 映射产品：easyrhythm
 - 融合判定：可融合候选
 - 评分：4（状态：pending_review）
-- 审计信号：total=8.9, tech=7
-- 缺口特征：数据库
-- 建议动作：
-  - 补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）
+- 审计信号：total=9.1, tech=8
+- 缺口特征：无明显缺口
 - 执行证据：
   - botpress/botpress status=可融合候选 score=4
   - products=['easyrhythm']
@@ -113,23 +107,7 @@
   - assafelovic/gpt-researcher status=可融合候选 score=4
   - products=['fission-creative']
 
-### 9. huggingface/transformers
-- 分类：内容分析
-- 映射产品：aestheflow, minddistill
-- 融合判定：可融合候选
-- 评分：4（状态：pending_review）
-- 审计信号：total=0.0, tech=0
-- 缺口特征：API集成, 数据处理, 机器学习, Web框架, 数据库, 文件处理, CLI工具, 测试
-- 建议动作：
-  - 补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略
-  - 补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）
-  - 补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试
-  - 补齐 CLI / 入口参数文档，增加 install/test/help 的一致性
-- 执行证据：
-  - huggingface/transformers status=可融合候选 score=4
-  - products=['aestheflow', 'minddistill']
-
-### 10. Comfy-Org/ComfyUI
+### 9. Comfy-Org/ComfyUI
 - 分类：多媒体生成
 - 映射产品：fractovision
 - 融合判定：观察/人工复核
@@ -143,7 +121,7 @@
   - Comfy-Org/ComfyUI status=观察/人工复核 score=3
   - products=['fractovision']
 
-### 11. vrtmrz/obsidian-livesync
+### 10. vrtmrz/obsidian-livesync
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：观察/人工复核
@@ -157,7 +135,7 @@
   - vrtmrz/obsidian-livesync status=观察/人工复核 score=1
   - products=['neverend']
 
-### 12. Auriti-Labs/geo-optimizer-skill
+### 11. Auriti-Labs/geo-optimizer-skill
 - 分类：GEO诊断
 - 映射产品：minddistill
 - 融合判定：观察/人工复核
@@ -170,6 +148,22 @@
 - 执行证据：
   - Auriti-Labs/geo-optimizer-skill status=观察/人工复核 score=1
   - products=['minddistill']
+
+### 12. huggingface/transformers
+- 分类：内容分析
+- 映射产品：aestheflow, minddistill
+- 融合判定：观察/人工复核
+- 评分：1（状态：watching）
+- 审计信号：total=0.0, tech=0
+- 缺口特征：API集成, 数据处理, 机器学习, Web框架, 数据库, 文件处理, CLI工具, 测试
+- 建议动作：
+  - 补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略
+  - 补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）
+  - 补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试
+  - 补齐 CLI / 入口参数文档，增加 install/test/help 的一致性
+- 执行证据：
+  - huggingface/transformers status=观察/人工复核 score=1
+  - products=['aestheflow', 'minddistill']
 
 ### 13. Wan-Video/Wan2.1
 - 分类：视频剪辑
