@@ -7,7 +7,7 @@
 
 ## 本轮待行动：可融合候选
 
-### 已完成（4 项）
+### 已完成（5 项）
 
 1. `mem0ai/mem0 -> hermes-doctor、pipixia-doctor`
    - 优先级：**P1**（score 6）
@@ -33,19 +33,21 @@
    - 完成动作：在 `ideasphere` 内已存在 `modules/diffusers_engine/*` 与 `video_processor` 的 diffusers 能力映射，且当前 doctor/gate/smoke 已通过。
    - 产物：`ideasphere` 主仓主线（`b3fe3aa`）
 
-### 待执行（3 项）
-
-以下 3 项保持 `status=pending_review`，优先级按 `score` + 对应产品缺口一致性排序：
-
-1. `assafelovic/gpt-researcher -> fission-creative`
+5. `assafelovic/gpt-researcher -> fission-creative`
    - 优先级：**P2**（score 4）
-   - 下一步：评估 fission-creative 长文后处理链路与 gpt-researcher 来源追溯字段是否可对齐。
+   - 完成时间：2026-07-15（本轮）
+   - 完成动作：新增 `scripts/gpt_researcher_bridge.py` 与 `tests/test_gpt_researcher_bridge.py`；补齐 `package.json` 与 `product_convergence.json` 的可见脚本/smoke 目标，完成 doctor/gate/compile/pytest（含新测试）验证。
+   - 产物：`fission-creative` 分支 `feat/gpt-researcher-bridge-wave-6`
 
-2. `botpress/botpress -> easyrhythm`
+### 待执行（2 项）
+
+以下 2 项保持 `status=pending_review`，优先级按 `score` + 对应产品缺口一致性排序：
+
+1. `botpress/botpress -> easyrhythm`
    - 优先级：**P2**（score 4）
    - 下一步：确认 easyrhythm 在会话流/对话脚本层存在可插拔策略，避免重复改动 runtime。
 
-3. `huggingface/transformers -> minddistill、minddistill`
+2. `huggingface/transformers -> minddistill、minddistill`
    - 优先级：**P2**（score 4）
    - 下一步：该项与 minddistill 重复映射，需先合并为单一工单避免重复复核。
 

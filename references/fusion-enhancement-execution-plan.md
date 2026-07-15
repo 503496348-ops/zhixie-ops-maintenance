@@ -81,13 +81,14 @@
 ### 7. assafelovic/gpt-researcher
 - 分类：长文创作
 - 映射产品：fission-creative
-- 融合判定：可融合候选
-- 评分：4（状态：pending_review）
+- 融合判定：可融合候选（已完成）
+- 评分：4（状态：implemented）
 - 审计信号：total=8.8, tech=8
 - 缺口特征：无明显缺口
 - 执行证据：
   - assafelovic/gpt-researcher status=可融合候选 score=4
   - products=['fission-creative']
+  - assafelovic/gpt-researcher bridge implemented in fission-creative (scripts/gpt_researcher_bridge.py)
 
 ### 8. Comfy-Org/ComfyUI
 - 分类：多媒体生成
