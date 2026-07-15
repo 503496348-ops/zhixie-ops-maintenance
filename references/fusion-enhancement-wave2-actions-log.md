@@ -121,8 +121,82 @@
   - `python3 scripts/ideasphere_api.py --help` 正常
 
 
+### 7) hermes-security-suite（映射: NVIDIA/SkillSpector；缺口: 机器学习/威胁检测能力边界）
+- 目标：补齐轻量可观测 API 与可选持久化记录，作为安全检测类仓库的统一诊断能力底座。
+- 变更：
+  - `scripts/doctor.py`
+    - 新增 `collect_run_report()`，并保持原有 CLI 输出路径不变。
+    - CLI 仍以可读输出为主；`--format json` 场景可复用内部结构。
+  - 新增 `scripts/hermes_security_suite_api.py`
+    - 提供可选 `FastAPI` 服务（`/health`, `/diag`, `/diag/run`, `/diag/latest`）
+  - 新增 `scripts/hermes_security_history_store.py`
+    - SQLite 运行记录持久化（`run_id`, `checked_at`, `passed`, 失败项）
+  - `package.json`
+    - 新增 `api` 脚本：`python3 scripts/hermes_security_suite_api.py`
+    - 引入可选依赖：`fastapi`, `uvicorn`
+    - `check:syntax` 覆盖 `scripts/*.py`
+- 提交：`c15ac65`（repo: `503496348-ops/hermes-security-suite`）
+- 推送：成功（`main -> main`）
+
+- 本地验收：
+  - `python3 -m py_compile scripts/*.py`
+  - `python3 -m pytest tests/test_one_click_open_box.py -q`
+  - 结果：4 passed
+  - `python3 scripts/hermes_security_suite_api.py --help` 正常
+
+
+### 8) fission-creative（映射: assafelovic/gpt-researcher；缺口: 机器学习）
+- 目标：补齐可选诊断 API 与 SQLite 持久化，统一候选执行模板。
+- 变更：
+  - `scripts/doctor.py`
+    - 新增 `collect_run_report()`，引入结构化健康摘要
+  - 新增 `scripts/fission_creative_api.py`
+    - 提供可选 `FastAPI` 服务（`/health`, `/diag`, `/diag/run`, `/diag/latest`）
+  - 新增 `scripts/fission_creative_history_store.py`
+    - SQLite 运行记录持久化
+  - `package.json`
+    - 新增 `api` 脚本：`python3 scripts/fission_creative_api.py`
+    - 引入可选依赖：`fastapi`, `uvicorn`
+    - `check:syntax` 覆盖 `scripts/*.py`
+- 提交：`8ba3a43`（repo: `503496348-ops/fission-creative`）
+- 推送：成功（`main -> main`）
+
+- 本地验收：
+  - `python3 -m py_compile scripts/*.py`
+  - `python3 -m pytest tests/test_one_click_open_box.py -q`
+  - 结果：4 passed
+  - `python3 scripts/fission_creative_api.py --help` 正常
+
+
+### 9) minddistill（映射: huggingface/transformers；缺口: 数据库）
+- 目标：补齐可选 SQLite 运行记录与 API 入口，完成缺口最小闭环。
+- 变更：
+  - `scripts/doctor.py`
+    - 新增 `collect_run_report()`，支持结构化 JSON 健康报告
+  - 新增 `scripts/minddistill_history_store.py`
+    - SQLite 运行记录持久化
+  - 新增 `scripts/minddistill_api.py`
+    - 提供可选 `FastAPI` 服务（`/health`, `/diag`, `/diag/run`, `/diag/latest`）
+  - `package.json`
+    - 新增 `api` 脚本：`python3 scripts/minddistill_api.py`
+    - 引入可选依赖：`fastapi`, `uvicorn`
+    - `check:syntax` 覆盖 `scripts/*.py`
+- 提交：`f20794f`（repo: `503496348-ops/minddistill`）
+- 推送：成功（`main -> main`）
+
+- 本地验收：
+  - `python3 -m py_compile scripts/*.py`
+  - `python3 -m pytest tests/test_one_click_open_box.py -q`
+  - 结果：4 passed
+  - `python3 scripts/minddistill_api.py --help` 正常
+
+
+### 10) 本轮总结
+- 本波次（Wave-2后段）完成 `hermes-security-suite`、`fission-creative`、`minddistill` 三仓库增强。
+- 已完成仓库：`barren-order`、`nichecraft`、`ideasphere`、`hermes-doctor`、`pipixia-doctor`。
+- 本次新增审计结果无回归（`F: 1`，`aestheflow` 仍属历史无仓问题）。
+- 运维执行：`python3 scripts/ops-product-monitor-orchestrator.py --with-audit --with-fusion-plan --dry-run` 全流程成功。
+
+
 ## 未执行（保留）
-- 其余候选项进入下一波次：
-  - `hermes-security-suite`（NVIDIA/SkillSpector，需先 commit 语义回放）
-  - `fission-creative`（assafelovic/gpt-researcher）
-  - `minddistill`（huggingface/transformers）
+- 本轮未执行：无

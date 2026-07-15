@@ -11,11 +11,11 @@
 - `langgenius/dify` → `hermes-doctor`, `pipixia-doctor`（缺口：已完成）
 - `excalidraw/excalidraw` → `nichecraft`（缺口：已完成）
 - `huggingface/diffusers` → `ideasphere`（缺口：已完成）
-- `NVIDIA/SkillSpector` → `hermes-security-suite`（缺口：无明显缺口，需先 commit 语义回放）
+- `NVIDIA/SkillSpector` → `hermes-security-suite`（缺口：已完成）
 - `mem0ai/mem0` → `hermes-doctor`, `pipixia-doctor`（缺口：已完成）
 - `botpress/botpress` → `easyrhythm`（缺口：数据库）
-- `assafelovic/gpt-researcher` → `fission-creative`（缺口：待补齐）
-- `huggingface/transformers` → `aestheflow`, `minddistill`（缺口：转入观察/人工复核）
+- `assafelovic/gpt-researcher` → `fission-creative`（缺口：已完成）
+- `huggingface/transformers` → `aestheflow`（观察/人工复核），`minddistill`（缺口：已完成）
 
 ## P1 执行约束
 1. 每项先给出“最小可交付改造点”
