@@ -65,7 +65,7 @@
   - 产物提交：`nichecraft` 分支 `feat/excalidraw-bridge-wave-6`（commit `e573109`）。
   - 改造点：新增 `scripts/excalidraw_bridge.py`，在 `scripts/doctor.py` 增加桥接 smoke，`scripts/nichecraft_api.py` 新增 `/diag/excalidraw`，并补充 `package.json` 与 `product_convergence.json`。
 - 统一验收完成：`check:syntax`、`pytest test_one_click_open_box.py`、`product_convergence_gate --json`。
-- 剩余待评审清单仍为 5 项，执行优先如下：
-  - P2：`NVIDIA/SkillSpector`、`huggingface/diffusers`、`botpress/botpress`、`assafelovic/gpt-researcher`、`huggingface/transformers`
+- 已完成当前可执行清单：`NVIDIA/SkillSpector`、`huggingface/diffusers`、`botpress/botpress`、`assafelovic/gpt-researcher`、`huggingface/transformers`。
+- minddistill 映射项（`huggingface/transformers`）对应 `minddistill` 的最小闭环桥接已补齐（分支 `feat/transformers-bridge-wave-6`）。
 - 仍维持观察/复核 3 项与仅记录 3 项状态，不入本批执行。
 - 当前提案文档：`references/fusion-candidate-wave-6-review.md`。

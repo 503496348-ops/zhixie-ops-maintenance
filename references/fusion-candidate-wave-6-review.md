@@ -7,7 +7,7 @@
 
 ## 本轮待行动：可融合候选
 
-### 已完成（6 项）
+### 已完成（7 项）
 
 1. `mem0ai/mem0 -> hermes-doctor、pipixia-doctor`
    - 优先级：**P1**（score 6）
@@ -45,13 +45,15 @@
    - 完成动作：新增 `python-backend/adapters/botpress.py` 并补齐 `adapters/__init__.py` + `adapters/router.py` 适配入口，完成 doctor/gate/smoke/pytest 验证。
    - 产物：`easyrhythm` 分支 `feat/botpress-bridge-wave-6`
 
-### 待执行（1 项）
-
-以下 1 项保持 `status=pending_review`，优先级按 `score` + 对应产品缺口一致性排序：
-
-1. `huggingface/transformers -> minddistill、minddistill`
+7. `huggingface/transformers -> minddistill`
    - 优先级：**P2**（score 4）
-   - 下一步：该项与 minddistill 重复映射，需先合并为单一工单避免重复复核。
+   - 完成时间：2026-07-16（本轮）
+   - 完成动作：新增 `scripts/transformers_bridge.py`，并接入 `scripts/doctor.py` + `scripts/minddistill_api.py`，补充 `package.json` 与 `product_convergence.json`，补齐桥接测试。
+   - 产物：`minddistill` 分支 `feat/transformers-bridge-wave-6`
+
+### 待执行（0 项）
+
+已完成全部目标，无新增待执行条目。
 
 ## 观察/复核项（3 项，保留）
 
