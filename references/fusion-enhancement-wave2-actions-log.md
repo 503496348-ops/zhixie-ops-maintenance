@@ -54,6 +54,29 @@
   - 结果：`F: 1`（`aestheflow`，与本次增强无关）
 
 
+### 4) barren-order（映射: crewAIInc/crewAI；缺口: 数据库）
+- 目标：补齐数据库持久化底座（可选，非破坏性）并提供轻量诊断 API。
+- 变更：
+  - `scripts/doctor.py`
+    - 新增 `collect_run_report()`，支持结构化检查结果输出。
+    - `--format json` 时可输出可机读健康报告。
+  - 新增 `scripts/barren_order_history_store.py`
+    - SQLite 运行记录持久化（通过率、失败项、时间戳）
+  - 新增 `scripts/barren_order_api.py`
+    - 提供可选 `FastAPI` 服务（`/health`, `/diag`, `/diag/run`, `/diag/latest`）
+  - `package.json`
+    - 新增 `api` 脚本：`python3 scripts/barren_order_api.py`
+    - 增加可选依赖 `fastapi`, `uvicorn`
+    - 强化 `check:syntax` 覆盖 `scripts/*.py`
+- 提交：`a940171`（repo: `503496348-ops/barren-order`）
+- 推送：成功（`main -> main`）
+
+- 本地验收：
+  - `PYTHONPATH=. pytest -q`
+  - 结果：35 passed
+  - `python3 scripts/barren_order_api.py --help` 正常
+
+
 ## 未执行（保留）
 - 其余候选项进入下一波次：
   - `barren-order`（crewAIInc/crewAI，缺 DB）

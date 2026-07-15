@@ -9,7 +9,6 @@
 
 ## P1（优先执行）
 - `langgenius/dify` → `hermes-doctor`, `pipixia-doctor`（缺口：已完成）
-- `crewAIInc/crewAI` → `barren-order`（缺口：数据库）
 - `excalidraw/excalidraw` → `nichecraft`（缺口：数据库）
 - `huggingface/diffusers` → `ideasphere`（缺口：Web框架, 数据库）
 - `NVIDIA/SkillSpector` → `hermes-security-suite`（缺口：无明显缺口，需先 commit 语义回放）
@@ -30,4 +29,6 @@
 
 ## 风险与回退
 - 风险点：`aestheflow` repo 不存在，无法验证对该仓库的本地交付增强
+- `barren-order` 已补齐 `crewAIInc/crewAI` 映射方向的数据库持久化能力（sqlite）
+
 - 回退点：恢复 `references/product-list.md` 与候选清单到上次稳定版本；清空本轮新增候选字段后重跑 `--validate` 与 orchestrator
