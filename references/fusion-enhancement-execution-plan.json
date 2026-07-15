@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-15T10:32:32.080219",
+  "generated_at": "2026-07-15T10:57:50.106153",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
@@ -44,13 +44,11 @@
       "triage": "可融合候选",
       "score": 6,
       "status": "pending_review",
-      "audit_total": 8.9,
-      "audit_tech": 7,
-      "missing_features": [
-        "数据库"
-      ],
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
       "recommended_actions": [
-        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
         "crewAIInc/crewAI status=可融合候选 score=6",
