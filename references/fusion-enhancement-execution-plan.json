@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-15T13:25:22.641764",
+  "generated_at": "2026-07-15T18:49:11.735813",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
@@ -14,26 +14,6 @@
     }
   },
   "items": [
-    {
-      "repo": "huggingface/diffusers",
-      "category": "视频剪辑",
-      "products": [
-        "ideasphere"
-      ],
-      "triage": "可融合候选",
-      "score": 6,
-      "status": "pending_review",
-      "audit_total": 9.1,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "huggingface/diffusers status=可融合候选 score=6",
-        "products=['ideasphere']"
-      ]
-    },
     {
       "repo": "langgenius/dify",
       "category": "智能体健康",
@@ -52,6 +32,27 @@
       ],
       "evidence": [
         "langgenius/dify status=可融合候选 score=6",
+        "products=['hermes-doctor', 'pipixia-doctor']"
+      ]
+    },
+    {
+      "repo": "mem0ai/mem0",
+      "category": "Agent上下文",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "mem0ai/mem0 status=可融合候选 score=6",
         "products=['hermes-doctor', 'pipixia-doctor']"
       ]
     },
@@ -116,11 +117,10 @@
       ]
     },
     {
-      "repo": "mem0ai/mem0",
-      "category": "Agent上下文",
+      "repo": "huggingface/diffusers",
+      "category": "视频剪辑",
       "products": [
-        "hermes-doctor",
-        "pipixia-doctor"
+        "ideasphere"
       ],
       "triage": "可融合候选",
       "score": 4,
@@ -132,8 +132,8 @@
         "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
-        "mem0ai/mem0 status=可融合候选 score=4",
-        "products=['hermes-doctor', 'pipixia-doctor']"
+        "huggingface/diffusers status=可融合候选 score=4",
+        "products=['ideasphere']"
       ]
     },
     {
@@ -180,6 +180,7 @@
       "repo": "huggingface/transformers",
       "category": "内容分析",
       "products": [
+        "minddistill",
         "minddistill"
       ],
       "triage": "可融合候选",
@@ -193,7 +194,7 @@
       ],
       "evidence": [
         "huggingface/transformers status=可融合候选 score=4",
-        "products=['minddistill']"
+        "products=['minddistill', 'minddistill']"
       ]
     },
     {

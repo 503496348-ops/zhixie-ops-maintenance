@@ -49,6 +49,7 @@
 
 ## 更新记录
 
+- 2026-07-15: 方案B执行：为缺失的 `艺术生花/Aestheflow` 增加映射补位行 `22d`，映射到 `minddistill`（不改变25条主口径）。
 - 2026-07-15: 方案A临时执行：将 `艺术生花/Aestheflow` 标注为 `🔒 已归档`（保持产品清单行数不变），用于隔离单点缺仓噪音。
 - 2026-07-02: ClaudeTeam 桥接能力二次融合：荒原序列 BarrenOrder 新增 Agent Team Bridge Runtime（manager inbox、worker pane、稳定 drop reason、Codex device-auth 恢复计划）；智脑星河 MindRiver 新增 Agent Fleet Ops Panel（语义健康、事件流停摆、登录恢复、上下文完整性）。
 - 2026-07-02: 完成 ClaudeTeam 类研究/协作能力拆分融合：元气方程 Energsolve 新增公司研究双层 memo 与双信源验证矩阵；荒原序列 BarrenOrder 新增会前人物情报四线 manager-only 任务流；深度方略 Stratapro 新增带时间戳与原句证据的播客投资信号层。三仓均已测试、提交、推送并远端 SHA 对齐。
@@ -67,3 +68,4 @@
 || 22a | GEO诊断映射补位 | GEO Map (临时) | minddistill | GEO诊断 | main | 映射补充 |
 || 22b | 智能体上下文映射补位A | Memory+Context | hermes-doctor | 智能体上下文 | main | 映射补充 |
 || 22c | 智能体上下文映射补位B | Memory+Context | pipixia-doctor | 智能体上下文 | main | 映射补充 |
+|| 22d | Aestheflow 反AI痕迹补位 | Content Slop Cleanup | minddistill | 内容分析 | main | 映射补充 |

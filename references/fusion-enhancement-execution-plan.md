@@ -1,5 +1,5 @@
 # 产品融合增强执行清单
-生成时间：2026-07-15T13:25:22.641764
+生成时间：2026-07-15T18:49:11.735813
 
 ## 来源
 - 产品审计：`references/audit-report.json`
@@ -12,18 +12,7 @@
 
 ## 候选池（共 15 项）
 
-### 1. huggingface/diffusers
-- 分类：视频剪辑
-- 映射产品：ideasphere
-- 融合判定：可融合候选
-- 评分：6（状态：pending_review）
-- 审计信号：total=9.1, tech=8
-- 缺口特征：无明显缺口
-- 执行证据：
-  - huggingface/diffusers status=可融合候选 score=6
-  - products=['ideasphere']
-
-### 2. langgenius/dify
+### 1. langgenius/dify
 - 分类：智能体健康
 - 映射产品：hermes-doctor, pipixia-doctor
 - 融合判定：可融合候选
@@ -32,6 +21,17 @@
 - 缺口特征：无明显缺口
 - 执行证据：
   - langgenius/dify status=可融合候选 score=6
+  - products=['hermes-doctor', 'pipixia-doctor']
+
+### 2. mem0ai/mem0
+- 分类：Agent上下文
+- 映射产品：hermes-doctor, pipixia-doctor
+- 融合判定：可融合候选
+- 评分：6（状态：pending_review）
+- 审计信号：total=9.1, tech=8
+- 缺口特征：无明显缺口
+- 执行证据：
+  - mem0ai/mem0 status=可融合候选 score=6
   - products=['hermes-doctor', 'pipixia-doctor']
 
 ### 3. crewAIInc/crewAI
@@ -67,16 +67,16 @@
   - NVIDIA/SkillSpector status=可融合候选 score=4
   - products=['hermes-security-suite']
 
-### 6. mem0ai/mem0
-- 分类：Agent上下文
-- 映射产品：hermes-doctor, pipixia-doctor
+### 6. huggingface/diffusers
+- 分类：视频剪辑
+- 映射产品：ideasphere
 - 融合判定：可融合候选
 - 评分：4（状态：pending_review）
 - 审计信号：total=9.1, tech=8
 - 缺口特征：无明显缺口
 - 执行证据：
-  - mem0ai/mem0 status=可融合候选 score=4
-  - products=['hermes-doctor', 'pipixia-doctor']
+  - huggingface/diffusers status=可融合候选 score=4
+  - products=['ideasphere']
 
 ### 7. botpress/botpress
 - 分类：智能客服
@@ -102,14 +102,14 @@
 
 ### 9. huggingface/transformers
 - 分类：内容分析
-- 映射产品：minddistill
+- 映射产品：minddistill, minddistill
 - 融合判定：可融合候选
 - 评分：4（状态：pending_review）
 - 审计信号：total=8.3, tech=8
 - 缺口特征：无明显缺口
 - 执行证据：
   - huggingface/transformers status=可融合候选 score=4
-  - products=['minddistill']
+  - products=['minddistill', 'minddistill']
 
 ### 10. Comfy-Org/ComfyUI
 - 分类：多媒体生成
