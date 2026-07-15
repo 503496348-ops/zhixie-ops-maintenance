@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-15T11:44:52.356743",
+  "generated_at": "2026-07-15T11:58:51.776879",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"

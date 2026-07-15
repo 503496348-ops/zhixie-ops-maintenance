@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-15T11:44:52.368546",
+  "generated_at": "2026-07-15T11:58:51.788204",
   "dry_run": true,
   "total_steps": 4,
   "success_count": 4,
@@ -10,33 +10,33 @@
       "name": "产品仓库日报",
       "success": true,
       "output_lines": 10,
-      "duration_seconds": 42.7,
+      "duration_seconds": 45.1,
       "error": "",
-      "timestamp": "2026-07-15T11:42:38.137251"
+      "timestamp": "2026-07-15T11:56:43.692166"
     },
     {
       "name": "竞品仓库监控",
       "success": true,
-      "output_lines": 151,
-      "duration_seconds": 95.19,
+      "output_lines": 149,
+      "duration_seconds": 94.11,
       "error": "",
-      "timestamp": "2026-07-15T11:44:13.331390"
+      "timestamp": "2026-07-15T11:58:17.802997"
     },
     {
       "name": "产品质量审计",
       "success": true,
       "output_lines": 95,
-      "duration_seconds": 38.97,
+      "duration_seconds": 33.92,
       "error": "",
-      "timestamp": "2026-07-15T11:44:52.299156"
+      "timestamp": "2026-07-15T11:58:51.723576"
     },
     {
       "name": "融合增强候选清单",
       "success": true,
       "output_lines": 4,
-      "duration_seconds": 0.07,
+      "duration_seconds": 0.06,
       "error": "",
-      "timestamp": "2026-07-15T11:44:52.368055"
+      "timestamp": "2026-07-15T11:58:51.787668"
     }
   ]
 }
