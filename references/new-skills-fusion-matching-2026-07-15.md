@@ -61,3 +61,13 @@
 - 已在 `product-list.md` 增加 `Aestheflow 反AI痕迹补位` 行（映射到 `minddistill`）。
 - 这既保留产品清单口径不变，也能在后续把 `kill-ai-slop` 这类内容风格能力沉淀为“内容分析补位路线”。
 
+## 3) Wave-3 执行记录（2026-07-15）
+
+- 已落地 `nichecraft`：新增 `scripts/anti_ai_style_guard.py`，并接入 `scripts/doctor.py` 与 `scripts/nichecraft_api.py`，提供
+  - AI风格风险扫描（emoji、渐变、全大写）
+  - `/diag/style` API 入口
+  - `npm run style-guard` 脚本
+- 已落地 `canvas-design`：新增 `scripts/anti_ai_sanity.mjs`，并接入 `scripts/doctor.mjs` 与 `npm run style-guard`，提供
+  - 反AI视觉静态评分（非阻断）
+  - 输出风险样本与修复建议
+- 状态：**已完成（仓库改造已推送，待用户验收）**

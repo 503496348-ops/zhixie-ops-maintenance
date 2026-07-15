@@ -32,6 +32,10 @@
 - `jakubkrehel/skills`：建议优先挂接 `nichecraft`、`canvas-design`；次级 `artipen / fractovision / ideasphere`。
 - `方案B` 已执行：`Aestheflow` 增加映射补位行 `22d`，后续以 `minddistill` 承接内容分析缺口。
 
+## Wave-3 执行补充（2026-07-15）
+- 已完成 `nichecraft` 与 `canvas-design` 的外部技能能力入口改造（反AI风格静态扫描 + style-guard）。
+- 对应输出文件：仓库内新增 `anti_ai_style_guard.py` / `anti_ai_sanity.mjs`，并接入各自 doctor 流程。
+
 ## 风险与回退
 - 风险点：`aestheflow` 已转为映射补位（`22d`）并不进入主失败项；当前审计口径为 23 个主条目、F=0。
 
