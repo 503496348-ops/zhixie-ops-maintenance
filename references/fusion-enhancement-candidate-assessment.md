@@ -8,12 +8,12 @@
 - 竞品分诊来源：`/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json`
 
 ## P1（优先执行）
-- `langgenius/dify` → `hermes-doctor`, `pipixia-doctor`（缺口：已补齐 Web + SQLite 持久化底座）
+- `langgenius/dify` → `hermes-doctor`, `pipixia-doctor`（缺口：已完成）
 - `crewAIInc/crewAI` → `barren-order`（缺口：数据库）
 - `excalidraw/excalidraw` → `nichecraft`（缺口：数据库）
 - `huggingface/diffusers` → `ideasphere`（缺口：Web框架, 数据库）
 - `NVIDIA/SkillSpector` → `hermes-security-suite`（缺口：无明显缺口，需先 commit 语义回放）
-- `mem0ai/mem0` → `hermes-doctor`, `pipixia-doctor`（缺口：已部分补齐；`hermes-doctor` 已完成）
+- `mem0ai/mem0` → `hermes-doctor`, `pipixia-doctor`（缺口：已完成）
 - `botpress/botpress` → `easyrhythm`（缺口：数据库）
 - `assafelovic/gpt-researcher` → `fission-creative`（缺口：待补齐）
 - `huggingface/transformers` → `aestheflow`, `minddistill`（缺口：转入观察/人工复核）

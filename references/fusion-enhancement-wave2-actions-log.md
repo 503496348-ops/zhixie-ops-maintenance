@@ -30,6 +30,30 @@
 - 运维仓库审计：`python3 scripts/audit-products.py`
   - 结果：`F: 1`（`aestheflow`，与本次增强无关）
 
+
+### 3) pipixia-doctor（映射: `langgenius/dify`, `mem0ai/mem0`；缺口: Web框架）
+- 目标：补齐 Web 接口能力，并提供可选的诊断运行持久化。
+- 变更：
+  - 新增 `scripts/pipixia_api.py`
+    - 提供 `FastAPI` 轻量服务（`/health`, `/diag/run`, `/diag/latest`）
+  - 新增 `scripts/pipixia_history_store.py`
+    - 基于 SQLite 的运行记录持久化
+  - `package.json`
+    - 新增 `api` 启动脚本：`python3 scripts/pipixia_api.py`
+    - 增加可选依赖：`fastapi`, `uvicorn`
+    - 更新 `check:syntax` 为全量 `py_compile scripts/*.py`
+- 提交：`f6a42e5`（repo: `503496348-ops/pipixia-doctor`）
+- 推送：成功（`main -> main`）
+
+## 验证与回归
+- 本地验收命令：
+  - `PYTHONPATH=. pytest -q`
+  - 结果：13 passed
+  - `python3 scripts/pipixia_api.py --help` 可正常输出帮助
+- 运维仓库审计：`python3 scripts/audit-products.py`
+  - 结果：`F: 1`（`aestheflow`，与本次增强无关）
+
+
 ## 未执行（保留）
 - 其余候选项进入下一波次：
   - `barren-order`（crewAIInc/crewAI，缺 DB）
