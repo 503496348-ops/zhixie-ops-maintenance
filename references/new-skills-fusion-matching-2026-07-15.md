@@ -83,3 +83,13 @@
   - `check:syntax` 已覆盖 anti-AI 检查脚本
 - 验收动作：`py_compile`、`check:syntax`、`pytest test_one_click_open_box` 均通过。
 - 状态：**已完成（`artipen`、`fractovision` 已推送主仓）**
+
+
+## 5) Wave-5 执行记录（2026-07-15）
+
+- 已落地 `ideasphere`：新增 `scripts/anti_ai_style_guard.py`，并接入 `scripts/doctor.py` 与 `scripts/ideasphere_api.py`。
+  - 新增 `npm run style-guard` 入口
+  - `check:syntax` 已覆盖 anti-AI 检查脚本
+  - `doctor` 输出为 PASS（样式告警为非阻断）
+- 验收动作：`py_compile`、`check:syntax`、`pytest test_one_click_open_box`、`ops orchestrator --dry-run`、`product-repo-card --dry-run`、`audit-products` 均通过
+- 状态：**已完成（`ideasphere` 已推送主仓）**

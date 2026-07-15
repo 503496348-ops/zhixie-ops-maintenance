@@ -48,3 +48,9 @@
 - `barren-order` 已补齐 `crewAIInc/crewAI` 映射方向的数据库持久化能力（sqlite）
 
 - 回退点：恢复 `references/product-list.md` 与候选清单到上次稳定版本；清空本轮新增候选字段后重跑 `--validate` 与 orchestrator
+
+## Wave-5 执行补充（2026-07-15）
+- 已完成 `ideasphere` 反AI风格静态扫描接入（`style-guard`）与 doctor 闭环，并新增 `/diag/style` API 入口。
+- 对应输出文件：`ideasphere/scripts/anti_ai_style_guard.py`，`ideasphere/scripts/ideasphere_api.py`。
+- 回归动作：`py_compile`、`check:syntax`、`pytest test_one_click_open_box.py`、DRY_RUN 统一脚本验证均通过。
+- 状态：**已完成（主仓库推送）**
