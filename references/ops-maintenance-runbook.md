@@ -119,6 +119,9 @@ competitor-monitor.py
 
 ### 6.5 融合增强执行清单（候选与验收闭环）
 
+> 变更记录：首次落地执行文档位于 `references/fusion-enhancement-execution-runbook.md`
+> 候选评估记录位于 `references/fusion-enhancement-candidate-assessment.md`
+
 **目的**：把竞品分诊候选变为可执行清单（含建议动作与验收链路）。
 
 **执行链路**：
