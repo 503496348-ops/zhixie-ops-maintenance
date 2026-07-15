@@ -28,7 +28,7 @@
 - 其它候选项当前无新增审计告警（在当前脚本口径内）
 
 ## 风险与回退
-- 风险点：`aestheflow` repo 不存在，无法验证对该仓库的本地交付增强
+- 风险点：`aestheflow` repo（`/tmp/aestheflow` 本地旧副本）原始远端 `https://github.com/503496348-ops/aestheflow.git` 已 `Repository not found`，本次复核已确认不存在；当前 `F:1` 仅由该条导致，影响：审计总仓数从25降为24
 - `barren-order` 已补齐 `crewAIInc/crewAI` 映射方向的数据库持久化能力（sqlite）
 
 - 回退点：恢复 `references/product-list.md` 与候选清单到上次稳定版本；清空本轮新增候选字段后重跑 `--validate` 与 orchestrator
