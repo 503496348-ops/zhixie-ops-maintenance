@@ -7,7 +7,7 @@
 
 ## 本轮待行动：可融合候选
 
-### 已完成（1 项）
+### 已完成（2 项）
 
 1. `mem0ai/mem0 -> hermes-doctor、pipixia-doctor`
    - 优先级：**P1**（score 6）
@@ -15,17 +15,23 @@
    - 完成动作：新增 `scripts/mem0_bridge.py` 并接入 `doctor.py`
    - 产物：分别在两仓库创建并合并分支 `feat/mem0-bridge-wave-6`（未提 PR）
 
-### 待执行（6 项）
-
-以下 6 项保持 `status=pending_review`，优先级按 `score` + 对应产品缺口一致性排序：
-
-1. `excalidraw/excalidraw -> nichecraft`
+2. `excalidraw/excalidraw -> nichecraft`
    - 优先级：**P1**（score 6）
-   - 下一步：核对 nichecraft 现有能力覆盖竞品差距，确认可复用的反AI/渲染能力边界。
+   - 完成时间：2026-07-15 22:08
+   - 完成动作：新增 `scripts/excalidraw_bridge.py`，并接入 `scripts/doctor.py`、`scripts/nichecraft_api.py`，补充 `package.json` 与 `product_convergence.json`
+   - 产物：`nichecraft` 分支 `feat/excalidraw-bridge-wave-6`
 
-2. `NVIDIA/SkillSpector -> hermes-security-suite`
+### 待执行（5 项）
+
+以下 5 项保持 `status=pending_review`，优先级按 `score` + 对应产品缺口一致性排序：
+
+1. `NVIDIA/SkillSpector -> hermes-security-suite`
    - 优先级：**P2**（score 4）
    - 下一步：以安全审计可解释性与告警证据持久化为对齐点，评估检测项可直接接入可行性。
+
+2. `huggingface/diffusers -> ideasphere`
+   - 优先级：**P2**（score 4）
+   - 下一步：评估 ideasphere 生成链路与 diffusers 的采样/模型配置边界，确认参数化入口复用比例。
 
 3. `assafelovic/gpt-researcher -> fission-creative`
    - 优先级：**P2**（score 4）
@@ -35,11 +41,7 @@
    - 优先级：**P2**（score 4）
    - 下一步：确认 easyrhythm 在会话流/对话脚本层存在可插拔策略，避免重复改动 runtime。
 
-5. `huggingface/diffusers -> ideasphere`
-   - 优先级：**P2**（score 4）
-   - 下一步：对比 ideasphere 生成链路与 diffusers 的采样/模型配置边界，确认参数化入口复用比例。
-
-6. `huggingface/transformers -> minddistill、minddistill`
+5. `huggingface/transformers -> minddistill、minddistill`
    - 优先级：**P2**（score 4）
    - 下一步：该项与 minddistill 重复映射，需先合并为单一工单避免重复复核。
 

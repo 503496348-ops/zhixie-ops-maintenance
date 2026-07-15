@@ -102,3 +102,10 @@
 - 观察/复核与仅记录条目暂缓执行，保持风控界限
 - 输出决策文档：`references/fusion-candidate-wave-6-review.md`
 
+
+## 7) Wave-6 执行记录（2026-07-15）
+- 已完成：`excalidraw/excalidraw -> nichecraft`
+  - 分支：`feat/excalidraw-bridge-wave-6`
+  - 改造：`scripts/excalidraw_bridge.py`、`scripts/doctor.py`、`scripts/nichecraft_api.py`、`package.json`、`product_convergence.json`
+- 当前待执行 `pending_review` 可融合候选为 5 项，执行优先为：
+  - `NVIDIA/SkillSpector`、`huggingface/diffusers`、`botpress/botpress`、`assafelovic/gpt-researcher`、`huggingface/transformers`

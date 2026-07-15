@@ -61,10 +61,11 @@
   - hermes-doctor：新增 `scripts/mem0_bridge.py`，并在 `scripts/doctor.py` 增加 `mem0 compatibility bridge` 检查。
   - pipixia-doctor：新增 `scripts/mem0_bridge.py`，并在 `scripts/doctor.py` 增加 `mem0 compatibility bridge` 检查。
   - 产物提交：`hermes-doctor` 分支 `feat/mem0-bridge-wave-6`（commit `2b6be75`）与 `pipixia-doctor` 分支 `feat/mem0-bridge-wave-6`（commit `5c15297`）。
+- 已执行：`excalidraw/excalidraw -> nichecraft`
+  - 产物提交：`nichecraft` 分支 `feat/excalidraw-bridge-wave-6`（commit `e573109`）。
+  - 改造点：新增 `scripts/excalidraw_bridge.py`，在 `scripts/doctor.py` 增加桥接 smoke，`scripts/nichecraft_api.py` 新增 `/diag/excalidraw`，并补充 `package.json` 与 `product_convergence.json`。
 - 统一验收完成：`check:syntax`、`pytest test_one_click_open_box.py`、`product_convergence_gate --json`。
-- 剩余待评审清单仍为 6 项，执行优先如下：
-  - P1：`excalidraw/excalidraw`
+- 剩余待评审清单仍为 5 项，执行优先如下：
   - P2：`NVIDIA/SkillSpector`、`huggingface/diffusers`、`botpress/botpress`、`assafelovic/gpt-researcher`、`huggingface/transformers`
 - 仍维持观察/复核 3 项与仅记录 3 项状态，不入本批执行。
 - 当前提案文档：`references/fusion-candidate-wave-6-review.md`。
-
