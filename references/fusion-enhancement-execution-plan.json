@@ -1,0 +1,395 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-07-15T09:19:45.522162",
+  "source": {
+    "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
+    "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
+  },
+  "summary": {
+    "total_candidates": 16,
+    "by_triage": {
+      "可融合候选": 9,
+      "观察/人工复核": 3,
+      "仅记录": 4
+    }
+  },
+  "items": [
+    {
+      "repo": "langgenius/dify",
+      "category": "智能体健康",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 8.9,
+      "audit_tech": 7,
+      "missing_features": [
+        "Web框架"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略"
+      ],
+      "evidence": [
+        "langgenius/dify status=可融合候选 score=6",
+        "products=['hermes-doctor', 'pipixia-doctor']"
+      ]
+    },
+    {
+      "repo": "crewAIInc/crewAI",
+      "category": "多Agent协作",
+      "products": [
+        "barren-order"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 8.9,
+      "audit_tech": 7,
+      "missing_features": [
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "crewAIInc/crewAI status=可融合候选 score=6",
+        "products=['barren-order']"
+      ]
+    },
+    {
+      "repo": "excalidraw/excalidraw",
+      "category": "飞书白板设计+PPT",
+      "products": [
+        "nichecraft"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 8.7,
+      "audit_tech": 7,
+      "missing_features": [
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "excalidraw/excalidraw status=可融合候选 score=6",
+        "products=['nichecraft']"
+      ]
+    },
+    {
+      "repo": "huggingface/diffusers",
+      "category": "视频剪辑",
+      "products": [
+        "ideasphere"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 8.7,
+      "audit_tech": 6,
+      "missing_features": [
+        "Web框架",
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "huggingface/diffusers status=可融合候选 score=6",
+        "products=['ideasphere']"
+      ]
+    },
+    {
+      "repo": "NVIDIA/SkillSpector",
+      "category": "安全检测",
+      "products": [
+        "hermes-security-suite"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "pending_review",
+      "audit_total": 9.6,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "NVIDIA/SkillSpector status=可融合候选 score=4",
+        "products=['hermes-security-suite']"
+      ]
+    },
+    {
+      "repo": "mem0ai/mem0",
+      "category": "Agent上下文",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "pending_review",
+      "audit_total": 8.9,
+      "audit_tech": 7,
+      "missing_features": [
+        "Web框架"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略"
+      ],
+      "evidence": [
+        "mem0ai/mem0 status=可融合候选 score=4",
+        "products=['hermes-doctor', 'pipixia-doctor']"
+      ]
+    },
+    {
+      "repo": "botpress/botpress",
+      "category": "智能客服",
+      "products": [
+        "easyrhythm"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "pending_review",
+      "audit_total": 8.9,
+      "audit_tech": 7,
+      "missing_features": [
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "botpress/botpress status=可融合候选 score=4",
+        "products=['easyrhythm']"
+      ]
+    },
+    {
+      "repo": "assafelovic/gpt-researcher",
+      "category": "长文创作",
+      "products": [
+        "fission-creative"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "pending_review",
+      "audit_total": 8.8,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "assafelovic/gpt-researcher status=可融合候选 score=4",
+        "products=['fission-creative']"
+      ]
+    },
+    {
+      "repo": "huggingface/transformers",
+      "category": "内容分析",
+      "products": [
+        "aestheflow",
+        "minddistill"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "pending_review",
+      "audit_total": 0.0,
+      "audit_tech": 0,
+      "missing_features": [
+        "API集成",
+        "数据处理",
+        "机器学习",
+        "Web框架",
+        "数据库",
+        "文件处理",
+        "CLI工具",
+        "测试"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）",
+        "补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试",
+        "补齐 CLI / 入口参数文档，增加 install/test/help 的一致性"
+      ],
+      "evidence": [
+        "huggingface/transformers status=可融合候选 score=4",
+        "products=['aestheflow', 'minddistill']"
+      ]
+    },
+    {
+      "repo": "Comfy-Org/ComfyUI",
+      "category": "多媒体生成",
+      "products": [
+        "fractovision"
+      ],
+      "triage": "观察/人工复核",
+      "score": 3,
+      "status": "watching",
+      "audit_total": 8.7,
+      "audit_tech": 6,
+      "missing_features": [
+        "Web框架",
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "Comfy-Org/ComfyUI status=观察/人工复核 score=3",
+        "products=['fractovision']"
+      ]
+    },
+    {
+      "repo": "vrtmrz/obsidian-livesync",
+      "category": "知识管理",
+      "products": [
+        "neverend"
+      ],
+      "triage": "观察/人工复核",
+      "score": 1,
+      "status": "watching",
+      "audit_total": 8.7,
+      "audit_tech": 6,
+      "missing_features": [
+        "机器学习",
+        "Web框架"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试"
+      ],
+      "evidence": [
+        "vrtmrz/obsidian-livesync status=观察/人工复核 score=1",
+        "products=['neverend']"
+      ]
+    },
+    {
+      "repo": "Auriti-Labs/geo-optimizer-skill",
+      "category": "GEO诊断",
+      "products": [
+        "minddistill"
+      ],
+      "triage": "观察/人工复核",
+      "score": 1,
+      "status": "watching",
+      "audit_total": 8.0,
+      "audit_tech": 6,
+      "missing_features": [
+        "Web框架",
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "Auriti-Labs/geo-optimizer-skill status=观察/人工复核 score=1",
+        "products=['minddistill']"
+      ]
+    },
+    {
+      "repo": "Wan-Video/Wan2.1",
+      "category": "视频剪辑",
+      "products": [
+        "ideasphere"
+      ],
+      "triage": "仅记录",
+      "score": -5,
+      "status": "仅记录",
+      "audit_total": 8.7,
+      "audit_tech": 6,
+      "missing_features": [
+        "Web框架",
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "Wan-Video/Wan2.1 status=仅记录 score=-5",
+        "products=['ideasphere']"
+      ]
+    },
+    {
+      "repo": "AUTOMATIC1111/stable-diffusion-webui",
+      "category": "多媒体生成",
+      "products": [
+        "fractovision"
+      ],
+      "triage": "仅记录",
+      "score": -5,
+      "status": "仅记录",
+      "audit_total": 8.7,
+      "audit_tech": 6,
+      "missing_features": [
+        "Web框架",
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "AUTOMATIC1111/stable-diffusion-webui status=仅记录 score=-5",
+        "products=['fractovision']"
+      ]
+    },
+    {
+      "repo": "linuxserver/docker-obsidian",
+      "category": "知识管理",
+      "products": [
+        "neverend"
+      ],
+      "triage": "仅记录",
+      "score": -5,
+      "status": "recorded",
+      "audit_total": 8.7,
+      "audit_tech": 6,
+      "missing_features": [
+        "机器学习",
+        "Web框架"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试"
+      ],
+      "evidence": [
+        "linuxserver/docker-obsidian status=仅记录 score=-5",
+        "products=['neverend']"
+      ]
+    },
+    {
+      "repo": "aaron-he-zhu/seo-geo-claude-skills",
+      "category": "GEO诊断",
+      "products": [
+        "minddistill"
+      ],
+      "triage": "仅记录",
+      "score": -5,
+      "status": "recorded",
+      "audit_total": 8.0,
+      "audit_tech": 6,
+      "missing_features": [
+        "Web框架",
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "aaron-he-zhu/seo-geo-claude-skills status=仅记录 score=-5",
+        "products=['minddistill']"
+      ]
+    }
+  ]
+}

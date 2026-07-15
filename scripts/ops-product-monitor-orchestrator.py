@@ -25,6 +25,7 @@ REFERENCES_DIR = SKILL_DIR / "references"
 PRODUCT_CARD_SCRIPT = SCRIPTS_DIR / "product-repo-card.py"
 COMPETITOR_MONITOR_SCRIPT = SCRIPTS_DIR / "competitor-monitor.py"
 AUDIT_PRODUCTS_SCRIPT = SCRIPTS_DIR / "audit-products.py"
+FUSION_PLAN_SCRIPT = SCRIPTS_DIR / "build-fusion-enhancement-plan.py"
 
 # 输出路径
 ORCHESTRATOR_OUTPUT = REFERENCES_DIR / "orchestrator-run-result.json"
@@ -170,7 +171,13 @@ def main():
         results.append(run_step("产品质量审计", [
             "python3", str(AUDIT_PRODUCTS_SCRIPT)
         ], timeout=600))
-    
+
+    # Step 4: 融合增强执行清单（可选）
+    if "--with-fusion-plan" in sys.argv and FUSION_PLAN_SCRIPT.exists():
+        results.append(run_step("融合增强候选清单", [
+            "python3", str(FUSION_PLAN_SCRIPT), "--validate"
+        ], timeout=120))
+
     # 生成汇总
     print(f"\n{'='*60}")
     print("📊 生成汇总报告...")

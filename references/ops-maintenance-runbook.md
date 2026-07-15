@@ -117,6 +117,30 @@ competitor-monitor.py
 
 ### 6.4 统一编排器
 
+### 6.5 融合增强执行清单（候选与验收闭环）
+
+**目的**：把竞品分诊候选变为可执行清单（含建议动作与验收链路）。
+
+**执行链路**：
+```text
+competitor-monitor.py（含分诊）
+    ↓ competitor-candidate-pool.json
+build-fusion-enhancement-plan.py
+    ↓ fusion-enhancement-execution-plan.md/json
+ops-product-monitor-orchestrator.py --with-fusion-plan
+    ↓ 引导任务分配与验收闭环
+```
+
+**产物**：
+- `references/fusion-enhancement-execution-plan.md`
+- `references/fusion-enhancement-execution-plan.json`
+
+**验收标准**：
+- 优先级 top 候选至少包含 `可融合候选` 中的可执行项（当前 9 项）
+- 产出后触发 `python3 scripts/audit-products.py` 验证 `products_with_issues {}`
+- 审计/日报与候选清单保持同口径（25 产品与 44 竞品）
+
+
 **脚本位置**：`scripts/ops-product-monitor-orchestrator.py`
 
 **用法**：
@@ -128,7 +152,7 @@ python3 scripts/ops-product-monitor-orchestrator.py
 python3 scripts/ops-product-monitor-orchestrator.py --dry-run
 
 # 含产品质量审计（耗时较长）
-python3 scripts/ops-product-monitor-orchestrator.py --with-audit --dry-run
+python3 scripts/ops-product-monitor-orchestrator.py --with-audit --with-fusion-plan --dry-run
 ```
 
 **输出产物**：
