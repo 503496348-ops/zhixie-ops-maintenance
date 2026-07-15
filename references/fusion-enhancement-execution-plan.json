@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-15T22:23:14.021091",
+  "generated_at": "2026-07-16T00:17:16.431181",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
@@ -8,9 +8,9 @@
   "summary": {
     "total_candidates": 12,
     "by_triage": {
-      "可融合候选": 7,
-      "观察/人工复核": 2,
-      "仅记录": 3
+      "可融合候选": 5,
+      "观察/人工复核": 3,
+      "仅记录": 4
     }
   },
   "items": [
@@ -76,47 +76,6 @@
       ]
     },
     {
-      "repo": "huggingface/diffusers",
-      "category": "视频剪辑",
-      "products": [
-        "ideasphere"
-      ],
-      "triage": "可融合候选",
-      "score": 4,
-      "status": "pending_review",
-      "audit_total": 9.1,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "huggingface/diffusers status=可融合候选 score=4",
-        "products=['ideasphere']"
-      ]
-    },
-    {
-      "repo": "langgenius/dify",
-      "category": "智能体健康",
-      "products": [
-        "hermes-doctor",
-        "pipixia-doctor"
-      ],
-      "triage": "可融合候选",
-      "score": 4,
-      "status": "pending_review",
-      "audit_total": 9.1,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "langgenius/dify status=可融合候选 score=4",
-        "products=['hermes-doctor', 'pipixia-doctor']"
-      ]
-    },
-    {
       "repo": "botpress/botpress",
       "category": "智能客服",
       "products": [
@@ -124,14 +83,16 @@
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "implemented",
+      "status": "pending_review",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
       "evidence": [
         "botpress/botpress status=可融合候选 score=4",
-        "products=['easyrhythm']",
-        "botpress/botpress bridge implemented in easyrhythm (python-backend/adapters/botpress.py)"
+        "products=['easyrhythm']"
       ]
     },
     {
@@ -142,14 +103,16 @@
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "implemented",
+      "status": "pending_review",
       "audit_total": 8.8,
       "audit_tech": 8,
       "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
       "evidence": [
         "assafelovic/gpt-researcher status=可融合候选 score=4",
-        "products=['fission-creative']",
-        "assafelovic/gpt-researcher bridge implemented in fission-creative"
+        "products=['fission-creative']"
       ]
     },
     {
@@ -174,6 +137,30 @@
       "evidence": [
         "Comfy-Org/ComfyUI status=观察/人工复核 score=3",
         "products=['fractovision']"
+      ]
+    },
+    {
+      "repo": "vrtmrz/obsidian-livesync",
+      "category": "知识管理",
+      "products": [
+        "neverend"
+      ],
+      "triage": "观察/人工复核",
+      "score": 1,
+      "status": "watching",
+      "audit_total": 8.7,
+      "audit_tech": 6,
+      "missing_features": [
+        "机器学习",
+        "Web框架"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试"
+      ],
+      "evidence": [
+        "vrtmrz/obsidian-livesync status=观察/人工复核 score=1",
+        "products=['neverend']"
       ]
     },
     {
@@ -242,6 +229,27 @@
       "evidence": [
         "linuxserver/docker-obsidian status=仅记录 score=-5",
         "products=['neverend']"
+      ]
+    },
+    {
+      "repo": "huggingface/transformers",
+      "category": "内容分析",
+      "products": [
+        "minddistill",
+        "minddistill"
+      ],
+      "triage": "仅记录",
+      "score": -5,
+      "status": "recorded",
+      "audit_total": 8.3,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先补齐审计缺口，再评估融合可执行性"
+      ],
+      "evidence": [
+        "huggingface/transformers status=仅记录 score=-5",
+        "products=['minddistill', 'minddistill']"
       ]
     },
     {
