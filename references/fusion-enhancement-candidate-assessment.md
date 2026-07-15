@@ -69,3 +69,12 @@
 - minddistill 映射项（`huggingface/transformers`）对应 `minddistill` 的最小闭环桥接已补齐（分支 `feat/transformers-bridge-wave-6`）。
 - 仍维持观察/复核 3 项与仅记录 3 项状态，不入本批执行。
 - 当前提案文档：`references/fusion-candidate-wave-6-review.md`。
+
+## Wave-7 复核起点（2026-07-16）
+- 按“先复核不改动”策略推进。
+- 本轮复核三项：
+  - `Comfy-Org/ComfyUI -> fractovision`
+  - `vrtmrz/obsidian-livesync -> neverend`
+  - `Auriti-Labs/geo-optimizer-skill -> minddistill`
+- 观察结论：三类提交当前均非直接服务/API 层增量（偏版本、发布、前端构建/文案），暂不进入实现。
+- 详细记录：`references/fusion-candidate-wave-7-review.md`。
