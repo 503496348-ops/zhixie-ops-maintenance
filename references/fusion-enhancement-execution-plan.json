@@ -1,40 +1,19 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-15T19:03:20.962565",
+  "generated_at": "2026-07-15T19:22:21.739577",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 15,
+    "total_candidates": 14,
     "by_triage": {
-      "可融合候选": 9,
+      "可融合候选": 8,
       "观察/人工复核": 3,
       "仅记录": 3
     }
   },
   "items": [
-    {
-      "repo": "langgenius/dify",
-      "category": "智能体健康",
-      "products": [
-        "hermes-doctor",
-        "pipixia-doctor"
-      ],
-      "triage": "可融合候选",
-      "score": 6,
-      "status": "pending_review",
-      "audit_total": 9.1,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "langgenius/dify status=可融合候选 score=6",
-        "products=['hermes-doctor', 'pipixia-doctor']"
-      ]
-    },
     {
       "repo": "mem0ai/mem0",
       "category": "Agent上下文",

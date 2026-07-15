@@ -71,3 +71,15 @@
   - 反AI视觉静态评分（非阻断）
   - `npm run style-guard` 脚本
   - 状态：**已完成（nichecraft 与 canvas-design 已推送主仓库；canvas-design 变更未触发功能阻塞，PR bypass 提示已确认）**
+
+
+## 4) Wave-4 执行记录（2026-07-15）
+
+- 已落地 `artipen`：新增 `scripts/anti_ai_style_guard.py`，并接入 `scripts/doctor.py`。
+  - `npm run style-guard` 入口已加入
+  - `check:syntax` 已覆盖 anti-AI 检查脚本
+- 已落地 `fractovision`：新增 `scripts/anti_ai_style_guard.py`，并接入 `scripts/doctor.py`。
+  - `npm run style-guard` 入口已加入
+  - `check:syntax` 已覆盖 anti-AI 检查脚本
+- 验收动作：`py_compile`、`check:syntax`、`pytest test_one_click_open_box` 均通过。
+- 状态：**已完成（`artipen`、`fractovision` 已推送主仓）**

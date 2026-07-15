@@ -36,6 +36,12 @@
 - 已完成 `nichecraft` 与 `canvas-design` 的外部技能能力入口改造（反AI风格静态扫描 + style-guard）。
 - 对应输出文件：仓库内新增 `anti_ai_style_guard.py` / `anti_ai_sanity.mjs`，并接入各自 doctor 流程。
 
+## Wave-4 执行补充（2026-07-15）
+- 已完成 `artipen` 与 `fractovision` 的反AI风格静态扫描接入（`style-guard`），并接入 doctor 闭环。
+- 对应输出文件：`artipen/scripts/anti_ai_style_guard.py`，`fractovision/scripts/anti_ai_style_guard.py`。
+- 回归动作：新增脚本通过 `py_compile`、`check:syntax`、`pytest test_one_click_open_box.py` 验证。
+- 状态：**已完成（主仓库推送）**
+
 ## 风险与回退
 - 风险点：`aestheflow` 已转为映射补位（`22d`）并不进入主失败项；当前审计口径为 23 个主条目、F=0。
 

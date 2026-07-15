@@ -1,5 +1,5 @@
 # 产品融合增强执行清单
-生成时间：2026-07-15T19:03:20.962565
+生成时间：2026-07-15T19:22:21.739577
 
 ## 来源
 - 产品审计：`references/audit-report.json`
@@ -10,20 +10,9 @@
 - 每项融合需给出 `代码入口 / 验收命令 / 回退点`
 - 首轮只做能力增强准备，不做跨仓库自动重构
 
-## 候选池（共 15 项）
+## 候选池（共 14 项）
 
-### 1. langgenius/dify
-- 分类：智能体健康
-- 映射产品：hermes-doctor, pipixia-doctor
-- 融合判定：可融合候选
-- 评分：6（状态：pending_review）
-- 审计信号：total=9.1, tech=8
-- 缺口特征：无明显缺口
-- 执行证据：
-  - langgenius/dify status=可融合候选 score=6
-  - products=['hermes-doctor', 'pipixia-doctor']
-
-### 2. mem0ai/mem0
+### 1. mem0ai/mem0
 - 分类：Agent上下文
 - 映射产品：hermes-doctor, pipixia-doctor
 - 融合判定：可融合候选
@@ -34,7 +23,7 @@
   - mem0ai/mem0 status=可融合候选 score=6
   - products=['hermes-doctor', 'pipixia-doctor']
 
-### 3. crewAIInc/crewAI
+### 2. crewAIInc/crewAI
 - 分类：多Agent协作
 - 映射产品：barren-order
 - 融合判定：可融合候选
@@ -45,7 +34,7 @@
   - crewAIInc/crewAI status=可融合候选 score=6
   - products=['barren-order']
 
-### 4. excalidraw/excalidraw
+### 3. excalidraw/excalidraw
 - 分类：飞书白板设计+PPT
 - 映射产品：nichecraft
 - 融合判定：可融合候选
@@ -56,7 +45,7 @@
   - excalidraw/excalidraw status=可融合候选 score=6
   - products=['nichecraft']
 
-### 5. NVIDIA/SkillSpector
+### 4. NVIDIA/SkillSpector
 - 分类：安全检测
 - 映射产品：hermes-security-suite
 - 融合判定：可融合候选
@@ -67,7 +56,7 @@
   - NVIDIA/SkillSpector status=可融合候选 score=4
   - products=['hermes-security-suite']
 
-### 6. huggingface/diffusers
+### 5. huggingface/diffusers
 - 分类：视频剪辑
 - 映射产品：ideasphere
 - 融合判定：可融合候选
@@ -78,7 +67,7 @@
   - huggingface/diffusers status=可融合候选 score=4
   - products=['ideasphere']
 
-### 7. botpress/botpress
+### 6. botpress/botpress
 - 分类：智能客服
 - 映射产品：easyrhythm
 - 融合判定：可融合候选
@@ -89,7 +78,7 @@
   - botpress/botpress status=可融合候选 score=4
   - products=['easyrhythm']
 
-### 8. assafelovic/gpt-researcher
+### 7. assafelovic/gpt-researcher
 - 分类：长文创作
 - 映射产品：fission-creative
 - 融合判定：可融合候选
@@ -100,7 +89,7 @@
   - assafelovic/gpt-researcher status=可融合候选 score=4
   - products=['fission-creative']
 
-### 9. huggingface/transformers
+### 8. huggingface/transformers
 - 分类：内容分析
 - 映射产品：minddistill, minddistill
 - 融合判定：可融合候选
@@ -111,7 +100,7 @@
   - huggingface/transformers status=可融合候选 score=4
   - products=['minddistill', 'minddistill']
 
-### 10. Comfy-Org/ComfyUI
+### 9. Comfy-Org/ComfyUI
 - 分类：多媒体生成
 - 映射产品：fractovision
 - 融合判定：观察/人工复核
@@ -125,7 +114,7 @@
   - Comfy-Org/ComfyUI status=观察/人工复核 score=3
   - products=['fractovision']
 
-### 11. vrtmrz/obsidian-livesync
+### 10. vrtmrz/obsidian-livesync
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：观察/人工复核
@@ -139,7 +128,7 @@
   - vrtmrz/obsidian-livesync status=观察/人工复核 score=1
   - products=['neverend']
 
-### 12. Auriti-Labs/geo-optimizer-skill
+### 11. Auriti-Labs/geo-optimizer-skill
 - 分类：GEO诊断
 - 映射产品：minddistill
 - 融合判定：观察/人工复核
@@ -150,7 +139,7 @@
   - Auriti-Labs/geo-optimizer-skill status=观察/人工复核 score=1
   - products=['minddistill']
 
-### 13. AUTOMATIC1111/stable-diffusion-webui
+### 12. AUTOMATIC1111/stable-diffusion-webui
 - 分类：多媒体生成
 - 映射产品：fractovision
 - 融合判定：仅记录
@@ -164,7 +153,7 @@
   - AUTOMATIC1111/stable-diffusion-webui status=仅记录 score=-5
   - products=['fractovision']
 
-### 14. linuxserver/docker-obsidian
+### 13. linuxserver/docker-obsidian
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：仅记录
@@ -178,7 +167,7 @@
   - linuxserver/docker-obsidian status=仅记录 score=-5
   - products=['neverend']
 
-### 15. aaron-he-zhu/seo-geo-claude-skills
+### 14. aaron-he-zhu/seo-geo-claude-skills
 - 分类：GEO诊断
 - 映射产品：minddistill
 - 融合判定：仅记录
