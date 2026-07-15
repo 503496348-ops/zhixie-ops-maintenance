@@ -5,37 +5,43 @@
 - 最新一次 DRY_RUN 证据：`references/orchestrator-run-result.json`
 - 产品口径快照：`references/product-repo-card`（25 个产品，产品 Issue 验证：`products_total 25` / `products_with_issues {}`）
 
-## 本轮待行动：可融合候选（7 项）
+## 本轮待行动：可融合候选
 
-以下 7 项保持 `status=pending_review`，优先级按 `score` + 对应产品缺口一致性排序：
+### 已完成（1 项）
 
-1. `mem0ai/mem0 -> hermes-doctor, pipixia-doctor`
+1. `mem0ai/mem0 -> hermes-doctor、pipixia-doctor`
    - 优先级：**P1**（score 6）
-   - 下一步：抽样验收 `hermes-doctor` 的历史 `memory` 能力链路，确认是否还存在可直接引入 mem0 的 API/数据抽象。
+   - 完成时间：2026-07-15 21:12
+   - 完成动作：新增 `scripts/mem0_bridge.py` 并接入 `doctor.py`
+   - 产物：分别在两仓库创建并合并分支 `feat/mem0-bridge-wave-6`（未提 PR）
 
-2. `excalidraw/excalidraw -> nichecraft`
-   - 优先级：**P2**（score 6）
-   - 下一步：核对 `nichecraft` 现有反 AI 静态风格能力是否覆盖竞品核心能力差距（已完成 Wave-4/5 体系可复用）。
+### 待执行（6 项）
 
-3. `NVIDIA/SkillSpector -> hermes-security-suite`
+以下 6 项保持 `status=pending_review`，优先级按 `score` + 对应产品缺口一致性排序：
+
+1. `excalidraw/excalidraw -> nichecraft`
+   - 优先级：**P1**（score 6）
+   - 下一步：核对 nichecraft 现有能力覆盖竞品差距，确认可复用的反AI/渲染能力边界。
+
+2. `NVIDIA/SkillSpector -> hermes-security-suite`
    - 优先级：**P2**（score 4）
-   - 下一步：以“安全审计可解释性”与“告警证据持久化”为对齐点，先确认 `hermes-security-suite` 可直接接收 `SkillSpector` 的检测项。
+   - 下一步：以安全审计可解释性与告警证据持久化为对齐点，评估检测项可直接接入可行性。
 
-4. `huggingface/diffusers -> ideasphere`
+3. `assafelovic/gpt-researcher -> fission-creative`
    - 优先级：**P2**（score 4）
-   - 下一步：先对比当前 `ideasphere` 生成链路与 `diffusers` 的采样/模型配置能力边界，确认是否为“参数化入口复用”还是“仅风格层增强”。
+   - 下一步：评估 fission-creative 长文后处理链路与 gpt-researcher 来源追溯字段是否可对齐。
 
-5. `botpress/botpress -> easyrhythm`
+4. `botpress/botpress -> easyrhythm`
    - 优先级：**P2**（score 4）
-   - 下一步：确认 `easyrhythm` 是否在会话流/对话脚本层存在可插拔策略，避免重复改动到 runtime。
+   - 下一步：确认 easyrhythm 在会话流/对话脚本层存在可插拔策略，避免重复改动 runtime。
 
-6. `assafelovic/gpt-researcher -> fission-creative`
+5. `huggingface/diffusers -> ideasphere`
    - 优先级：**P2**（score 4）
-   - 下一步：评估 `fission-creative` 的长文生成后处理链路与 `gpt-researcher` 的事实来源与来源追溯字段是否可对齐。
+   - 下一步：对比 ideasphere 生成链路与 diffusers 的采样/模型配置边界，确认参数化入口复用比例。
 
-7. `huggingface/transformers -> minddistill, minddistill`
+6. `huggingface/transformers -> minddistill、minddistill`
    - 优先级：**P2**（score 4）
-   - 下一步：目前该项仍重复映射同一产品两次（`minddistill`），复盘时先拆分为一次性归并条目，避免重复工单。
+   - 下一步：该项与 minddistill 重复映射，需先合并为单一工单避免重复复核。
 
 ## 观察/复核项（3 项，保留）
 
@@ -56,4 +62,4 @@
   - `scripts/ops-product-monitor-orchestrator.py --with-audit --with-fusion-plan --dry-run`
   - `scripts/product-repo-card.py --dry-run`
   - `scripts/audit-products.py`
-- 必要时更新：`references/fusion-enhancement-execution-plan.json/.md` 与 `references/fusion-enhancement-candidate-assessment.md`。
+- 必要时更新：`references/fusion-enhancement-execution-plan.json/.md` 与 `references/fusion-enhancement-candidate-assessment.md`.

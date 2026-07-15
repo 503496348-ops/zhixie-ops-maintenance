@@ -96,8 +96,9 @@
 
 
 ## 6) Wave-6 下一步计划（2026-07-15）
-- 已进入下一步可融合候选评审：从 `references/fusion-enhancement-execution-plan.json` 抽取 7 项 `pending_review` 可融合候选
-  - P1：`mem0ai/mem0`
-  - P2：`excalidraw/excalidraw`、`NVIDIA/SkillSpector`、`huggingface/diffusers`、`botpress/botpress`、`assafelovic/gpt-researcher`、`huggingface/transformers`
+- Wave-6 P1 `mem0ai/mem0` 已完成。
+- 当前待执行 `pending_review` 可融合候选为 6 项，执行优先为：
+  - `excalidraw/excalidraw`、`NVIDIA/SkillSpector`、`huggingface/diffusers`、`botpress/botpress`、`assafelovic/gpt-researcher`、`huggingface/transformers`
 - 观察/复核与仅记录条目暂缓执行，保持风控界限
 - 输出决策文档：`references/fusion-candidate-wave-6-review.md`
+

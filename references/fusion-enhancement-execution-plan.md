@@ -1,5 +1,5 @@
 # 产品融合增强执行清单
-生成时间：2026-07-15T20:25:21.736361
+生成时间：2026-07-15T21:17:54.602529
 
 ## 来源
 - 产品审计：`references/audit-report.json`
@@ -10,7 +10,7 @@
 - 每项融合需给出 `代码入口 / 验收命令 / 回退点`
 - 首轮只做能力增强准备，不做跨仓库自动重构
 
-## 候选池（共 13 项）
+## 候选池（共 12 项）
 
 ### 1. mem0ai/mem0
 - 分类：Agent上下文
@@ -78,18 +78,7 @@
   - assafelovic/gpt-researcher status=可融合候选 score=4
   - products=['fission-creative']
 
-### 7. huggingface/transformers
-- 分类：内容分析
-- 映射产品：minddistill, minddistill
-- 融合判定：可融合候选
-- 评分：4（状态：pending_review）
-- 审计信号：total=8.3, tech=8
-- 缺口特征：无明显缺口
-- 执行证据：
-  - huggingface/transformers status=可融合候选 score=4
-  - products=['minddistill', 'minddistill']
-
-### 8. Comfy-Org/ComfyUI
+### 7. Comfy-Org/ComfyUI
 - 分类：多媒体生成
 - 映射产品：fractovision
 - 融合判定：观察/人工复核
@@ -103,21 +92,21 @@
   - Comfy-Org/ComfyUI status=观察/人工复核 score=3
   - products=['fractovision']
 
-### 9. vrtmrz/obsidian-livesync
+### 8. vrtmrz/obsidian-livesync
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：观察/人工复核
-- 评分：1（状态：watching）
+- 评分：3（状态：watching）
 - 审计信号：total=8.7, tech=6
 - 缺口特征：机器学习, Web框架
 - 建议动作：
   - 补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略
   - 补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试
 - 执行证据：
-  - vrtmrz/obsidian-livesync status=观察/人工复核 score=1
+  - vrtmrz/obsidian-livesync status=观察/人工复核 score=3
   - products=['neverend']
 
-### 10. Auriti-Labs/geo-optimizer-skill
+### 9. Auriti-Labs/geo-optimizer-skill
 - 分类：GEO诊断
 - 映射产品：minddistill
 - 融合判定：观察/人工复核
@@ -128,7 +117,7 @@
   - Auriti-Labs/geo-optimizer-skill status=观察/人工复核 score=1
   - products=['minddistill']
 
-### 11. AUTOMATIC1111/stable-diffusion-webui
+### 10. AUTOMATIC1111/stable-diffusion-webui
 - 分类：多媒体生成
 - 映射产品：fractovision
 - 融合判定：仅记录
@@ -142,7 +131,7 @@
   - AUTOMATIC1111/stable-diffusion-webui status=仅记录 score=-5
   - products=['fractovision']
 
-### 12. linuxserver/docker-obsidian
+### 11. linuxserver/docker-obsidian
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：仅记录
@@ -156,7 +145,7 @@
   - linuxserver/docker-obsidian status=仅记录 score=-5
   - products=['neverend']
 
-### 13. aaron-he-zhu/seo-geo-claude-skills
+### 12. aaron-he-zhu/seo-geo-claude-skills
 - 分类：GEO诊断
 - 映射产品：minddistill
 - 融合判定：仅记录

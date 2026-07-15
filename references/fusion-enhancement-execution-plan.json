@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-15T20:25:21.736361",
+  "generated_at": "2026-07-15T21:17:54.602529",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 13,
+    "total_candidates": 12,
     "by_triage": {
-      "可融合候选": 7,
+      "可融合候选": 6,
       "观察/人工复核": 3,
       "仅记录": 3
     }
@@ -136,27 +136,6 @@
       ]
     },
     {
-      "repo": "huggingface/transformers",
-      "category": "内容分析",
-      "products": [
-        "minddistill",
-        "minddistill"
-      ],
-      "triage": "可融合候选",
-      "score": 4,
-      "status": "pending_review",
-      "audit_total": 8.3,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "huggingface/transformers status=可融合候选 score=4",
-        "products=['minddistill', 'minddistill']"
-      ]
-    },
-    {
       "repo": "Comfy-Org/ComfyUI",
       "category": "多媒体生成",
       "products": [
@@ -187,7 +166,7 @@
         "neverend"
       ],
       "triage": "观察/人工复核",
-      "score": 1,
+      "score": 3,
       "status": "watching",
       "audit_total": 8.7,
       "audit_tech": 6,
@@ -200,7 +179,7 @@
         "补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试"
       ],
       "evidence": [
-        "vrtmrz/obsidian-livesync status=观察/人工复核 score=1",
+        "vrtmrz/obsidian-livesync status=观察/人工复核 score=3",
         "products=['neverend']"
       ]
     },
