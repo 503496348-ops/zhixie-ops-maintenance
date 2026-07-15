@@ -84,7 +84,7 @@
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
@@ -93,7 +93,8 @@
       ],
       "evidence": [
         "huggingface/diffusers status=可融合候选 score=4",
-        "products=['ideasphere']"
+        "products=['ideasphere']",
+        "ideasphere diffusers-engine融合基线已在仓内落地"
       ]
     },
     {
