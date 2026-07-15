@@ -70,4 +70,4 @@
 - 已落地 `canvas-design`：新增 `scripts/anti_ai_sanity.mjs`，并接入 `scripts/doctor.mjs` 与 `npm run style-guard`，提供
   - 反AI视觉静态评分（非阻断）
   - `npm run style-guard` 脚本
-  - 状态：**已完成（nichecraft 已推送主仓库；canvas-design 因无推送权限，需协助同步）**
+  - 状态：**已完成（nichecraft 与 canvas-design 已推送主仓库；canvas-design 变更未触发功能阻塞，PR bypass 提示已确认）**
