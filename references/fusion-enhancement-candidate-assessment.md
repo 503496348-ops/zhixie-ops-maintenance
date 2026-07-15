@@ -13,7 +13,7 @@
 - `huggingface/diffusers` → `ideasphere`（缺口：已完成）
 - `NVIDIA/SkillSpector` → `hermes-security-suite`（缺口：已完成）
 - `mem0ai/mem0` → `hermes-doctor`, `pipixia-doctor`（缺口：已完成）
-- `botpress/botpress` → `easyrhythm`（缺口：数据库）
+- `botpress/botpress` → `easyrhythm`（缺口：已完成）
 - `assafelovic/gpt-researcher` → `fission-creative`（缺口：已完成）
 - `huggingface/transformers` → `aestheflow`（观察/人工复核），`minddistill`（缺口：已完成）
 
