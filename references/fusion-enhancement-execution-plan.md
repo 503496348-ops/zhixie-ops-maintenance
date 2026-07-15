@@ -37,8 +37,8 @@
 ### 3. NVIDIA/SkillSpector
 - 分类：安全检测
 - 映射产品：hermes-security-suite
-- 融合判定：可融合候选
-- 评分：4（状态：pending_review）
+- 融合判定：可融合候选（已完成）
+- 评分：4（状态：implemented）
 - 审计信号：total=9.6, tech=8
 - 缺口特征：无明显缺口
 - 执行证据：
@@ -48,8 +48,8 @@
 ### 4. huggingface/diffusers
 - 分类：视频剪辑
 - 映射产品：ideasphere
-- 融合判定：可融合候选
-- 评分：4（状态：pending_review）
+- 融合判定：可融合候选（已完成）
+- 评分：4（状态：implemented）
 - 审计信号：total=9.1, tech=8
 - 缺口特征：无明显缺口
 - 执行证据：
@@ -59,8 +59,8 @@
 ### 5. langgenius/dify
 - 分类：智能体健康
 - 映射产品：hermes-doctor, pipixia-doctor
-- 融合判定：可融合候选
-- 评分：4（状态：pending_review）
+- 融合判定：可融合候选（已完成）
+- 评分：4（状态：implemented）
 - 审计信号：total=9.1, tech=8
 - 缺口特征：无明显缺口
 - 执行证据：
@@ -70,13 +70,14 @@
 ### 6. botpress/botpress
 - 分类：智能客服
 - 映射产品：easyrhythm
-- 融合判定：可融合候选
-- 评分：4（状态：pending_review）
+- 融合判定：可融合候选（已完成）
+- 评分：4（状态：implemented）
 - 审计信号：total=9.1, tech=8
 - 缺口特征：无明显缺口
 - 执行证据：
   - botpress/botpress status=可融合候选 score=4
   - products=['easyrhythm']
+  - botpress/botpress bridge implemented in easyrhythm (`python-backend/adapters/botpress.py`)
 
 ### 7. assafelovic/gpt-researcher
 - 分类：长文创作

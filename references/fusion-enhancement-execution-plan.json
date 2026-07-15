@@ -124,16 +124,14 @@
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
       "evidence": [
         "botpress/botpress status=可融合候选 score=4",
-        "products=['easyrhythm']"
+        "products=['easyrhythm']",
+        "botpress/botpress bridge implemented in easyrhythm (python-backend/adapters/botpress.py)"
       ]
     },
     {

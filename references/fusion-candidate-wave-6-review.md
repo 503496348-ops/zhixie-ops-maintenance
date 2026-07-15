@@ -7,7 +7,7 @@
 
 ## 本轮待行动：可融合候选
 
-### 已完成（5 项）
+### 已完成（6 项）
 
 1. `mem0ai/mem0 -> hermes-doctor、pipixia-doctor`
    - 优先级：**P1**（score 6）
@@ -39,15 +39,17 @@
    - 完成动作：新增 `scripts/gpt_researcher_bridge.py` 与 `tests/test_gpt_researcher_bridge.py`；补齐 `package.json` 与 `product_convergence.json` 的可见脚本/smoke 目标，完成 doctor/gate/compile/pytest（含新测试）验证。
    - 产物：`fission-creative` 分支 `feat/gpt-researcher-bridge-wave-6`
 
-### 待执行（2 项）
-
-以下 2 项保持 `status=pending_review`，优先级按 `score` + 对应产品缺口一致性排序：
-
-1. `botpress/botpress -> easyrhythm`
+6. `botpress/botpress -> easyrhythm`
    - 优先级：**P2**（score 4）
-   - 下一步：确认 easyrhythm 在会话流/对话脚本层存在可插拔策略，避免重复改动 runtime。
+   - 完成时间：2026-07-16（本轮）
+   - 完成动作：新增 `python-backend/adapters/botpress.py` 并补齐 `adapters/__init__.py` + `adapters/router.py` 适配入口，完成 doctor/gate/smoke/pytest 验证。
+   - 产物：`easyrhythm` 分支 `feat/botpress-bridge-wave-6`
 
-2. `huggingface/transformers -> minddistill、minddistill`
+### 待执行（1 项）
+
+以下 1 项保持 `status=pending_review`，优先级按 `score` + 对应产品缺口一致性排序：
+
+1. `huggingface/transformers -> minddistill、minddistill`
    - 优先级：**P2**（score 4）
    - 下一步：该项与 minddistill 重复映射，需先合并为单一工单避免重复复核。
 
