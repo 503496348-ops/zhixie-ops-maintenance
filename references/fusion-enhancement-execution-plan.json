@@ -63,7 +63,7 @@
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 9.6,
       "audit_tech": 8,
       "missing_features": [],
@@ -72,7 +72,8 @@
       ],
       "evidence": [
         "NVIDIA/SkillSpector status=可融合候选 score=4",
-        "products=['hermes-security-suite']"
+        "products=['hermes-security-suite']",
+        "skillspector->hermes-security-suite status=implemented by wave-6"
       ]
     },
     {
