@@ -77,13 +77,31 @@
   - `python3 scripts/barren_order_api.py --help` 正常
 
 
+### 5) nichecraft（映射: excalidraw/excalidraw；缺口: 数据库）
+- 目标：补齐数据库持久化底座（可选，非破坏性）并提供轻量诊断 API。
+- 变更：
+  - `scripts/doctor.py`
+    - 新增 `collect_run_report()`，支持结构化 JSON 健康报告。
+  - 新增 `scripts/nichecraft_history_store.py`
+    - SQLite 运行记录持久化（通过率、失败项、时间戳）
+  - 新增 `scripts/nichecraft_api.py`
+    - 提供可选 `FastAPI` 服务（`/health`, `/diag`, `/diag/run`, `/diag/latest`）
+  - `package.json`
+    - 新增 `api` 脚本：`python3 scripts/nichecraft_api.py`
+    - 增加可选依赖 `fastapi`, `uvicorn`
+    - 强化 `check:syntax` 覆盖 `scripts/*.py`
+- 提交：`98b322d`（repo: `503496348-ops/nichecraft`）
+- 推送：成功（`main -> main`）
+
+- 本地验收：
+  - `PYTHONPATH=. pytest -q`
+  - 结果：19 passed
+  - `python3 scripts/nichecraft_api.py --help` 正常
+
+
 ## 未执行（保留）
 - 其余候选项进入下一波次：
-  - `barren-order`（crewAIInc/crewAI，缺 DB）
-  - `nichecraft`（excalidraw/excalidraw，缺 DB）
   - `ideasphere`（huggingface/diffusers，缺 Web+DB）
   - `hermes-security-suite`（NVIDIA/SkillSpector，需先 commit 语义回放）
-  - `pipixia-doctor`（langgenius/dify & mem0ai/mem0，缺 Web 框架）
   - `fission-creative`（assafelovic/gpt-researcher）
   - `minddistill`（huggingface/transformers）
-

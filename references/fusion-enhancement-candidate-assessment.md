@@ -9,7 +9,7 @@
 
 ## P1（优先执行）
 - `langgenius/dify` → `hermes-doctor`, `pipixia-doctor`（缺口：已完成）
-- `excalidraw/excalidraw` → `nichecraft`（缺口：数据库）
+- `excalidraw/excalidraw` → `nichecraft`（缺口：已完成）
 - `huggingface/diffusers` → `ideasphere`（缺口：Web框架, 数据库）
 - `NVIDIA/SkillSpector` → `hermes-security-suite`（缺口：无明显缺口，需先 commit 语义回放）
 - `mem0ai/mem0` → `hermes-doctor`, `pipixia-doctor`（缺口：已完成）
