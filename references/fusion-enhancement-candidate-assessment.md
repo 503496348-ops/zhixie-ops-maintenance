@@ -78,3 +78,9 @@
   - `Auriti-Labs/geo-optimizer-skill -> minddistill`
 - 观察结论：三类提交当前均非直接服务/API 层增量（偏版本、发布、前端构建/文案），暂不进入实现。
 - 详细记录：`references/fusion-candidate-wave-7-review.md`。
+
+## Wave-8 复核补录（2026-07-16）
+- 再次复核结论：三项 `watching` 仍未形成可直接落地的产品服务/API 增量，继续保留观察。
+- 复核依据：`Comfy-Org/ComfyUI` 仍为版本与视频测试修复；`vrtmrz/obsidian-livesync` 仍为发布与依赖/文案/测试配置更新；`Auriti-Labs/geo-optimizer-skill` 仍为前端索引与构建脚本更新。
+- 记录文件：`references/fusion-candidate-wave-8-review.md`。
+- 执行策略：继续在每次 `继续` 前做一次全链路 DRY-RUN 验证后再决定是否升级执行。
