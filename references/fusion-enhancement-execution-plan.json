@@ -1,19 +1,40 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-16T14:00:31.635138",
+  "generated_at": "2026-07-16T15:05:39.741233",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 19,
+    "total_candidates": 20,
     "by_triage": {
-      "可融合候选": 14,
+      "可融合候选": 15,
       "观察/人工复核": 1,
       "仅记录": 4
     }
   },
   "items": [
+    {
+      "repo": "langgenius/dify",
+      "category": "智能体健康",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "langgenius/dify status=可融合候选 score=6",
+        "products=['hermes-doctor', 'pipixia-doctor']"
+      ]
+    },
     {
       "repo": "excalidraw/excalidraw",
       "category": "飞书白板设计+PPT",

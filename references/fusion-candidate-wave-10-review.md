@@ -126,3 +126,13 @@
   1) 授权后推送 `efe21f7`
   2) 同步补上 `competitor-candidate-pool.json` 映射写入/状态流（若定为可落地）
   3) 运行一次 `ops-product-monitor-orchestrator --with-audit --with-fusion-plan --dry-run` 形成新一轮复核闭环
+
+
+## 8.1 候选状态漂移说明（langgenius/dify）
+
+- 运行 `python3 scripts/ops-product-monitor-orchestrator.py --with-audit --with-fusion-plan --dry-run`（15:02:49）后，`fusion-enhancement-execution-plan` 出现实际变更：
+  - `total_candidates`: 20
+  - `可融合候选`: 15
+  - 重新纳入项：`langgenius/dify`（`pending_review`，`unseen_shas` 从之前快照不再空）
+- 这类变化源于共享候选池/上游审计口径刷新，不属于本次代码实现回退。
+- 后续操作：将 `langgenius/dify` 的 unseen/shas 与 review 同步，再决定是否进入复核清单。
