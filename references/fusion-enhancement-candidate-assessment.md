@@ -84,3 +84,20 @@
 - 复核依据：`Comfy-Org/ComfyUI` 仍为版本与视频测试修复；`vrtmrz/obsidian-livesync` 仍为发布与依赖/文案/测试配置更新；`Auriti-Labs/geo-optimizer-skill` 仍为前端索引与构建脚本更新。
 - 记录文件：`references/fusion-candidate-wave-8-review.md`。
 - 执行策略：继续在每次 `继续` 前做一次全链路 DRY-RUN 验证后再决定是否升级执行。
+
+
+## Wave-9 执行落地（2026-07-16）
+- 已按你同意的 6 个可融合候选执行并完成主线合并：
+  - mem0ai/mem0 → hermes-doctor（`2b6be75`）
+  - mem0ai/mem0 → pipixia-doctor（`5c15297`）
+  - excalidraw/excalidraw → nichecraft（`e573109`）
+  - huggingface/transformers → minddistill（`2dea1a6`）
+  - botpress/botpress → easyrhythm（`f0699d4`）
+  - assafelovic/gpt-researcher → fission-creative（`0f5bc8e`）
+  - NVIDIA/SkillSpector → hermes-security-suite（`17f3a24` 已位于 main）
+- 对应验收命令：
+  - `PYTHONPATH=. pytest -q <对应 test_*.py>`（全部通过）
+  - `PYTHONPATH=. python3 scripts/product_convergence_gate.py --json`（全部 ok=true）
+- 竞品候选池状态：以上 6 项 `status` 已同步为 `implemented`。
+- 继续观察项：
+  - Comfy-Org/ComfyUI、vrtmrz/obsidian-livesync、Auriti-Labs/geo-optimizer-skill

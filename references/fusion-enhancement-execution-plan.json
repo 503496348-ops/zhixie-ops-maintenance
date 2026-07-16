@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-16T01:12:32.700095",
+  "generated_at": "2026-07-16T09:50:18.919898",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
@@ -8,9 +8,9 @@
   "summary": {
     "total_candidates": 12,
     "by_triage": {
-      "可融合候选": 5,
+      "可融合候选": 6,
       "观察/人工复核": 3,
-      "仅记录": 4
+      "仅记录": 3
     }
   },
   "items": [
@@ -23,7 +23,7 @@
       ],
       "triage": "可融合候选",
       "score": 6,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
@@ -43,7 +43,7 @@
       ],
       "triage": "可融合候选",
       "score": 6,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 8.8,
       "audit_tech": 8,
       "missing_features": [],
@@ -56,6 +56,27 @@
       ]
     },
     {
+      "repo": "huggingface/transformers",
+      "category": "内容分析",
+      "products": [
+        "minddistill",
+        "minddistill"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "implemented",
+      "audit_total": 8.3,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "huggingface/transformers status=可融合候选 score=6",
+        "products=['minddistill', 'minddistill']"
+      ]
+    },
+    {
       "repo": "NVIDIA/SkillSpector",
       "category": "安全检测",
       "products": [
@@ -63,7 +84,7 @@
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 9.6,
       "audit_tech": 8,
       "missing_features": [],
@@ -83,7 +104,7 @@
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
@@ -103,7 +124,7 @@
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 8.8,
       "audit_tech": 8,
       "missing_features": [],
@@ -229,27 +250,6 @@
       "evidence": [
         "linuxserver/docker-obsidian status=仅记录 score=-5",
         "products=['neverend']"
-      ]
-    },
-    {
-      "repo": "huggingface/transformers",
-      "category": "内容分析",
-      "products": [
-        "minddistill",
-        "minddistill"
-      ],
-      "triage": "仅记录",
-      "score": -5,
-      "status": "recorded",
-      "audit_total": 8.3,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先补齐审计缺口，再评估融合可执行性"
-      ],
-      "evidence": [
-        "huggingface/transformers status=仅记录 score=-5",
-        "products=['minddistill', 'minddistill']"
       ]
     },
     {
