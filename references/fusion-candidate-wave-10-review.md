@@ -98,3 +98,31 @@
 - 三项均为 `nichecraft` 未命名重名样式（`candidate-only`），可作为首批试点导入。
 - 已生成 `references/wave-10-poc1-beautiful-feishu-to-nichecraft.md` 保存字段头样例与导入边界。
 - 下一步：在不改状态前提下，进入模板签名字段映射（colors/description/name）与规则映射点位落地。
+
+## 8. POC-1 实作交付（Beautiful-feishu-whiteboard -> nichecraft）
+
+### 实施
+- 时间：2026-07-16T14:53:00+08:00（本机本地时间）
+- 操作仓库：`/root/nichecraft`（main）
+- 目标：导入 3 个样式 POC（`apricot-arc`, `berry-pop`, `bold-poster`）
+- 提交：`efe21f7`
+  - Commit Message: `feat: add wave-10 poc-1 candidate templates from beautiful-feishu-whiteboard`
+
+### 本地验收
+- `python3 -m pytest tests/test_one_click_open_box.py -q`
+  - 结果：`4 passed`
+- `python3 scripts/product_convergence_gate.py --json`
+  - 结果：`ok=true`
+  - 仅警告：`BRAND_001`（新增模板文件 `templates/apricot-arc/design.md` 被检测为“未复核外部引用”）
+- `python3 scripts/smoke.py`
+  - `doctor result: PASS`
+  - `smoke result: PASS`
+
+### 同步说明
+- 推送 `nichecraft` 到 `origin/main` 失败：GitHub 403（当前 token 没有仓库 push 权限）。
+  - 提交已在本地保留，待授权后可继续推送。
+- 目前仅为 POC-1（样式签名层导入），未触发 `competitor-candidate-pool` 状态变更。
+- 下步建议：
+  1) 授权后推送 `efe21f7`
+  2) 同步补上 `competitor-candidate-pool.json` 映射写入/状态流（若定为可落地）
+  3) 运行一次 `ops-product-monitor-orchestrator --with-audit --with-fusion-plan --dry-run` 形成新一轮复核闭环
