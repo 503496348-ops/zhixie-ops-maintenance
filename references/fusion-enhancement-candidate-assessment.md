@@ -101,3 +101,9 @@
 - 竞品候选池状态：以上 6 项 `status` 已同步为 `implemented`。
 - 继续观察项：
   - Comfy-Org/ComfyUI、vrtmrz/obsidian-livesync、Auriti-Labs/geo-optimizer-skill
+
+## Wave-10 复核起点（2026-07-16）
+- 继续执行 `frontend-slides` 与 `beautiful-feishu-whiteboard` 的最小闭环复核，不改状态。
+- 依据：`references/top2-fusion-comparison.json` 与远程提交树（`zhixie-ops-maintenance`）
+- 执行结论：两项均判定为可复用重叠项（非核心架构替换），优先导入策略与模板补齐。
+- 未执行项：未改 `competitor-candidate-pool.json` 的 `status`（维持 `pending_review`）。
