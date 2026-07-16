@@ -1,5 +1,5 @@
 # 产品融合增强执行清单
-生成时间：2026-07-16T13:33:50.836003
+生成时间：2026-07-16T14:00:31.635138
 
 ## 来源
 - 产品审计：`references/audit-report.json`
@@ -186,18 +186,7 @@
   - vrtmrz/obsidian-livesync status=观察/人工复核 score=1
   - products=['neverend']
 
-### 16. Auriti-Labs/geo-optimizer-skill
-- 分类：GEO诊断
-- 映射产品：minddistill
-- 融合判定：仅记录
-- 评分：-3（状态：recorded）
-- 审计信号：total=8.3, tech=8
-- 缺口特征：无明显缺口
-- 执行证据：
-  - Auriti-Labs/geo-optimizer-skill status=仅记录 score=-3
-  - products=['minddistill']
-
-### 17. AUTOMATIC1111/stable-diffusion-webui
+### 16. AUTOMATIC1111/stable-diffusion-webui
 - 分类：多媒体生成
 - 映射产品：fractovision
 - 融合判定：仅记录
@@ -211,7 +200,7 @@
   - AUTOMATIC1111/stable-diffusion-webui status=仅记录 score=-5
   - products=['fractovision']
 
-### 18. linuxserver/docker-obsidian
+### 17. linuxserver/docker-obsidian
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：仅记录
@@ -225,7 +214,7 @@
   - linuxserver/docker-obsidian status=仅记录 score=-5
   - products=['neverend']
 
-### 19. aaron-he-zhu/seo-geo-claude-skills
+### 18. aaron-he-zhu/seo-geo-claude-skills
 - 分类：GEO诊断
 - 映射产品：minddistill
 - 融合判定：仅记录
@@ -234,6 +223,17 @@
 - 缺口特征：无明显缺口
 - 执行证据：
   - aaron-he-zhu/seo-geo-claude-skills status=仅记录 score=-5
+  - products=['minddistill']
+
+### 19. Auriti-Labs/geo-optimizer-skill
+- 分类：GEO诊断
+- 映射产品：minddistill
+- 融合判定：仅记录
+- 评分：-5（状态：recorded）
+- 审计信号：total=8.3, tech=8
+- 缺口特征：无明显缺口
+- 执行证据：
+  - Auriti-Labs/geo-optimizer-skill status=仅记录 score=-5
   - products=['minddistill']
 
 ## 交付验收

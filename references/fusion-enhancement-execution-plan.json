@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-16T13:33:50.836003",
+  "generated_at": "2026-07-16T14:00:31.635138",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
@@ -329,26 +329,6 @@
       ]
     },
     {
-      "repo": "Auriti-Labs/geo-optimizer-skill",
-      "category": "GEO诊断",
-      "products": [
-        "minddistill"
-      ],
-      "triage": "仅记录",
-      "score": -3,
-      "status": "recorded",
-      "audit_total": 8.3,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先补齐审计缺口，再评估融合可执行性"
-      ],
-      "evidence": [
-        "Auriti-Labs/geo-optimizer-skill status=仅记录 score=-3",
-        "products=['minddistill']"
-      ]
-    },
-    {
       "repo": "AUTOMATIC1111/stable-diffusion-webui",
       "category": "多媒体生成",
       "products": [
@@ -413,6 +393,26 @@
       ],
       "evidence": [
         "aaron-he-zhu/seo-geo-claude-skills status=仅记录 score=-5",
+        "products=['minddistill']"
+      ]
+    },
+    {
+      "repo": "Auriti-Labs/geo-optimizer-skill",
+      "category": "GEO诊断",
+      "products": [
+        "minddistill"
+      ],
+      "triage": "仅记录",
+      "score": -5,
+      "status": "recorded",
+      "audit_total": 8.3,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先补齐审计缺口，再评估融合可执行性"
+      ],
+      "evidence": [
+        "Auriti-Labs/geo-optimizer-skill status=仅记录 score=-5",
         "products=['minddistill']"
       ]
     }
