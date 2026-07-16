@@ -166,3 +166,21 @@
   - 竞品日报: `分类数 21 / 监控44 / 错误0`
   - 全链路步骤: `4/4` 成功
   - 候选统计: `20` (`15` 可融合 / `1` 观察 / `4` 仅记录)
+
+
+## 10. frontend-slides 策略复用（样式预选）
+- 时间：2026-07-16T16:20:00+08:00
+- 依据：zarazhangrui/frontend-slides 的 STYLE_PRESETS.md、viewport-base.css、bold-template-pack/selection-index.json
+- 在 /root/nichecraft 落地的实物：
+  - references/frontend-slides-style-presets.json（12 个 STYLE_PRESETS 摘要）
+  - references/frontend-slides-overlap-for-nichecraft.json（与 nichecraft 重名 7 项）
+  - references/frontend-slides-style-bridge.json（融合执行策略文件）
+  - scripts/frontend_style_bridge.py（元数据优先复选器）
+- 本拍验收动作：
+  1. 验证 16:9 舞台策略可读取（manifest 中 stage_policy）。
+  2. 通过脚本输出候选推荐，确认 safe_candidates 与 bold_candidates 都返回。
+- 本地命令：python3 scripts/frontend_style_bridge.py --mood bold --tone editorial --formality restrained --density medium --top 3
+- 关键结果：
+  - 返回 safe_candidates：12 个 SAFE 风格中按关键词命中的 top3
+  - 返回 bold_candidates：block-frame/grove/long-table 等重名模板 shortlist（按评分倒序）
+- 说明：该策略不引入 STYLE_PRESETS.css 直接注入 nichecraft；它作为“选择策略”与“候选复用”层，避免直接模板移植导致规则漂移。
