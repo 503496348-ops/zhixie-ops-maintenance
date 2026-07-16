@@ -1,5 +1,5 @@
 # 产品融合增强执行清单
-生成时间：2026-07-16T10:02:04.918358
+生成时间：2026-07-16T12:12:09.489088
 
 ## 来源
 - 产品审计：`references/audit-report.json`
@@ -34,7 +34,21 @@
   - excalidraw/excalidraw status=可融合候选 score=6
   - products=['nichecraft']
 
-### 3. huggingface/transformers
+### 3. Comfy-Org/ComfyUI
+- 分类：多媒体生成
+- 映射产品：fractovision
+- 融合判定：可融合候选
+- 评分：6（状态：pending_review）
+- 审计信号：total=8.7, tech=6
+- 缺口特征：Web框架, 数据库
+- 建议动作：
+  - 补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略
+  - 补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）
+- 执行证据：
+  - Comfy-Org/ComfyUI status=可融合候选 score=6
+  - products=['fractovision']
+
+### 4. huggingface/transformers
 - 分类：内容分析
 - 映射产品：minddistill, minddistill
 - 融合判定：可融合候选
@@ -45,7 +59,7 @@
   - huggingface/transformers status=可融合候选 score=6
   - products=['minddistill', 'minddistill']
 
-### 4. NVIDIA/SkillSpector
+### 5. NVIDIA/SkillSpector
 - 分类：安全检测
 - 映射产品：hermes-security-suite
 - 融合判定：可融合候选
@@ -56,7 +70,7 @@
   - NVIDIA/SkillSpector status=可融合候选 score=4
   - products=['hermes-security-suite']
 
-### 5. langgenius/dify
+### 6. langgenius/dify
 - 分类：智能体健康
 - 映射产品：hermes-doctor, pipixia-doctor
 - 融合判定：可融合候选
@@ -67,7 +81,7 @@
   - langgenius/dify status=可融合候选 score=4
   - products=['hermes-doctor', 'pipixia-doctor']
 
-### 6. botpress/botpress
+### 7. botpress/botpress
 - 分类：智能客服
 - 映射产品：easyrhythm
 - 融合判定：可融合候选
@@ -78,7 +92,7 @@
   - botpress/botpress status=可融合候选 score=4
   - products=['easyrhythm']
 
-### 7. assafelovic/gpt-researcher
+### 8. assafelovic/gpt-researcher
 - 分类：长文创作
 - 映射产品：fission-creative
 - 融合判定：可融合候选
@@ -88,20 +102,6 @@
 - 执行证据：
   - assafelovic/gpt-researcher status=可融合候选 score=4
   - products=['fission-creative']
-
-### 8. Comfy-Org/ComfyUI
-- 分类：多媒体生成
-- 映射产品：fractovision
-- 融合判定：观察/人工复核
-- 评分：3（状态：watching）
-- 审计信号：total=8.7, tech=6
-- 缺口特征：Web框架, 数据库
-- 建议动作：
-  - 补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略
-  - 补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）
-- 执行证据：
-  - Comfy-Org/ComfyUI status=观察/人工复核 score=3
-  - products=['fractovision']
 
 ### 9. vrtmrz/obsidian-livesync
 - 分类：知识管理
