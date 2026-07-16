@@ -119,13 +119,11 @@
   - `smoke result: PASS`
 
 ### 同步说明
-- 推送 `nichecraft` 到 `origin/main` 失败：GitHub 403（当前 token 没有仓库 push 权限）。
-  - 提交已在本地保留，待授权后可继续推送。
-- 目前仅为 POC-1（样式签名层导入），未触发 `competitor-candidate-pool` 状态变更。
-- 下步建议：
-  1) 授权后推送 `efe21f7`
-  2) 同步补上 `competitor-candidate-pool.json` 映射写入/状态流（若定为可落地）
-  3) 运行一次 `ops-product-monitor-orchestrator --with-audit --with-fusion-plan --dry-run` 形成新一轮复核闭环
+- 推送 `nichecraft` 到 `origin/main` 已成功（使用提供的 token）：
+  - 推送后提交为 `0f8995b`。
+- 目前已完成 POC-1 与 POC-2，两次导入共计 19 个 `candidate-only` 样式。
+- 已完成 `product_convergence` 白名单治理，`BRAND_001` 外部引用告警已清零。
+- 建议直接进入策略层回归（`STYLE_PRESETS/模板映射策略`）或开始下一个候选（`frontend-slides`）。
 
 
 ## 8.1 候选状态漂移说明（langgenius/dify）
@@ -136,3 +134,35 @@
   - 重新纳入项：`langgenius/dify`（`pending_review`，`unseen_shas` 从之前快照不再空）
 - 这类变化源于共享候选池/上游审计口径刷新，不属于本次代码实现回退。
 - 后续操作：将 `langgenius/dify` 的 unseen/shas 与 review 同步，再决定是否进入复核清单。
+
+## 9. POC-2 实作交付（Beautiful-feishu-whiteboard -> nichecraft）
+
+### 实施
+- 时间：2026-07-16T15:44:00+08:00（本机本地时间）
+- 操作仓库：`/root/nichecraft`（main）
+- 目标：补齐剩余 16 个 candidate-only 模板（共 19 样式全部入库）
+- 提交：`0f8995b`
+  - Commit Message: `feat: complete wave-10 poc-2 style imports from beautiful-feishu-whiteboard`
+
+### 本地验收
+- `python3 -m pytest tests/test_one_click_open_box.py -q`
+  - 结果：`4 passed`
+- `python3 scripts/product_convergence_gate.py --json`
+  - 结果：`ok=true`
+  - 警告：`0`（通过 `known_external_reference_files` 白名单处理）
+- `python3 scripts/smoke.py`
+  - `doctor result: PASS`
+  - `smoke result: PASS`
+
+### 结果
+- `beautiful-feishu-whiteboard` 候选独占样式（共19）已全部同步为 `templates/*/design.md`。
+- 当前 3 + 16 = 19 个样式导入，下一步可进入策略化回归（风格签名字段映射+模板选择默认策略）或直接推动下一波。
+
+### 9.1 POC-2 后复核（2026-07-16）
+- 运行 `python3 scripts/ops-product-monitor-orchestrator.py --with-audit --with-fusion-plan --dry-run`（15:38:00）
+- 汇总：
+  - 产品日报: `25个产品, 25有仓, 总⭐73`（快照口径与历史一致）
+  - 产品仓库: `products_with_issues {}`
+  - 竞品日报: `分类数 21 / 监控44 / 错误0`
+  - 全链路步骤: `4/4` 成功
+  - 候选统计: `20` (`15` 可融合 / `1` 观察 / `4` 仅记录)
