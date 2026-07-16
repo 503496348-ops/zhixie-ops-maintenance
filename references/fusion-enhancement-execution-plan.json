@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-16T12:12:09.489088",
+  "generated_at": "2026-07-16T13:01:29.655387",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 13,
+    "total_candidates": 21,
     "by_triage": {
-      "可融合候选": 8,
+      "可融合候选": 16,
       "观察/人工复核": 2,
       "仅记录": 3
     }
@@ -52,6 +52,26 @@
       ],
       "evidence": [
         "excalidraw/excalidraw status=可融合候选 score=6",
+        "products=['nichecraft']"
+      ]
+    },
+    {
+      "repo": "frontend-slides",
+      "category": "飞书白板设计+PPT",
+      "products": [
+        "nichecraft"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 8.8,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "frontend-slides status=可融合候选 score=6",
         "products=['nichecraft']"
       ]
     },
@@ -101,6 +121,26 @@
       ]
     },
     {
+      "repo": "beautiful-feishu-whiteboard",
+      "category": "飞书白板设计+PPT",
+      "products": [
+        "nichecraft"
+      ],
+      "triage": "可融合候选",
+      "score": 5,
+      "status": "pending_review",
+      "audit_total": 8.8,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "beautiful-feishu-whiteboard status=可融合候选 score=5",
+        "products=['nichecraft']"
+      ]
+    },
+    {
       "repo": "NVIDIA/SkillSpector",
       "category": "安全检测",
       "products": [
@@ -118,6 +158,26 @@
       "evidence": [
         "NVIDIA/SkillSpector status=可融合候选 score=4",
         "products=['hermes-security-suite']"
+      ]
+    },
+    {
+      "repo": "botpress/botpress",
+      "category": "智能客服",
+      "products": [
+        "easyrhythm"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "implemented",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "botpress/botpress status=可融合候选 score=4",
+        "products=['easyrhythm']"
       ]
     },
     {
@@ -142,14 +202,15 @@
       ]
     },
     {
-      "repo": "botpress/botpress",
-      "category": "智能客服",
+      "repo": "lark-coding-agent-bridge",
+      "category": "智能体健康",
       "products": [
-        "easyrhythm"
+        "hermes-doctor",
+        "pipixia-doctor"
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "implemented",
+      "status": "pending_review",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
@@ -157,8 +218,8 @@
         "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
-        "botpress/botpress status=可融合候选 score=4",
-        "products=['easyrhythm']"
+        "lark-coding-agent-bridge status=可融合候选 score=4",
+        "products=['hermes-doctor', 'pipixia-doctor']"
       ]
     },
     {
@@ -179,6 +240,110 @@
       "evidence": [
         "assafelovic/gpt-researcher status=可融合候选 score=4",
         "products=['fission-creative']"
+      ]
+    },
+    {
+      "repo": "codebase-to-course",
+      "category": "智能教育",
+      "products": [
+        "herpeakgem"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "pending_review",
+      "audit_total": 8.8,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "codebase-to-course status=可融合候选 score=4",
+        "products=['herpeakgem']"
+      ]
+    },
+    {
+      "repo": "follow-builders",
+      "category": "长文创作",
+      "products": [
+        "fission-creative"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "pending_review",
+      "audit_total": 8.8,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "follow-builders status=可融合候选 score=4",
+        "products=['fission-creative']"
+      ]
+    },
+    {
+      "repo": "ai-xunjian",
+      "category": "视频剪辑",
+      "products": [
+        "ideasphere"
+      ],
+      "triage": "可融合候选",
+      "score": 3,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "ai-xunjian status=可融合候选 score=3",
+        "products=['ideasphere']"
+      ]
+    },
+    {
+      "repo": "bilingual-subtitles",
+      "category": "视频剪辑",
+      "products": [
+        "ideasphere"
+      ],
+      "triage": "可融合候选",
+      "score": 2,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "bilingual-subtitles status=可融合候选 score=2",
+        "products=['ideasphere']"
+      ]
+    },
+    {
+      "repo": "feishu-base-custom-api",
+      "category": "知识管理",
+      "products": [
+        "neverend"
+      ],
+      "triage": "可融合候选",
+      "score": 2,
+      "status": "pending_review",
+      "audit_total": 8.7,
+      "audit_tech": 6,
+      "missing_features": [
+        "机器学习",
+        "Web框架"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试"
+      ],
+      "evidence": [
+        "feishu-base-custom-api status=可融合候选 score=2",
+        "products=['neverend']"
       ]
     },
     {
