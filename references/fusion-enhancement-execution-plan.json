@@ -1,16 +1,16 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-16T13:01:29.655387",
+  "generated_at": "2026-07-16T13:23:24.588872",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 21,
+    "total_candidates": 20,
     "by_triage": {
-      "可融合候选": 16,
-      "观察/人工复核": 2,
-      "仅记录": 3
+      "可融合候选": 15,
+      "观察/人工复核": 1,
+      "仅记录": 4
     }
   },
   "items": [
@@ -178,27 +178,6 @@
       "evidence": [
         "botpress/botpress status=可融合候选 score=4",
         "products=['easyrhythm']"
-      ]
-    },
-    {
-      "repo": "langgenius/dify",
-      "category": "智能体健康",
-      "products": [
-        "hermes-doctor",
-        "pipixia-doctor"
-      ],
-      "triage": "可融合候选",
-      "score": 4,
-      "status": "pending_review",
-      "audit_total": 9.1,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "langgenius/dify status=可融合候选 score=4",
-        "products=['hermes-doctor', 'pipixia-doctor']"
       ]
     },
     {
@@ -376,9 +355,9 @@
       "products": [
         "minddistill"
       ],
-      "triage": "观察/人工复核",
-      "score": 1,
-      "status": "watching",
+      "triage": "仅记录",
+      "score": -3,
+      "status": "recorded",
       "audit_total": 8.3,
       "audit_tech": 8,
       "missing_features": [],
@@ -386,7 +365,7 @@
         "先补齐审计缺口，再评估融合可执行性"
       ],
       "evidence": [
-        "Auriti-Labs/geo-optimizer-skill status=观察/人工复核 score=1",
+        "Auriti-Labs/geo-optimizer-skill status=仅记录 score=-3",
         "products=['minddistill']"
       ]
     },
