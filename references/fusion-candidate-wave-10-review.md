@@ -90,3 +90,11 @@
   1) 资产命名迁移兼容性检查
   2) 风格签名字段映射（`description/name/colors`）
   3) 白板中端规则复用
+
+
+## 7.1 POC-1 预检结果（2026-07-16）
+
+- 已对 `beautiful-feishu-whiteboard` 进行独占样式抽样复核：`apricot-arc` / `berry-pop` / `bold-poster`。
+- 三项均为 `nichecraft` 未命名重名样式（`candidate-only`），可作为首批试点导入。
+- 已生成 `references/wave-10-poc1-beautiful-feishu-to-nichecraft.md` 保存字段头样例与导入边界。
+- 下一步：在不改状态前提下，进入模板签名字段映射（colors/description/name）与规则映射点位落地。

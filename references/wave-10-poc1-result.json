@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-07-16T14:49:05",
+  "candidate_total_templates": 35,
+  "niche_total_templates": 20,
+  "overlap_count": 16,
+  "candidate_only_count": 19,
+  "candidate_only_sample": [
+    "apricot-arc",
+    "berry-pop",
+    "bold-poster",
+    "burst-panel",
+    "checker-bloom",
+    "confetti-wedge",
+    "coral",
+    "cut-bloom",
+    "editorial-forest",
+    "jade-lens",
+    "lime-slab",
+    "linen-cut",
+    "macchiato",
+    "neo-grid-bold",
+    "riptide-cobalt",
+    "salmon-stamp",
+    "specimen-bold",
+    "stencil-tablet",
+    "violet-marker"
+  ],
+  "poc_candidates": [
+    "apricot-arc",
+    "berry-pop",
+    "bold-poster"
+  ],
+  "poc_precheck": [
+    {
+      "template": "apricot-arc",
+      "cand_exists": true,
+      "overlap_in_niche": false,
+      "design_head": "---\nversion: 1.0\nname: Apricot Arc\nrenderer: feishu-svg-whiteboard\ndescription: >\n  A warm mid-century geometric design system for Feishu SVG whiteboards. Soft cream canvas, no borders and no shadows — depth comes purely from flat apricot-and-salmon color-blocking and a signature half-circle (arc) motif laid out on a tight checkerboard rhythm. Rounded, friendly, two-hue palette with a deep terracotta ink reserved for text inside light panels. Calm and retro rather than loud. Built for explanatory diagrams that benefit from a soft, rhythmic, optimistic register: stages, comparisons, system maps, timelines, and step pipelines.\n\n# ── COLOR ────────────────────────────────────────────────────\ncolors:\n  cream: \"#FFF8EE\" # universal canvas background — warm soft ivory, never pure white\n  paper: \"#FFFFFF\" # optional clean panel fill (highest-contrast card)\n  orange: \"#F69834\" # primary accent — warm apricot orange; alternates with salmon to create rhythm, not collision\n  salmon: \"#F9C2BD\" # secondary accent — soft salmon pink (pairs with orange); never put light text on salmon\n  terracotta: \"#C7561E\" # ink only — text, big numerals, occasional 3px rule; a deep burnt tone from the orange family so the system never goes cold or black; not a fill block\n  ink-2: \"#7A4A33\" # softer brown for secondary text on light panels\n  # Use the 2-hue core (orange + salmon) per scene — that pairing IS the identity; terracotta is for ink only, not a fill block.\n  # Dark (terracotta) text on light fills always. No black — the system stays warm.\n  # Opacity is ignored: get a lighter shade by choosing a lighter solid (cream over salmon over orange), never by fading.\n\n# ── DEPTH ────────────────────────────────────────────────────\n# FLAT system — NO shadows of any kind (no blur, no duplicate-offset trick).\n# Depth and hierarchy come from flat color blocks, the arc motif, panel role-swaps, and scale.\n# The reference is borderless: prefer abutting flat shapes over outlined cards.\n"
+    },
+    {
+      "template": "berry-pop",
+      "cand_exists": true,
+      "overlap_in_niche": false,
+      "design_head": "---\nversion: 1.0\nname: Berry Pop\nrenderer: feishu-svg-whiteboard\ndescription: >\n  A fresh, fruity brand palette: a clean white page with two pop accents, a deep raspberry-wine and a\n  pale periwinkle. The raspberry is the loud hero (bold fills, headers, big blocks) and a darker wine\n  doubles as the readable ink; the periwinkle is the soft cool counter, used for light panels and for\n  text on a berry fill. Confident and playful, like a juice-bar or club logo. Flat color only, no\n  gradients; hard offset shadows are fine.\n\n# ── COLOR ────────────────────────────────────────────────────\ncolors:\n  white: \"#FFFFFF\" # universal canvas: clean bright white\n  berry: \"#9E2B50\" # PRIMARY accent: deep raspberry-wine. Hero fills, headers, key blocks\n  berry-deep: \"#6E1E3A\" # darker wine: body/structural text on white, borders, hard shadows (the in-family \"ink\")\n  peri: \"#C7D2F0\" # SECONDARY accent: pale periwinkle. Soft panels/fills, and large text on a berry fill\n  peri-deep: \"#9DB0E8\" # stronger periwinkle: small accents, rules, dots where the pale tone is too faint\n  # White page + two accent families. Berry leads, periwinkle supports; both share a scene. Berry-deep\n  # is the text color on white. Keep two accents per scene; let the white breathe.\n\n# ── TEXT COLOR ───────────────────────────────────────────────\ntext-rules:\n  rule: \"Text is berry-deep on the white page (a deep wine that reads like ink). On a berry fill, use large bold white or pale periwinkle. Keep periwinkle out of small text on white (too pale).\""
+    },
+    {
+      "template": "bold-poster",
+      "cand_exists": true,
+      "overlap_in_niche": false,
+      "design_head": "---\nversion: 1.0\nname: Bold Poster\nrenderer: feishu-svg-whiteboard\ndescription: >\n  A populist editorial-poster palette of uncompromising restraint: a white canvas, a deep brown-black\n  ink, a single saturated tomato red, and a warm off-white for alternating panels. No secondary brand\n  colors, no tints, no semantic state colors. Red is reserved for emphasis moments only (numerals,\n  active rules, calls to action, full-bleed statement panels), never body text or an empty fill. Loud,\n  confident, and unmistakably print-poster. The only depth is a single hard offset shadow behind red\n  display text.\n\n# ── COLOR ────────────────────────────────────────────────────\ncolors:\n  bg: \"#FFFFFF\" # pure white canvas: the default ground for most surfaces, reads as fresh newsprint\n  dark: \"#1C1410\" # deep brown-black with a warm bias (not pure black — warmth sets it apart from a generic editorial black): ALL body text, borders, small labels, and full-bleed dark panel grounds\n  red: \"#D8000F\" # saturated tomato red: the single accent, emphasis moments only — numerals, section eyebrows, the active emphasis rule, bullet glyphs, the progress bar, calls to action, full-bleed statement panels\n  light: \"#F5F2EF\" # warm off-white: stripe alternating panels and small chrome backgrounds; subtly warmer than bg so a surface differentiates without breaking the printed-paper register\n  # Two-color identity: brown-black ink on white, with red as the sole accent. Red is never body\n  # text, never a tint, never a card fill without overlaid text.\n\n# ── SHADOW ───────────────────────────────────────────────────\nshadow:\n  recipe: \"redraw the shape or word once in dark behind the real red display text, offset on x and y\""
+    }
+  ]
+}
