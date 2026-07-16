@@ -105,7 +105,7 @@
 - 时间：2026-07-16T14:53:00+08:00（本机本地时间）
 - 操作仓库：`/root/nichecraft`（main）
 - 目标：导入 3 个样式 POC（`apricot-arc`, `berry-pop`, `bold-poster`）
-- 提交：`efe21f7`
+- 提交：`f1b38f5`
   - Commit Message: `feat: add wave-10 poc-1 candidate templates from beautiful-feishu-whiteboard`
 
 ### 本地验收
