@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-17T22:35:26.002366",
+  "generated_at": "2026-07-17T22:51:12.009194",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 18,
+    "total_candidates": 15,
     "by_triage": {
-      "可融合候选": 11,
+      "可融合候选": 8,
       "观察/人工复核": 4,
       "仅记录": 3
     }
@@ -58,47 +58,6 @@
       ]
     },
     {
-      "repo": "camel-ai/camel",
-      "category": "多Agent协作",
-      "products": [
-        "barren-order"
-      ],
-      "triage": "可融合候选",
-      "score": 6,
-      "status": "pending_review",
-      "audit_total": 9.1,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "camel-ai/camel status=可融合候选 score=6",
-        "products=['barren-order']"
-      ]
-    },
-    {
-      "repo": "langgenius/dify",
-      "category": "智能体健康",
-      "products": [
-        "hermes-doctor",
-        "pipixia-doctor"
-      ],
-      "triage": "可融合候选",
-      "score": 6,
-      "status": "pending_review",
-      "audit_total": 9.1,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "langgenius/dify status=可融合候选 score=6",
-        "products=['hermes-doctor', 'pipixia-doctor']"
-      ]
-    },
-    {
       "repo": "frontend-slides",
       "category": "飞书白板设计+PPT",
       "products": [
@@ -115,26 +74,6 @@
       ],
       "evidence": [
         "frontend-slides status=可融合候选 score=6",
-        "products=['nichecraft']"
-      ]
-    },
-    {
-      "repo": "tldraw/tldraw",
-      "category": "飞书白板设计+PPT",
-      "products": [
-        "nichecraft"
-      ],
-      "triage": "可融合候选",
-      "score": 6,
-      "status": "pending_review",
-      "audit_total": 8.8,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "tldraw/tldraw status=可融合候选 score=6",
         "products=['nichecraft']"
       ]
     },
