@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-17T22:25:29.688959",
+  "generated_at": "2026-07-17T22:35:26.002366",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
@@ -8,8 +8,8 @@
   "summary": {
     "total_candidates": 18,
     "by_triage": {
-      "可融合候选": 12,
-      "观察/人工复核": 3,
+      "可融合候选": 11,
+      "观察/人工复核": 4,
       "仅记录": 3
     }
   },
@@ -136,27 +136,6 @@
       "evidence": [
         "tldraw/tldraw status=可融合候选 score=6",
         "products=['nichecraft']"
-      ]
-    },
-    {
-      "repo": "huggingface/transformers",
-      "category": "内容分析",
-      "products": [
-        "minddistill",
-        "minddistill"
-      ],
-      "triage": "可融合候选",
-      "score": 6,
-      "status": "pending_review",
-      "audit_total": 8.3,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "huggingface/transformers status=可融合候选 score=6",
-        "products=['minddistill', 'minddistill']"
       ]
     },
     {
@@ -327,6 +306,27 @@
       "evidence": [
         "Auriti-Labs/geo-optimizer-skill status=观察/人工复核 score=1",
         "products=['minddistill']"
+      ]
+    },
+    {
+      "repo": "huggingface/transformers",
+      "category": "内容分析",
+      "products": [
+        "minddistill",
+        "minddistill"
+      ],
+      "triage": "观察/人工复核",
+      "score": 1,
+      "status": "watching",
+      "audit_total": 8.3,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先补齐审计缺口，再评估融合可执行性"
+      ],
+      "evidence": [
+        "huggingface/transformers status=观察/人工复核 score=1",
+        "products=['minddistill', 'minddistill']"
       ]
     },
     {
