@@ -1,5 +1,5 @@
 # 产品融合增强执行清单
-生成时间：2026-07-17T12:52:44.903875
+生成时间：2026-07-17T12:57:54.394477
 
 ## 来源
 - 产品审计：`references/audit-report.json`
@@ -10,7 +10,7 @@
 - 每项融合需给出 `代码入口 / 验收命令 / 回退点`
 - 首轮只做能力增强准备，不做跨仓库自动重构
 
-## 候选池（共 17 项）
+## 候选池（共 16 项）
 
 ### 1. huggingface/diffusers
 - 分类：视频剪辑
@@ -122,18 +122,7 @@
   - huggingface/transformers status=可融合候选 score=4
   - products=['minddistill', 'minddistill']
 
-### 11. ai-xunjian
-- 分类：视频剪辑
-- 映射产品：ideasphere
-- 融合判定：可融合候选
-- 评分：3（状态：pending_review）
-- 审计信号：total=9.1, tech=8
-- 缺口特征：无明显缺口
-- 执行证据：
-  - ai-xunjian status=可融合候选 score=3
-  - products=['ideasphere']
-
-### 12. bilingual-subtitles
+### 11. bilingual-subtitles
 - 分类：视频剪辑
 - 映射产品：ideasphere
 - 融合判定：可融合候选
@@ -144,7 +133,7 @@
   - bilingual-subtitles status=可融合候选 score=2
   - products=['ideasphere']
 
-### 13. feishu-base-custom-api
+### 12. feishu-base-custom-api
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：可融合候选
@@ -158,7 +147,7 @@
   - feishu-base-custom-api status=可融合候选 score=2
   - products=['neverend']
 
-### 14. vrtmrz/obsidian-livesync
+### 13. vrtmrz/obsidian-livesync
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：观察/人工复核
@@ -172,7 +161,7 @@
   - vrtmrz/obsidian-livesync status=观察/人工复核 score=1
   - products=['neverend']
 
-### 15. AUTOMATIC1111/stable-diffusion-webui
+### 14. AUTOMATIC1111/stable-diffusion-webui
 - 分类：多媒体生成
 - 映射产品：fractovision
 - 融合判定：仅记录
@@ -186,7 +175,7 @@
   - AUTOMATIC1111/stable-diffusion-webui status=仅记录 score=-5
   - products=['fractovision']
 
-### 16. linuxserver/docker-obsidian
+### 15. linuxserver/docker-obsidian
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：仅记录
@@ -200,7 +189,7 @@
   - linuxserver/docker-obsidian status=仅记录 score=-5
   - products=['neverend']
 
-### 17. aaron-he-zhu/seo-geo-claude-skills
+### 16. aaron-he-zhu/seo-geo-claude-skills
 - 分类：GEO诊断
 - 映射产品：minddistill
 - 融合判定：仅记录
