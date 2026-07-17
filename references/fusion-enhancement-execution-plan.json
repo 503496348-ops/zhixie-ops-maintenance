@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-17T22:51:12.009194",
+  "generated_at": "2026-07-17T23:06:35.457328",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 15,
+    "total_candidates": 16,
     "by_triage": {
-      "可融合候选": 8,
+      "可融合候选": 9,
       "观察/人工复核": 4,
       "仅记录": 3
     }
@@ -55,6 +55,26 @@
       "evidence": [
         "OpenCut-app/OpenCut status=可融合候选 score=7",
         "products=['ideasphere', 'fractovision']"
+      ]
+    },
+    {
+      "repo": "CAHLR/OATutor",
+      "category": "智能教育",
+      "products": [
+        "herpeakgem"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "recorded",
+      "audit_total": 8.8,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "CAHLR/OATutor status=可融合候选 score=6",
+        "products=['herpeakgem']"
       ]
     },
     {
@@ -276,7 +296,7 @@
       ],
       "triage": "仅记录",
       "score": -5,
-      "status": "仅记录",
+      "status": "recorded",
       "audit_total": 8.7,
       "audit_tech": 6,
       "missing_features": [
