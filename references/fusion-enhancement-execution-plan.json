@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-17T10:36:51.529901",
+  "generated_at": "2026-07-17T11:33:04.669994",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
@@ -32,6 +32,27 @@
       "evidence": [
         "huggingface/diffusers status=可融合候选 score=6",
         "products=['ideasphere']"
+      ]
+    },
+    {
+      "repo": "langgenius/dify",
+      "category": "智能体健康",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "langgenius/dify status=可融合候选 score=6",
+        "products=['hermes-doctor', 'pipixia-doctor']"
       ]
     },
     {
@@ -72,30 +93,6 @@
       "evidence": [
         "frontend-slides status=可融合候选 score=6",
         "products=['nichecraft']"
-      ]
-    },
-    {
-      "repo": "Comfy-Org/ComfyUI",
-      "category": "多媒体生成",
-      "products": [
-        "fractovision"
-      ],
-      "triage": "可融合候选",
-      "score": 6,
-      "status": "implemented",
-      "audit_total": 8.7,
-      "audit_tech": 6,
-      "missing_features": [
-        "Web框架",
-        "数据库"
-      ],
-      "recommended_actions": [
-        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
-        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
-      ],
-      "evidence": [
-        "Comfy-Org/ComfyUI status=可融合候选 score=6",
-        "products=['fractovision']"
       ]
     },
     {
@@ -146,7 +143,7 @@
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
