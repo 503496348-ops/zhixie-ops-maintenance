@@ -1,5 +1,5 @@
 # 产品融合增强执行清单
-生成时间：2026-07-17T13:47:56.045640
+生成时间：2026-07-17T16:44:00.716752
 
 ## 来源
 - 产品审计：`references/audit-report.json`
@@ -10,9 +10,20 @@
 - 每项融合需给出 `代码入口 / 验收命令 / 回退点`
 - 首轮只做能力增强准备，不做跨仓库自动重构
 
-## 候选池（共 12 项）
+## 候选池（共 15 项）
 
-### 1. excalidraw/excalidraw
+### 1. OpenCut-app/OpenCut
+- 分类：视频剪辑
+- 映射产品：ideasphere, fractovision
+- 融合判定：可融合候选
+- 评分：7（状态：pending_review）
+- 审计信号：total=9.1, tech=8
+- 缺口特征：无明显缺口
+- 执行证据：
+  - OpenCut-app/OpenCut status=可融合候选 score=7
+  - products=['ideasphere', 'fractovision']
+
+### 2. excalidraw/excalidraw
 - 分类：飞书白板设计+PPT
 - 映射产品：nichecraft
 - 融合判定：可融合候选
@@ -23,7 +34,7 @@
   - excalidraw/excalidraw status=可融合候选 score=6
   - products=['nichecraft']
 
-### 2. frontend-slides
+### 3. frontend-slides
 - 分类：飞书白板设计+PPT
 - 映射产品：nichecraft
 - 融合判定：可融合候选
@@ -34,7 +45,18 @@
   - frontend-slides status=可融合候选 score=6
   - products=['nichecraft']
 
-### 3. beautiful-feishu-whiteboard
+### 4. langgenius/dify
+- 分类：智能体健康
+- 映射产品：hermes-doctor, pipixia-doctor
+- 融合判定：可融合候选
+- 评分：5（状态：pending_review）
+- 审计信号：total=9.1, tech=8
+- 缺口特征：无明显缺口
+- 执行证据：
+  - langgenius/dify status=可融合候选 score=5
+  - products=['hermes-doctor', 'pipixia-doctor']
+
+### 5. beautiful-feishu-whiteboard
 - 分类：飞书白板设计+PPT
 - 映射产品：nichecraft
 - 融合判定：可融合候选
@@ -45,7 +67,18 @@
   - beautiful-feishu-whiteboard status=可融合候选 score=5
   - products=['nichecraft']
 
-### 4. NVIDIA/SkillSpector
+### 6. Nutlope/hallmark
+- 分类：内容创作
+- 映射产品：nichecraft, canvas-design, artipen
+- 融合判定：可融合候选
+- 评分：5（状态：pending_review）
+- 审计信号：total=8.8, tech=8
+- 缺口特征：无明显缺口
+- 执行证据：
+  - Nutlope/hallmark status=可融合候选 score=5
+  - products=['nichecraft', 'canvas-design', 'artipen']
+
+### 7. NVIDIA/SkillSpector
 - 分类：安全检测
 - 映射产品：hermes-security-suite
 - 融合判定：可融合候选
@@ -56,7 +89,7 @@
   - NVIDIA/SkillSpector status=可融合候选 score=4
   - products=['hermes-security-suite']
 
-### 5. botpress/botpress
+### 8. botpress/botpress
 - 分类：智能客服
 - 映射产品：easyrhythm
 - 融合判定：可融合候选
@@ -67,7 +100,7 @@
   - botpress/botpress status=可融合候选 score=4
   - products=['easyrhythm']
 
-### 6. assafelovic/gpt-researcher
+### 9. assafelovic/gpt-researcher
 - 分类：长文创作
 - 映射产品：fission-creative
 - 融合判定：可融合候选
@@ -78,18 +111,18 @@
   - assafelovic/gpt-researcher status=可融合候选 score=4
   - products=['fission-creative']
 
-### 7. huggingface/transformers
+### 10. huggingface/transformers
 - 分类：内容分析
 - 映射产品：minddistill, minddistill
 - 融合判定：可融合候选
-- 评分：4（状态：implemented）
+- 评分：4（状态：pending_review）
 - 审计信号：total=8.3, tech=8
 - 缺口特征：无明显缺口
 - 执行证据：
   - huggingface/transformers status=可融合候选 score=4
   - products=['minddistill', 'minddistill']
 
-### 8. feishu-base-custom-api
+### 11. feishu-base-custom-api
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：观察/人工复核
@@ -103,7 +136,7 @@
   - feishu-base-custom-api status=观察/人工复核 score=2
   - products=['neverend']
 
-### 9. vrtmrz/obsidian-livesync
+### 12. vrtmrz/obsidian-livesync
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：观察/人工复核
@@ -117,7 +150,7 @@
   - vrtmrz/obsidian-livesync status=观察/人工复核 score=1
   - products=['neverend']
 
-### 10. AUTOMATIC1111/stable-diffusion-webui
+### 13. AUTOMATIC1111/stable-diffusion-webui
 - 分类：多媒体生成
 - 映射产品：fractovision
 - 融合判定：仅记录
@@ -131,7 +164,7 @@
   - AUTOMATIC1111/stable-diffusion-webui status=仅记录 score=-5
   - products=['fractovision']
 
-### 11. linuxserver/docker-obsidian
+### 14. linuxserver/docker-obsidian
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：仅记录
@@ -145,7 +178,7 @@
   - linuxserver/docker-obsidian status=仅记录 score=-5
   - products=['neverend']
 
-### 12. aaron-he-zhu/seo-geo-claude-skills
+### 15. aaron-he-zhu/seo-geo-claude-skills
 - 分类：GEO诊断
 - 映射产品：minddistill
 - 融合判定：仅记录

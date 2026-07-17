@@ -1,19 +1,40 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-17T13:47:56.045640",
+  "generated_at": "2026-07-17T16:44:00.716752",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 12,
+    "total_candidates": 15,
     "by_triage": {
-      "可融合候选": 7,
+      "可融合候选": 10,
       "观察/人工复核": 2,
       "仅记录": 3
     }
   },
   "items": [
+    {
+      "repo": "OpenCut-app/OpenCut",
+      "category": "视频剪辑",
+      "products": [
+        "ideasphere",
+        "fractovision"
+      ],
+      "triage": "可融合候选",
+      "score": 7,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "OpenCut-app/OpenCut status=可融合候选 score=7",
+        "products=['ideasphere', 'fractovision']"
+      ]
+    },
     {
       "repo": "excalidraw/excalidraw",
       "category": "飞书白板设计+PPT",
@@ -55,6 +76,27 @@
       ]
     },
     {
+      "repo": "langgenius/dify",
+      "category": "智能体健康",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor"
+      ],
+      "triage": "可融合候选",
+      "score": 5,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "langgenius/dify status=可融合候选 score=5",
+        "products=['hermes-doctor', 'pipixia-doctor']"
+      ]
+    },
+    {
       "repo": "beautiful-feishu-whiteboard",
       "category": "飞书白板设计+PPT",
       "products": [
@@ -72,6 +114,28 @@
       "evidence": [
         "beautiful-feishu-whiteboard status=可融合候选 score=5",
         "products=['nichecraft']"
+      ]
+    },
+    {
+      "repo": "Nutlope/hallmark",
+      "category": "内容创作",
+      "products": [
+        "nichecraft",
+        "canvas-design",
+        "artipen"
+      ],
+      "triage": "可融合候选",
+      "score": 5,
+      "status": "pending_review",
+      "audit_total": 8.8,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "Nutlope/hallmark status=可融合候选 score=5",
+        "products=['nichecraft', 'canvas-design', 'artipen']"
       ]
     },
     {
@@ -143,7 +207,7 @@
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "implemented",
+      "status": "pending_review",
       "audit_total": 8.3,
       "audit_tech": 8,
       "missing_features": [],
