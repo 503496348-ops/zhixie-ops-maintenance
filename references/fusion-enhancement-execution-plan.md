@@ -1,5 +1,5 @@
 # 产品融合增强执行清单
-生成时间：2026-07-17T10:00:52.191408
+生成时间：2026-07-17T10:08:33.271436
 
 ## 来源
 - 产品审计：`references/audit-report.json`
@@ -16,7 +16,7 @@
 - 分类：视频剪辑
 - 映射产品：ideasphere
 - 融合判定：可融合候选
-- 评分：6（状态：pending_review）
+- 评分：6（状态：implemented）
 - 审计信号：total=9.1, tech=8
 - 缺口特征：无明显缺口
 - 执行证据：
@@ -27,7 +27,7 @@
 - 分类：飞书白板设计+PPT
 - 映射产品：nichecraft
 - 融合判定：可融合候选
-- 评分：6（状态：pending_review）
+- 评分：6（状态：implemented）
 - 审计信号：total=8.8, tech=8
 - 缺口特征：无明显缺口
 - 执行证据：
@@ -49,7 +49,7 @@
 - 分类：多媒体生成
 - 映射产品：fractovision
 - 融合判定：可融合候选
-- 评分：6（状态：pending_review）
+- 评分：6（状态：implemented）
 - 审计信号：total=8.7, tech=6
 - 缺口特征：Web框架, 数据库
 - 建议动作：

@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-17T10:00:52.191408",
+  "generated_at": "2026-07-17T10:08:33.271436",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
@@ -22,7 +22,7 @@
       ],
       "triage": "可融合候选",
       "score": 6,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
@@ -42,7 +42,7 @@
       ],
       "triage": "可融合候选",
       "score": 6,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 8.8,
       "audit_tech": 8,
       "missing_features": [],
@@ -82,7 +82,7 @@
       ],
       "triage": "可融合候选",
       "score": 6,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 8.7,
       "audit_tech": 6,
       "missing_features": [
