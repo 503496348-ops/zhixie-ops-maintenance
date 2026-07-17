@@ -1,19 +1,41 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-17T16:44:00.716752",
+  "generated_at": "2026-07-17T19:42:19.054524",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 15,
+    "total_candidates": 18,
     "by_triage": {
-      "可融合候选": 10,
-      "观察/人工复核": 2,
+      "可融合候选": 12,
+      "观察/人工复核": 3,
       "仅记录": 3
     }
   },
   "items": [
+    {
+      "repo": "EverMind-AI/Raven",
+      "category": "智能体上下文",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor",
+        "mindriver"
+      ],
+      "triage": "可融合候选",
+      "score": 8,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "EverMind-AI/Raven status=可融合候选 score=8",
+        "products=['hermes-doctor', 'pipixia-doctor', 'mindriver']"
+      ]
+    },
     {
       "repo": "OpenCut-app/OpenCut",
       "category": "视频剪辑",
@@ -33,6 +55,47 @@
       "evidence": [
         "OpenCut-app/OpenCut status=可融合候选 score=7",
         "products=['ideasphere', 'fractovision']"
+      ]
+    },
+    {
+      "repo": "camel-ai/camel",
+      "category": "多Agent协作",
+      "products": [
+        "barren-order"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "camel-ai/camel status=可融合候选 score=6",
+        "products=['barren-order']"
+      ]
+    },
+    {
+      "repo": "langgenius/dify",
+      "category": "智能体健康",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "langgenius/dify status=可融合候选 score=6",
+        "products=['hermes-doctor', 'pipixia-doctor']"
       ]
     },
     {
@@ -76,24 +139,24 @@
       ]
     },
     {
-      "repo": "langgenius/dify",
-      "category": "智能体健康",
+      "repo": "huggingface/transformers",
+      "category": "内容分析",
       "products": [
-        "hermes-doctor",
-        "pipixia-doctor"
+        "minddistill",
+        "minddistill"
       ],
       "triage": "可融合候选",
-      "score": 5,
+      "score": 6,
       "status": "pending_review",
-      "audit_total": 9.1,
+      "audit_total": 8.3,
       "audit_tech": 8,
       "missing_features": [],
       "recommended_actions": [
         "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
-        "langgenius/dify status=可融合候选 score=5",
-        "products=['hermes-doctor', 'pipixia-doctor']"
+        "huggingface/transformers status=可融合候选 score=6",
+        "products=['minddistill', 'minddistill']"
       ]
     },
     {
@@ -199,27 +262,6 @@
       ]
     },
     {
-      "repo": "huggingface/transformers",
-      "category": "内容分析",
-      "products": [
-        "minddistill",
-        "minddistill"
-      ],
-      "triage": "可融合候选",
-      "score": 4,
-      "status": "pending_review",
-      "audit_total": 8.3,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "huggingface/transformers status=可融合候选 score=4",
-        "products=['minddistill', 'minddistill']"
-      ]
-    },
-    {
       "repo": "feishu-base-custom-api",
       "category": "知识管理",
       "products": [
@@ -265,6 +307,26 @@
       "evidence": [
         "vrtmrz/obsidian-livesync status=观察/人工复核 score=1",
         "products=['neverend']"
+      ]
+    },
+    {
+      "repo": "Auriti-Labs/geo-optimizer-skill",
+      "category": "GEO诊断",
+      "products": [
+        "minddistill"
+      ],
+      "triage": "观察/人工复核",
+      "score": 1,
+      "status": "watching",
+      "audit_total": 8.3,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先补齐审计缺口，再评估融合可执行性"
+      ],
+      "evidence": [
+        "Auriti-Labs/geo-optimizer-skill status=观察/人工复核 score=1",
+        "products=['minddistill']"
       ]
     },
     {
