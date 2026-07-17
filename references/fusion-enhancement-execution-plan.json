@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-17T11:33:04.669994",
+  "generated_at": "2026-07-17T11:49:33.119641",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
@@ -176,7 +176,7 @@
       ]
     },
     {
-      "repo": "lark-coding-agent-bridge",
+      "repo": "zarazhangrui/lark-coding-agent-bridge",
       "category": "智能体健康",
       "products": [
         "hermes-doctor",
@@ -192,7 +192,7 @@
         "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
-        "lark-coding-agent-bridge status=可融合候选 score=4",
+        "zarazhangrui/lark-coding-agent-bridge status=可融合候选 score=4",
         "products=['hermes-doctor', 'pipixia-doctor']"
       ]
     },

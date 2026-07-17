@@ -1,5 +1,5 @@
 # 产品融合增强执行清单
-生成时间：2026-07-17T11:33:04.669994
+生成时间：2026-07-17T11:49:33.119641
 
 ## 来源
 - 产品审计：`references/audit-report.json`
@@ -100,7 +100,7 @@
   - crewAIInc/crewAI status=可融合候选 score=4
   - products=['barren-order']
 
-### 9. lark-coding-agent-bridge
+### 9. zarazhangrui/lark-coding-agent-bridge
 - 分类：智能体健康
 - 映射产品：hermes-doctor, pipixia-doctor
 - 融合判定：可融合候选
@@ -108,7 +108,7 @@
 - 审计信号：total=9.1, tech=8
 - 缺口特征：无明显缺口
 - 执行证据：
-  - lark-coding-agent-bridge status=可融合候选 score=4
+  - zarazhangrui/lark-coding-agent-bridge status=可融合候选 score=4
   - products=['hermes-doctor', 'pipixia-doctor']
 
 ### 10. assafelovic/gpt-researcher
