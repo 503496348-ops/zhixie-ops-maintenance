@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-17T19:42:19.054524",
+  "generated_at": "2026-07-17T21:47:05.253768",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 18,
+    "total_candidates": 19,
     "by_triage": {
-      "可融合候选": 12,
+      "可融合候选": 13,
       "观察/人工复核": 3,
       "仅记录": 3
     }
@@ -24,7 +24,7 @@
       ],
       "triage": "可融合候选",
       "score": 8,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
@@ -45,7 +45,7 @@
       ],
       "triage": "可融合候选",
       "score": 7,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
@@ -139,6 +139,26 @@
       ]
     },
     {
+      "repo": "tldraw/tldraw",
+      "category": "飞书白板设计+PPT",
+      "products": [
+        "nichecraft"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 8.8,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "tldraw/tldraw status=可融合候选 score=6",
+        "products=['nichecraft']"
+      ]
+    },
+    {
       "repo": "huggingface/transformers",
       "category": "内容分析",
       "products": [
@@ -189,7 +209,7 @@
       ],
       "triage": "可融合候选",
       "score": 5,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 8.8,
       "audit_tech": 8,
       "missing_features": [],
