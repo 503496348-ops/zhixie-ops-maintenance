@@ -1,39 +1,19 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-17T12:57:54.394477",
+  "generated_at": "2026-07-17T13:47:56.045640",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 16,
+    "total_candidates": 12,
     "by_triage": {
-      "可融合候选": 12,
-      "观察/人工复核": 1,
+      "可融合候选": 7,
+      "观察/人工复核": 2,
       "仅记录": 3
     }
   },
   "items": [
-    {
-      "repo": "huggingface/diffusers",
-      "category": "视频剪辑",
-      "products": [
-        "ideasphere"
-      ],
-      "triage": "可融合候选",
-      "score": 6,
-      "status": "implemented",
-      "audit_total": 9.1,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "huggingface/diffusers status=可融合候选 score=6",
-        "products=['ideasphere']"
-      ]
-    },
     {
       "repo": "excalidraw/excalidraw",
       "category": "飞书白板设计+PPT",
@@ -155,46 +135,6 @@
       ]
     },
     {
-      "repo": "codebase-to-course",
-      "category": "智能教育",
-      "products": [
-        "herpeakgem"
-      ],
-      "triage": "可融合候选",
-      "score": 4,
-      "status": "pending_review",
-      "audit_total": 8.8,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "codebase-to-course status=可融合候选 score=4",
-        "products=['herpeakgem']"
-      ]
-    },
-    {
-      "repo": "follow-builders",
-      "category": "长文创作",
-      "products": [
-        "fission-creative"
-      ],
-      "triage": "可融合候选",
-      "score": 4,
-      "status": "pending_review",
-      "audit_total": 8.8,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "follow-builders status=可融合候选 score=4",
-        "products=['fission-creative']"
-      ]
-    },
-    {
       "repo": "huggingface/transformers",
       "category": "内容分析",
       "products": [
@@ -216,34 +156,14 @@
       ]
     },
     {
-      "repo": "bilingual-subtitles",
-      "category": "视频剪辑",
-      "products": [
-        "ideasphere"
-      ],
-      "triage": "可融合候选",
-      "score": 2,
-      "status": "pending_review",
-      "audit_total": 9.1,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "bilingual-subtitles status=可融合候选 score=2",
-        "products=['ideasphere']"
-      ]
-    },
-    {
       "repo": "feishu-base-custom-api",
       "category": "知识管理",
       "products": [
         "neverend"
       ],
-      "triage": "可融合候选",
+      "triage": "观察/人工复核",
       "score": 2,
-      "status": "pending_review",
+      "status": "watching",
       "audit_total": 8.7,
       "audit_tech": 6,
       "missing_features": [
@@ -255,7 +175,7 @@
         "补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试"
       ],
       "evidence": [
-        "feishu-base-custom-api status=可融合候选 score=2",
+        "feishu-base-custom-api status=观察/人工复核 score=2",
         "products=['neverend']"
       ]
     },
