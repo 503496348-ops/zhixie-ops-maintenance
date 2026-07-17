@@ -181,7 +181,7 @@ def github_api(path_or_url: str) -> Any:
     token = get_github_token()
     if token:
         headers.extend(["-H", f"Authorization: token {token}"])
-    result = subprocess.run(["curl", "-sS"] + headers + [url], capture_output=True, text=True, timeout=45)
+    result = subprocess.run(["curl", "-sSL"] + headers + [url], capture_output=True, text=True, timeout=45)
     if result.returncode != 0:
         return {"_error": f"curl exit {result.returncode}"}
     try:
