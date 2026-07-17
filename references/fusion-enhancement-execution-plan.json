@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-17T12:11:56.202706",
+  "generated_at": "2026-07-17T12:35:27.711853",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 20,
+    "total_candidates": 19,
     "by_triage": {
-      "可融合候选": 16,
+      "可融合候选": 15,
       "观察/人工复核": 1,
       "仅记录": 3
     }
@@ -32,27 +32,6 @@
       "evidence": [
         "huggingface/diffusers status=可融合候选 score=6",
         "products=['ideasphere']"
-      ]
-    },
-    {
-      "repo": "langgenius/dify",
-      "category": "智能体健康",
-      "products": [
-        "hermes-doctor",
-        "pipixia-doctor"
-      ],
-      "triage": "可融合候选",
-      "score": 6,
-      "status": "implemented",
-      "audit_total": 9.1,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "langgenius/dify status=可融合候选 score=6",
-        "products=['hermes-doctor', 'pipixia-doctor']"
       ]
     },
     {
@@ -265,7 +244,7 @@
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 8.3,
       "audit_tech": 8,
       "missing_features": [],
