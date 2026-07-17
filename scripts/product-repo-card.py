@@ -555,7 +555,12 @@ def main():
     if "--dry-run" in sys.argv:
         os.environ["PRODUCT_MONITOR_DRY_RUN"] = "1"
 
-    chat_id = os.environ.get("FEISHU_CHAT_ID", "oc_44b5962120c4c149fe672acdb59a62db")
+    chat_id = (os.environ.get("FEISHU_CHAT_ID") or "").strip()
+    if not chat_id:
+        # 缺省 chat id 时不进行外发，避免泄漏默认占位符
+        if os.environ.get("PRODUCT_MONITOR_DRY_RUN", "").strip().lower() not in {"1", "true", "yes", "on"}:
+            os.environ["PRODUCT_MONITOR_DRY_RUN"] = "1"
+        chat_id = "DRY_RUN_DEFAULT"
     date_str = datetime.now().strftime("%Y-%m-%d")
 
     prev_snap = load_snapshot()
