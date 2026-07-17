@@ -1,25 +1,24 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-16T20:30:13.776848",
+  "generated_at": "2026-07-17T10:00:52.191408",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 21,
+    "total_candidates": 20,
     "by_triage": {
       "可融合候选": 16,
-      "观察/人工复核": 2,
+      "观察/人工复核": 1,
       "仅记录": 3
     }
   },
   "items": [
     {
-      "repo": "langgenius/dify",
-      "category": "智能体健康",
+      "repo": "huggingface/diffusers",
+      "category": "视频剪辑",
       "products": [
-        "hermes-doctor",
-        "pipixia-doctor"
+        "ideasphere"
       ],
       "triage": "可融合候选",
       "score": 6,
@@ -31,8 +30,8 @@
         "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
-        "langgenius/dify status=可融合候选 score=6",
-        "products=['hermes-doctor', 'pipixia-doctor']"
+        "huggingface/diffusers status=可融合候选 score=6",
+        "products=['ideasphere']"
       ]
     },
     {
@@ -43,7 +42,7 @@
       ],
       "triage": "可融合候选",
       "score": 6,
-      "status": "implemented",
+      "status": "pending_review",
       "audit_total": 8.8,
       "audit_tech": 8,
       "missing_features": [],
@@ -100,27 +99,6 @@
       ]
     },
     {
-      "repo": "huggingface/transformers",
-      "category": "内容分析",
-      "products": [
-        "minddistill",
-        "minddistill"
-      ],
-      "triage": "可融合候选",
-      "score": 6,
-      "status": "implemented",
-      "audit_total": 8.3,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "huggingface/transformers status=可融合候选 score=6",
-        "products=['minddistill', 'minddistill']"
-      ]
-    },
-    {
       "repo": "beautiful-feishu-whiteboard",
       "category": "飞书白板设计+PPT",
       "products": [
@@ -168,7 +146,7 @@
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "implemented",
+      "status": "pending_review",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
@@ -181,10 +159,10 @@
       ]
     },
     {
-      "repo": "huggingface/diffusers",
-      "category": "视频剪辑",
+      "repo": "crewAIInc/crewAI",
+      "category": "多Agent协作",
       "products": [
-        "ideasphere"
+        "barren-order"
       ],
       "triage": "可融合候选",
       "score": 4,
@@ -196,8 +174,8 @@
         "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
-        "huggingface/diffusers status=可融合候选 score=4",
-        "products=['ideasphere']"
+        "crewAIInc/crewAI status=可融合候选 score=4",
+        "products=['barren-order']"
       ]
     },
     {
@@ -279,6 +257,27 @@
       "evidence": [
         "follow-builders status=可融合候选 score=4",
         "products=['fission-creative']"
+      ]
+    },
+    {
+      "repo": "huggingface/transformers",
+      "category": "内容分析",
+      "products": [
+        "minddistill",
+        "minddistill"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "pending_review",
+      "audit_total": 8.3,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "huggingface/transformers status=可融合候选 score=4",
+        "products=['minddistill', 'minddistill']"
       ]
     },
     {
@@ -367,26 +366,6 @@
       "evidence": [
         "vrtmrz/obsidian-livesync status=观察/人工复核 score=1",
         "products=['neverend']"
-      ]
-    },
-    {
-      "repo": "Auriti-Labs/geo-optimizer-skill",
-      "category": "GEO诊断",
-      "products": [
-        "minddistill"
-      ],
-      "triage": "观察/人工复核",
-      "score": 1,
-      "status": "watching",
-      "audit_total": 8.3,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先补齐审计缺口，再评估融合可执行性"
-      ],
-      "evidence": [
-        "Auriti-Labs/geo-optimizer-skill status=观察/人工复核 score=1",
-        "products=['minddistill']"
       ]
     },
     {
