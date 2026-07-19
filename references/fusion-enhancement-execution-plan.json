@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-17T23:06:35.457328",
+  "generated_at": "2026-07-19T10:12:59.241514",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 16,
+    "total_candidates": 17,
     "by_triage": {
-      "可融合候选": 9,
+      "可融合候选": 10,
       "观察/人工复核": 4,
       "仅记录": 3
     }
@@ -55,6 +55,47 @@
       "evidence": [
         "OpenCut-app/OpenCut status=可融合候选 score=7",
         "products=['ideasphere', 'fractovision']"
+      ]
+    },
+    {
+      "repo": "huggingface/diffusers",
+      "category": "视频剪辑",
+      "products": [
+        "ideasphere"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "implemented",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "huggingface/diffusers status=可融合候选 score=6",
+        "products=['ideasphere']"
+      ]
+    },
+    {
+      "repo": "langgenius/dify",
+      "category": "智能体健康",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "langgenius/dify status=可融合候选 score=6",
+        "products=['hermes-doctor', 'pipixia-doctor']"
       ]
     },
     {
@@ -157,26 +198,6 @@
       "evidence": [
         "NVIDIA/SkillSpector status=可融合候选 score=4",
         "products=['hermes-security-suite']"
-      ]
-    },
-    {
-      "repo": "botpress/botpress",
-      "category": "智能客服",
-      "products": [
-        "easyrhythm"
-      ],
-      "triage": "可融合候选",
-      "score": 4,
-      "status": "implemented",
-      "audit_total": 9.1,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "botpress/botpress status=可融合候选 score=4",
-        "products=['easyrhythm']"
       ]
     },
     {

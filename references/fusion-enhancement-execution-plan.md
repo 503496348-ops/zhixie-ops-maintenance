@@ -1,5 +1,5 @@
 # 产品融合增强执行清单
-生成时间：2026-07-17T23:06:35.457328
+生成时间：2026-07-19T10:12:59.241514
 
 ## 来源
 - 产品审计：`references/audit-report.json`
@@ -10,7 +10,7 @@
 - 每项融合需给出 `代码入口 / 验收命令 / 回退点`
 - 首轮只做能力增强准备，不做跨仓库自动重构
 
-## 候选池（共 16 项）
+## 候选池（共 17 项）
 
 ### 1. EverMind-AI/Raven
 - 分类：智能体上下文
@@ -34,7 +34,29 @@
   - OpenCut-app/OpenCut status=可融合候选 score=7
   - products=['ideasphere', 'fractovision']
 
-### 3. CAHLR/OATutor
+### 3. huggingface/diffusers
+- 分类：视频剪辑
+- 映射产品：ideasphere
+- 融合判定：可融合候选
+- 评分：6（状态：implemented）
+- 审计信号：total=9.1, tech=8
+- 缺口特征：无明显缺口
+- 执行证据：
+  - huggingface/diffusers status=可融合候选 score=6
+  - products=['ideasphere']
+
+### 4. langgenius/dify
+- 分类：智能体健康
+- 映射产品：hermes-doctor, pipixia-doctor
+- 融合判定：可融合候选
+- 评分：6（状态：pending_review）
+- 审计信号：total=9.1, tech=8
+- 缺口特征：无明显缺口
+- 执行证据：
+  - langgenius/dify status=可融合候选 score=6
+  - products=['hermes-doctor', 'pipixia-doctor']
+
+### 5. CAHLR/OATutor
 - 分类：智能教育
 - 映射产品：herpeakgem
 - 融合判定：可融合候选
@@ -45,7 +67,7 @@
   - CAHLR/OATutor status=可融合候选 score=6
   - products=['herpeakgem']
 
-### 4. frontend-slides
+### 6. frontend-slides
 - 分类：飞书白板设计+PPT
 - 映射产品：nichecraft
 - 融合判定：可融合候选
@@ -56,7 +78,7 @@
   - frontend-slides status=可融合候选 score=6
   - products=['nichecraft']
 
-### 5. beautiful-feishu-whiteboard
+### 7. beautiful-feishu-whiteboard
 - 分类：飞书白板设计+PPT
 - 映射产品：nichecraft
 - 融合判定：可融合候选
@@ -67,7 +89,7 @@
   - beautiful-feishu-whiteboard status=可融合候选 score=5
   - products=['nichecraft']
 
-### 6. Nutlope/hallmark
+### 8. Nutlope/hallmark
 - 分类：内容创作
 - 映射产品：nichecraft, canvas-design, artipen
 - 融合判定：可融合候选
@@ -78,7 +100,7 @@
   - Nutlope/hallmark status=可融合候选 score=5
   - products=['nichecraft', 'canvas-design', 'artipen']
 
-### 7. NVIDIA/SkillSpector
+### 9. NVIDIA/SkillSpector
 - 分类：安全检测
 - 映射产品：hermes-security-suite
 - 融合判定：可融合候选
@@ -89,18 +111,7 @@
   - NVIDIA/SkillSpector status=可融合候选 score=4
   - products=['hermes-security-suite']
 
-### 8. botpress/botpress
-- 分类：智能客服
-- 映射产品：easyrhythm
-- 融合判定：可融合候选
-- 评分：4（状态：implemented）
-- 审计信号：total=9.1, tech=8
-- 缺口特征：无明显缺口
-- 执行证据：
-  - botpress/botpress status=可融合候选 score=4
-  - products=['easyrhythm']
-
-### 9. assafelovic/gpt-researcher
+### 10. assafelovic/gpt-researcher
 - 分类：长文创作
 - 映射产品：fission-creative
 - 融合判定：可融合候选
@@ -111,7 +122,7 @@
   - assafelovic/gpt-researcher status=可融合候选 score=4
   - products=['fission-creative']
 
-### 10. feishu-base-custom-api
+### 11. feishu-base-custom-api
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：观察/人工复核
@@ -125,7 +136,7 @@
   - feishu-base-custom-api status=观察/人工复核 score=2
   - products=['neverend']
 
-### 11. vrtmrz/obsidian-livesync
+### 12. vrtmrz/obsidian-livesync
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：观察/人工复核
@@ -139,7 +150,7 @@
   - vrtmrz/obsidian-livesync status=观察/人工复核 score=1
   - products=['neverend']
 
-### 12. Auriti-Labs/geo-optimizer-skill
+### 13. Auriti-Labs/geo-optimizer-skill
 - 分类：GEO诊断
 - 映射产品：minddistill
 - 融合判定：观察/人工复核
@@ -150,7 +161,7 @@
   - Auriti-Labs/geo-optimizer-skill status=观察/人工复核 score=1
   - products=['minddistill']
 
-### 13. huggingface/transformers
+### 14. huggingface/transformers
 - 分类：内容分析
 - 映射产品：minddistill, minddistill
 - 融合判定：观察/人工复核
@@ -161,7 +172,7 @@
   - huggingface/transformers status=观察/人工复核 score=1
   - products=['minddistill', 'minddistill']
 
-### 14. AUTOMATIC1111/stable-diffusion-webui
+### 15. AUTOMATIC1111/stable-diffusion-webui
 - 分类：多媒体生成
 - 映射产品：fractovision
 - 融合判定：仅记录
@@ -175,7 +186,7 @@
   - AUTOMATIC1111/stable-diffusion-webui status=仅记录 score=-5
   - products=['fractovision']
 
-### 15. linuxserver/docker-obsidian
+### 16. linuxserver/docker-obsidian
 - 分类：知识管理
 - 映射产品：neverend
 - 融合判定：仅记录
@@ -189,7 +200,7 @@
   - linuxserver/docker-obsidian status=仅记录 score=-5
   - products=['neverend']
 
-### 16. aaron-he-zhu/seo-geo-claude-skills
+### 17. aaron-he-zhu/seo-geo-claude-skills
 - 分类：GEO诊断
 - 映射产品：minddistill
 - 融合判定：仅记录
