@@ -1,16 +1,16 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-19T10:12:59.241514",
+  "generated_at": "2026-07-20T19:44:23.225762",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 17,
+    "total_candidates": 20,
     "by_triage": {
-      "可融合候选": 10,
-      "观察/人工复核": 4,
-      "仅记录": 3
+      "可融合候选": 9,
+      "观察/人工复核": 6,
+      "仅记录": 5
     }
   },
   "items": [
@@ -58,23 +58,23 @@
       ]
     },
     {
-      "repo": "huggingface/diffusers",
-      "category": "视频剪辑",
+      "repo": "brightdata/competitive-intelligence",
+      "category": "竞品分析",
       "products": [
-        "ideasphere"
+        "energsolve"
       ],
       "triage": "可融合候选",
       "score": 6,
-      "status": "implemented",
-      "audit_total": 9.1,
+      "status": "pending_review",
+      "audit_total": 9.6,
       "audit_tech": 8,
       "missing_features": [],
       "recommended_actions": [
         "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
-        "huggingface/diffusers status=可融合候选 score=6",
-        "products=['ideasphere']"
+        "brightdata/competitive-intelligence status=可融合候选 score=6",
+        "products=['energsolve']"
       ]
     },
     {
@@ -96,26 +96,6 @@
       "evidence": [
         "langgenius/dify status=可融合候选 score=6",
         "products=['hermes-doctor', 'pipixia-doctor']"
-      ]
-    },
-    {
-      "repo": "CAHLR/OATutor",
-      "category": "智能教育",
-      "products": [
-        "herpeakgem"
-      ],
-      "triage": "可融合候选",
-      "score": 6,
-      "status": "recorded",
-      "audit_total": 8.8,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "CAHLR/OATutor status=可融合候选 score=6",
-        "products=['herpeakgem']"
       ]
     },
     {
@@ -245,6 +225,31 @@
       ]
     },
     {
+      "repo": "jokecamp/FootballData",
+      "category": "体育分析",
+      "products": [
+        "football-predictor",
+        "worldcup-predictor"
+      ],
+      "triage": "观察/人工复核",
+      "score": 2,
+      "status": "watching",
+      "audit_total": 8.7,
+      "audit_tech": 6,
+      "missing_features": [
+        "Web框架",
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "jokecamp/FootballData status=观察/人工复核 score=2",
+        "products=['football-predictor', 'worldcup-predictor']"
+      ]
+    },
+    {
       "repo": "vrtmrz/obsidian-livesync",
       "category": "知识管理",
       "products": [
@@ -266,6 +271,30 @@
       "evidence": [
         "vrtmrz/obsidian-livesync status=观察/人工复核 score=1",
         "products=['neverend']"
+      ]
+    },
+    {
+      "repo": "black-forest-labs/flux",
+      "category": "多媒体生成",
+      "products": [
+        "fractovision"
+      ],
+      "triage": "观察/人工复核",
+      "score": 1,
+      "status": "watching",
+      "audit_total": 8.7,
+      "audit_tech": 6,
+      "missing_features": [
+        "Web框架",
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "black-forest-labs/flux status=观察/人工复核 score=1",
+        "products=['fractovision']"
       ]
     },
     {
@@ -374,6 +403,47 @@
       ],
       "evidence": [
         "aaron-he-zhu/seo-geo-claude-skills status=仅记录 score=-5",
+        "products=['minddistill']"
+      ]
+    },
+    {
+      "repo": "explosion/spaCy",
+      "category": "内容分析",
+      "products": [
+        "minddistill",
+        "minddistill"
+      ],
+      "triage": "仅记录",
+      "score": -5,
+      "status": "recorded",
+      "audit_total": 8.3,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先补齐审计缺口，再评估融合可执行性"
+      ],
+      "evidence": [
+        "explosion/spaCy status=仅记录 score=-5",
+        "products=['minddistill', 'minddistill']"
+      ]
+    },
+    {
+      "repo": "zubair-trabzada/geo-seo-claude",
+      "category": "GEO诊断",
+      "products": [
+        "minddistill"
+      ],
+      "triage": "仅记录",
+      "score": -5,
+      "status": "recorded",
+      "audit_total": 8.3,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先补齐审计缺口，再评估融合可执行性"
+      ],
+      "evidence": [
+        "zubair-trabzada/geo-seo-claude status=仅记录 score=-5",
         "products=['minddistill']"
       ]
     }
