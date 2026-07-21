@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-20T19:44:23.225762",
+  "generated_at": "2026-07-21T12:09:47.049392",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 20,
+    "total_candidates": 26,
     "by_triage": {
-      "可融合候选": 9,
+      "可融合候选": 15,
       "观察/人工复核": 6,
       "仅记录": 5
     }
@@ -58,6 +58,26 @@
       ]
     },
     {
+      "repo": "NVIDIA/SkillSpector",
+      "category": "安全检测",
+      "products": [
+        "hermes-security-suite"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "implemented",
+      "audit_total": 9.6,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "NVIDIA/SkillSpector status=可融合候选 score=6",
+        "products=['hermes-security-suite']"
+      ]
+    },
+    {
       "repo": "brightdata/competitive-intelligence",
       "category": "竞品分析",
       "products": [
@@ -65,7 +85,7 @@
       ],
       "triage": "可融合候选",
       "score": 6,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 9.6,
       "audit_tech": 8,
       "missing_features": [],
@@ -78,15 +98,14 @@
       ]
     },
     {
-      "repo": "langgenius/dify",
-      "category": "智能体健康",
+      "repo": "crewAIInc/crewAI",
+      "category": "多Agent协作",
       "products": [
-        "hermes-doctor",
-        "pipixia-doctor"
+        "barren-order"
       ],
       "triage": "可融合候选",
       "score": 6,
-      "status": "pending_review",
+      "status": "implemented",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
@@ -94,7 +113,28 @@
         "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
-        "langgenius/dify status=可融合候选 score=6",
+        "crewAIInc/crewAI status=可融合候选 score=6",
+        "products=['barren-order']"
+      ]
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "category": "智能体健康",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "implemented",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "langchain-ai/langchain status=可融合候选 score=6",
         "products=['hermes-doctor', 'pipixia-doctor']"
       ]
     },
@@ -116,6 +156,27 @@
       "evidence": [
         "frontend-slides status=可融合候选 score=6",
         "products=['nichecraft']"
+      ]
+    },
+    {
+      "repo": "huggingface/transformers",
+      "category": "内容分析",
+      "products": [
+        "minddistill",
+        "minddistill"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "implemented",
+      "audit_total": 8.3,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "huggingface/transformers status=可融合候选 score=6",
+        "products=['minddistill', 'minddistill']"
       ]
     },
     {
@@ -161,10 +222,10 @@
       ]
     },
     {
-      "repo": "NVIDIA/SkillSpector",
-      "category": "安全检测",
+      "repo": "scrapy/scrapy",
+      "category": "竞品分析",
       "products": [
-        "hermes-security-suite"
+        "energsolve"
       ],
       "triage": "可融合候选",
       "score": 4,
@@ -176,8 +237,69 @@
         "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
-        "NVIDIA/SkillSpector status=可融合候选 score=4",
-        "products=['hermes-security-suite']"
+        "scrapy/scrapy status=可融合候选 score=4",
+        "products=['energsolve']"
+      ]
+    },
+    {
+      "repo": "dottxt-ai/outlines",
+      "category": "内容创作",
+      "products": [
+        "artipen"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "implemented",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "dottxt-ai/outlines status=可融合候选 score=4",
+        "products=['artipen']"
+      ]
+    },
+    {
+      "repo": "huggingface/diffusers",
+      "category": "视频剪辑",
+      "products": [
+        "ideasphere"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "implemented",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "huggingface/diffusers status=可融合候选 score=4",
+        "products=['ideasphere']"
+      ]
+    },
+    {
+      "repo": "langgenius/dify",
+      "category": "智能体健康",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "implemented",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "langgenius/dify status=可融合候选 score=4",
+        "products=['hermes-doctor', 'pipixia-doctor']"
       ]
     },
     {
@@ -198,6 +320,30 @@
       "evidence": [
         "assafelovic/gpt-researcher status=可融合候选 score=4",
         "products=['fission-creative']"
+      ]
+    },
+    {
+      "repo": "Comfy-Org/ComfyUI",
+      "category": "多媒体生成",
+      "products": [
+        "fractovision"
+      ],
+      "triage": "观察/人工复核",
+      "score": 2,
+      "status": "watching",
+      "audit_total": 8.7,
+      "audit_tech": 6,
+      "missing_features": [
+        "Web框架",
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "Comfy-Org/ComfyUI status=观察/人工复核 score=2",
+        "products=['fractovision']"
       ]
     },
     {
@@ -315,27 +461,6 @@
       "evidence": [
         "Auriti-Labs/geo-optimizer-skill status=观察/人工复核 score=1",
         "products=['minddistill']"
-      ]
-    },
-    {
-      "repo": "huggingface/transformers",
-      "category": "内容分析",
-      "products": [
-        "minddistill",
-        "minddistill"
-      ],
-      "triage": "观察/人工复核",
-      "score": 1,
-      "status": "watching",
-      "audit_total": 8.3,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先补齐审计缺口，再评估融合可执行性"
-      ],
-      "evidence": [
-        "huggingface/transformers status=观察/人工复核 score=1",
-        "products=['minddistill', 'minddistill']"
       ]
     },
     {
