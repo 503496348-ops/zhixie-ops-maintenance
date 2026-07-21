@@ -65,7 +65,7 @@
       ],
       "triage": "可融合候选",
       "score": 7,
-      "status": "recorded",
+      "status": "implemented",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
@@ -74,7 +74,10 @@
       ],
       "evidence": [
         "code2rich/agentwaker-wechat-official-account-operator status=可融合候选 score=7",
-        "products=['artipen']"
+        "products=['artipen']",
+        "PR: https://github.com/503496348-ops/artipen/pull/2",
+        "P0: wechat_api + build_article_payload + editorial_risk_control + validate_visual_package",
+        "P1: signal_collect_feeds + signal_collect_github_projects + signal_rank + performance-framework"
       ]
     },
     {
