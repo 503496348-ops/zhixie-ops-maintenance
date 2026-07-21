@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-21T16:52:08.395864",
+  "generated_at": "2026-07-21T17:17:58.389417",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 24,
+    "total_candidates": 25,
     "by_triage": {
-      "可融合候选": 13,
+      "可融合候选": 14,
       "观察/人工复核": 6,
       "仅记录": 5
     }
@@ -239,6 +239,27 @@
       "evidence": [
         "dottxt-ai/outlines status=可融合候选 score=4",
         "products=['artipen']"
+      ]
+    },
+    {
+      "repo": "langgenius/dify",
+      "category": "智能体健康",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "langgenius/dify status=可融合候选 score=4",
+        "products=['hermes-doctor', 'pipixia-doctor']"
       ]
     },
     {
