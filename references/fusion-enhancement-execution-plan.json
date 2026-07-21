@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-21T20:19:09.691488",
+  "generated_at": "2026-07-21T22:11:45.709391",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 24,
+    "total_candidates": 23,
     "by_triage": {
       "可融合候选": 13,
-      "观察/人工复核": 6,
+      "观察/人工复核": 5,
       "仅记录": 5
     }
   },
@@ -75,26 +75,6 @@
       "evidence": [
         "NVIDIA/SkillSpector status=可融合候选 score=6",
         "products=['hermes-security-suite']"
-      ]
-    },
-    {
-      "repo": "scrapy/scrapy",
-      "category": "竞品分析",
-      "products": [
-        "energsolve"
-      ],
-      "triage": "可融合候选",
-      "score": 6,
-      "status": "pending_review",
-      "audit_total": 9.6,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "scrapy/scrapy status=可融合候选 score=6",
-        "products=['energsolve']"
       ]
     },
     {
@@ -208,7 +188,7 @@
       ],
       "triage": "可融合候选",
       "score": 4,
-      "status": "pending_review",
+      "status": "watching",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
@@ -241,27 +221,6 @@
       ]
     },
     {
-      "repo": "mem0ai/mem0",
-      "category": "Agent上下文",
-      "products": [
-        "hermes-doctor",
-        "pipixia-doctor"
-      ],
-      "triage": "可融合候选",
-      "score": 4,
-      "status": "implemented",
-      "audit_total": 9.1,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "mem0ai/mem0 status=可融合候选 score=4",
-        "products=['hermes-doctor', 'pipixia-doctor']"
-      ]
-    },
-    {
       "repo": "assafelovic/gpt-researcher",
       "category": "长文创作",
       "products": [
@@ -279,6 +238,51 @@
       "evidence": [
         "assafelovic/gpt-researcher status=可融合候选 score=4",
         "products=['fission-creative']"
+      ]
+    },
+    {
+      "repo": "Comfy-Org/ComfyUI",
+      "category": "多媒体生成",
+      "products": [
+        "fractovision"
+      ],
+      "triage": "可融合候选",
+      "score": 1,
+      "status": "watching",
+      "audit_total": 8.7,
+      "audit_tech": 6,
+      "missing_features": [
+        "Web框架",
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "Comfy-Org/ComfyUI status=可融合候选 score=1",
+        "products=['fractovision']"
+      ]
+    },
+    {
+      "repo": "huggingface/transformers",
+      "category": "内容分析",
+      "products": [
+        "minddistill",
+        "minddistill"
+      ],
+      "triage": "可融合候选",
+      "score": 1,
+      "status": "watching",
+      "audit_total": 8.3,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "huggingface/transformers status=可融合候选 score=1",
+        "products=['minddistill', 'minddistill']"
       ]
     },
     {
@@ -396,27 +400,6 @@
       "evidence": [
         "Auriti-Labs/geo-optimizer-skill status=观察/人工复核 score=1",
         "products=['minddistill']"
-      ]
-    },
-    {
-      "repo": "huggingface/transformers",
-      "category": "内容分析",
-      "products": [
-        "minddistill",
-        "minddistill"
-      ],
-      "triage": "观察/人工复核",
-      "score": 1,
-      "status": "watching",
-      "audit_total": 8.3,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先补齐审计缺口，再评估融合可执行性"
-      ],
-      "evidence": [
-        "huggingface/transformers status=观察/人工复核 score=1",
-        "products=['minddistill', 'minddistill']"
       ]
     },
     {
