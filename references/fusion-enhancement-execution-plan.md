@@ -1,5 +1,5 @@
 # 产品融合增强执行清单
-生成时间：2026-07-21T22:11:45.709391
+生成时间：2026-07-22T00:09:08.020708
 
 ## 来源
 - 产品审计：`references/audit-report.json`
@@ -34,7 +34,18 @@
   - OpenCut-app/OpenCut status=可融合候选 score=7
   - products=['ideasphere', 'fractovision']
 
-### 3. NVIDIA/SkillSpector
+### 3. code2rich/agentwaker-wechat-official-account-operator
+- 分类：内容创作
+- 映射产品：artipen
+- 融合判定：可融合候选
+- 评分：7（状态：recorded）
+- 审计信号：total=9.1, tech=8
+- 缺口特征：无明显缺口
+- 执行证据：
+  - code2rich/agentwaker-wechat-official-account-operator status=可融合候选 score=7
+  - products=['artipen']
+
+### 4. NVIDIA/SkillSpector
 - 分类：安全检测
 - 映射产品：hermes-security-suite
 - 融合判定：可融合候选
@@ -45,7 +56,7 @@
   - NVIDIA/SkillSpector status=可融合候选 score=6
   - products=['hermes-security-suite']
 
-### 4. brightdata/competitive-intelligence
+### 5. brightdata/competitive-intelligence
 - 分类：竞品分析
 - 映射产品：energsolve
 - 融合判定：可融合候选
@@ -56,18 +67,18 @@
   - brightdata/competitive-intelligence status=可融合候选 score=6
   - products=['energsolve']
 
-### 5. langchain-ai/langchain
+### 6. langgenius/dify
 - 分类：智能体健康
 - 映射产品：hermes-doctor, pipixia-doctor
 - 融合判定：可融合候选
-- 评分：6（状态：implemented）
+- 评分：6（状态：pending_review）
 - 审计信号：total=9.1, tech=8
 - 缺口特征：无明显缺口
 - 执行证据：
-  - langchain-ai/langchain status=可融合候选 score=6
+  - langgenius/dify status=可融合候选 score=6
   - products=['hermes-doctor', 'pipixia-doctor']
 
-### 6. frontend-slides
+### 7. frontend-slides
 - 分类：飞书白板设计+PPT
 - 映射产品：nichecraft
 - 融合判定：可融合候选
@@ -78,7 +89,7 @@
   - frontend-slides status=可融合候选 score=6
   - products=['nichecraft']
 
-### 7. beautiful-feishu-whiteboard
+### 8. beautiful-feishu-whiteboard
 - 分类：飞书白板设计+PPT
 - 映射产品：nichecraft
 - 融合判定：可融合候选
@@ -89,7 +100,7 @@
   - beautiful-feishu-whiteboard status=可融合候选 score=5
   - products=['nichecraft']
 
-### 8. Nutlope/hallmark
+### 9. Nutlope/hallmark
 - 分类：内容创作
 - 映射产品：nichecraft, canvas-design, artipen
 - 融合判定：可融合候选
@@ -100,7 +111,18 @@
   - Nutlope/hallmark status=可融合候选 score=5
   - products=['nichecraft', 'canvas-design', 'artipen']
 
-### 9. camel-ai/camel
+### 10. scrapy/scrapy
+- 分类：竞品分析
+- 映射产品：energsolve
+- 融合判定：可融合候选
+- 评分：4（状态：pending_review）
+- 审计信号：total=9.6, tech=8
+- 缺口特征：无明显缺口
+- 执行证据：
+  - scrapy/scrapy status=可融合候选 score=4
+  - products=['energsolve']
+
+### 11. camel-ai/camel
 - 分类：多Agent协作
 - 映射产品：barren-order
 - 融合判定：可融合候选
@@ -111,18 +133,7 @@
   - camel-ai/camel status=可融合候选 score=4
   - products=['barren-order']
 
-### 10. dottxt-ai/outlines
-- 分类：内容创作
-- 映射产品：artipen
-- 融合判定：可融合候选
-- 评分：4（状态：implemented）
-- 审计信号：total=9.1, tech=8
-- 缺口特征：无明显缺口
-- 执行证据：
-  - dottxt-ai/outlines status=可融合候选 score=4
-  - products=['artipen']
-
-### 11. assafelovic/gpt-researcher
+### 12. assafelovic/gpt-researcher
 - 分类：长文创作
 - 映射产品：fission-creative
 - 融合判定：可融合候选
@@ -133,29 +144,15 @@
   - assafelovic/gpt-researcher status=可融合候选 score=4
   - products=['fission-creative']
 
-### 12. Comfy-Org/ComfyUI
-- 分类：多媒体生成
-- 映射产品：fractovision
-- 融合判定：可融合候选
-- 评分：1（状态：watching）
-- 审计信号：total=8.7, tech=6
-- 缺口特征：Web框架, 数据库
-- 建议动作：
-  - 补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略
-  - 补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）
-- 执行证据：
-  - Comfy-Org/ComfyUI status=可融合候选 score=1
-  - products=['fractovision']
-
 ### 13. huggingface/transformers
 - 分类：内容分析
 - 映射产品：minddistill, minddistill
 - 融合判定：可融合候选
-- 评分：1（状态：watching）
+- 评分：4（状态：pending_review）
 - 审计信号：total=8.3, tech=8
 - 缺口特征：无明显缺口
 - 执行证据：
-  - huggingface/transformers status=可融合候选 score=1
+  - huggingface/transformers status=可融合候选 score=4
   - products=['minddistill', 'minddistill']
 
 ### 14. feishu-base-custom-api

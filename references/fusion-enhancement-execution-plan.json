@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-21T22:11:45.709391",
+  "generated_at": "2026-07-22T00:09:08.020708",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
@@ -58,6 +58,26 @@
       ]
     },
     {
+      "repo": "code2rich/agentwaker-wechat-official-account-operator",
+      "category": "内容创作",
+      "products": [
+        "artipen"
+      ],
+      "triage": "可融合候选",
+      "score": 7,
+      "status": "recorded",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "code2rich/agentwaker-wechat-official-account-operator status=可融合候选 score=7",
+        "products=['artipen']"
+      ]
+    },
+    {
       "repo": "NVIDIA/SkillSpector",
       "category": "安全检测",
       "products": [
@@ -98,7 +118,7 @@
       ]
     },
     {
-      "repo": "langchain-ai/langchain",
+      "repo": "langgenius/dify",
       "category": "智能体健康",
       "products": [
         "hermes-doctor",
@@ -106,7 +126,7 @@
       ],
       "triage": "可融合候选",
       "score": 6,
-      "status": "implemented",
+      "status": "pending_review",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
@@ -114,7 +134,7 @@
         "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
-        "langchain-ai/langchain status=可融合候选 score=6",
+        "langgenius/dify status=可融合候选 score=6",
         "products=['hermes-doctor', 'pipixia-doctor']"
       ]
     },
@@ -181,6 +201,26 @@
       ]
     },
     {
+      "repo": "scrapy/scrapy",
+      "category": "竞品分析",
+      "products": [
+        "energsolve"
+      ],
+      "triage": "可融合候选",
+      "score": 4,
+      "status": "pending_review",
+      "audit_total": 9.6,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "scrapy/scrapy status=可融合候选 score=4",
+        "products=['energsolve']"
+      ]
+    },
+    {
       "repo": "camel-ai/camel",
       "category": "多Agent协作",
       "products": [
@@ -198,26 +238,6 @@
       "evidence": [
         "camel-ai/camel status=可融合候选 score=4",
         "products=['barren-order']"
-      ]
-    },
-    {
-      "repo": "dottxt-ai/outlines",
-      "category": "内容创作",
-      "products": [
-        "artipen"
-      ],
-      "triage": "可融合候选",
-      "score": 4,
-      "status": "implemented",
-      "audit_total": 9.1,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "dottxt-ai/outlines status=可融合候选 score=4",
-        "products=['artipen']"
       ]
     },
     {
@@ -241,30 +261,6 @@
       ]
     },
     {
-      "repo": "Comfy-Org/ComfyUI",
-      "category": "多媒体生成",
-      "products": [
-        "fractovision"
-      ],
-      "triage": "可融合候选",
-      "score": 1,
-      "status": "watching",
-      "audit_total": 8.7,
-      "audit_tech": 6,
-      "missing_features": [
-        "Web框架",
-        "数据库"
-      ],
-      "recommended_actions": [
-        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
-        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
-      ],
-      "evidence": [
-        "Comfy-Org/ComfyUI status=可融合候选 score=1",
-        "products=['fractovision']"
-      ]
-    },
-    {
       "repo": "huggingface/transformers",
       "category": "内容分析",
       "products": [
@@ -272,8 +268,8 @@
         "minddistill"
       ],
       "triage": "可融合候选",
-      "score": 1,
-      "status": "watching",
+      "score": 4,
+      "status": "pending_review",
       "audit_total": 8.3,
       "audit_tech": 8,
       "missing_features": [],
@@ -281,7 +277,7 @@
         "先完成 commit 语义回放，确认可复用模块后逐条提交"
       ],
       "evidence": [
-        "huggingface/transformers status=可融合候选 score=1",
+        "huggingface/transformers status=可融合候选 score=4",
         "products=['minddistill', 'minddistill']"
       ]
     },
