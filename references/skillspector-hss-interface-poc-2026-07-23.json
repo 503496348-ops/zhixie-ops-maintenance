@@ -1,0 +1,582 @@
+{
+  "title": "SkillSpector ↔ hermes-security-suite interface对照 PoC",
+  "generated_at": "2026-07-23T02:22:20.492035+00:00",
+  "sources": {
+    "SkillSpector": {
+      "path": "/tmp/SkillSpector-head",
+      "sha": "a54947c307fe19a24a43db55f6148e181a987a67",
+      "repo": "NVIDIA/SkillSpector"
+    },
+    "hermes-security-suite": {
+      "path": "/tmp/zhixie-org-audit/hermes-security-suite",
+      "sha": "a09a428b6ae050735ac9d35ce8558341139740bb",
+      "repo": "local/main"
+    }
+  },
+  "summary": {
+    "prior_fusion": "wave-6/9 already landed skillspector_bridge + security_extensions on HSS main",
+    "bridge_version": "skillspector-bridge-1",
+    "acceptance": {
+      "bridge_sample_ok": true,
+      "pytest_skillspector_bridge": true,
+      "doctor_pass": true,
+      "product_convergence_ok": true
+    },
+    "analyzer_coverage_tally": {
+      "full": 10,
+      "partial": 13,
+      "bridge-only": 0,
+      "missing": 3
+    },
+    "feature_coverage_tally": {
+      "full": 4,
+      "partial": 1,
+      "bridge-only": 0,
+      "missing": 4
+    },
+    "recommendation": {
+      "candidate_status": "implemented",
+      "rationale": "Core SkillSpector fusion surface already on HSS main (MCP poisoning/least-privilege, memory poisoning, trigger abuse, risk scoring, SARIF, OSV, AST/taint/yara, bridge CLI/API/doctor). New SS HEAD a54947c primarily adds baseline suppression, multi-provider LLM semantic stage, MCP-server mode and full skill-scan CLI parity — treat as residual incremental backlog, not re-open full pending_review fusion.",
+      "residual_backlog": "optional P1 baseline + skill-scan CLI parity; P2 LLM semantic/providers/MCP-server/batch",
+      "do_not_reopen_as": "pending_review full-fusion"
+    }
+  },
+  "skillpector_inventory": {
+    "analyzers": [
+      "behavioral_ast",
+      "behavioral_taint_tracking",
+      "common",
+      "mcp_least_privilege",
+      "mcp_rug_pull",
+      "mcp_tool_poisoning",
+      "osv_client",
+      "pattern_defaults",
+      "semantic_developer_intent",
+      "semantic_quality_policy",
+      "semantic_security_discovery",
+      "static_patterns_agent_snooping",
+      "static_patterns_anti_refusal",
+      "static_patterns_data_exfiltration",
+      "static_patterns_excessive_agency",
+      "static_patterns_harmful_content",
+      "static_patterns_memory_poisoning",
+      "static_patterns_output_handling",
+      "static_patterns_privilege_escalation",
+      "static_patterns_prompt_injection",
+      "static_patterns_rogue_agent",
+      "static_patterns_ssrf",
+      "static_patterns_supply_chain",
+      "static_patterns_system_prompt_leakage",
+      "static_patterns_tool_misuse",
+      "static_runner",
+      "static_yara"
+    ],
+    "nodes": [
+      "build_context",
+      "deduplicate",
+      "meta_analyzer",
+      "report",
+      "resolve_input"
+    ],
+    "yara": [
+      "agent_skills.yar",
+      "cryptominers.yar",
+      "hacktools.yar",
+      "malware.yar.b64",
+      "webshells.yar"
+    ],
+    "providers": [
+      "anthropic",
+      "anthropic_proxy",
+      "antigravity_cli",
+      "bedrock",
+      "claude_cli",
+      "codex_cli",
+      "gemini_cli",
+      "nv_build",
+      "openai"
+    ],
+    "cli_commands_detected": [
+      "baseline",
+      "mcp",
+      "scan",
+      "version"
+    ],
+    "readme_pattern_families": [
+      {
+        "name": "Prompt Injection ",
+        "patterns": 5
+      },
+      {
+        "name": "Anti-Refusal ",
+        "patterns": 3
+      },
+      {
+        "name": "Data Exfiltration ",
+        "patterns": 4
+      },
+      {
+        "name": "Privilege Escalation ",
+        "patterns": 3
+      },
+      {
+        "name": "Supply Chain ",
+        "patterns": 6
+      },
+      {
+        "name": "Excessive Agency ",
+        "patterns": 4
+      },
+      {
+        "name": "Output Handling ",
+        "patterns": 3
+      },
+      {
+        "name": "System Prompt Leakage ",
+        "patterns": 3
+      },
+      {
+        "name": "Memory Poisoning ",
+        "patterns": 3
+      },
+      {
+        "name": "Tool Misuse ",
+        "patterns": 3
+      },
+      {
+        "name": "Rogue Agent ",
+        "patterns": 2
+      },
+      {
+        "name": "Trigger Abuse ",
+        "patterns": 3
+      },
+      {
+        "name": "Behavioral AST ",
+        "patterns": 9
+      },
+      {
+        "name": "Taint Tracking ",
+        "patterns": 5
+      },
+      {
+        "name": "YARA Signatures ",
+        "patterns": 4
+      },
+      {
+        "name": "MCP Least Privilege ",
+        "patterns": 4
+      },
+      {
+        "name": "MCP Tool Poisoning ",
+        "patterns": 4
+      }
+    ],
+    "flags": {
+      "baseline": true,
+      "sarif": true,
+      "mcp_server": true,
+      "multi_skill": true
+    }
+  },
+  "hss_inventory": {
+    "detector_modules": [
+      "agent_scan_pipeline",
+      "agent_snooping",
+      "ast_analyzer",
+      "mcp_analyzer",
+      "mcp_runtime_guard",
+      "osv_client",
+      "supply_chain",
+      "taint_tracker",
+      "unified_scan",
+      "yara_scanner"
+    ],
+    "core_modules": [
+      "ast_analyzer",
+      "mcp_analyzer",
+      "osv_client",
+      "supply_chain",
+      "taint_tracker",
+      "unified_scan",
+      "yara_scanner"
+    ],
+    "security_extensions": [
+      "content_hardening",
+      "memory_poisoning_detector",
+      "risk_scoring_engine",
+      "sarif_reporter",
+      "trigger_abuse_detector"
+    ],
+    "scripts": [
+      "doctor.py",
+      "hermes_security_history_store.py",
+      "hermes_security_suite_api.py",
+      "product_convergence_gate.py",
+      "setup.py",
+      "skillspector_bridge.py",
+      "smoke.py"
+    ],
+    "yara_files": [
+      "cryptominers.yar",
+      "hacktools.yar",
+      "malware.yar",
+      "webshells.yar"
+    ],
+    "flags": {
+      "bridge": true,
+      "sarif": true,
+      "baseline": false,
+      "mcp_server": false
+    }
+  },
+  "analyzer_matrix": [
+    {
+      "ss_analyzer": "static_patterns_prompt_injection",
+      "capability": "prompt injection static",
+      "hss_coverage": "partial",
+      "evidence": "redteam/prompt-security + genesisix rules; not first-class skill-scan family CLI"
+    },
+    {
+      "ss_analyzer": "static_patterns_anti_refusal",
+      "capability": "anti-refusal",
+      "hss_coverage": "partial",
+      "evidence": "redteam deepteam plugins; no dedicated static_patterns module"
+    },
+    {
+      "ss_analyzer": "static_patterns_data_exfiltration",
+      "capability": "data exfiltration",
+      "hss_coverage": "partial",
+      "evidence": "agent_action_security_policy / detector rules"
+    },
+    {
+      "ss_analyzer": "static_patterns_privilege_escalation",
+      "capability": "privilege escalation",
+      "hss_coverage": "partial",
+      "evidence": "mcp_runtime_security + policy"
+    },
+    {
+      "ss_analyzer": "static_patterns_supply_chain",
+      "capability": "supply chain patterns",
+      "hss_coverage": "full",
+      "evidence": "detector/modules/supply_chain.py + osv_client"
+    },
+    {
+      "ss_analyzer": "static_patterns_excessive_agency",
+      "capability": "excessive agency",
+      "hss_coverage": "partial",
+      "evidence": "mcp least-privilege / runtime audit"
+    },
+    {
+      "ss_analyzer": "static_patterns_output_handling",
+      "capability": "output handling",
+      "hss_coverage": "partial",
+      "evidence": "content_hardening"
+    },
+    {
+      "ss_analyzer": "static_patterns_system_prompt_leakage",
+      "capability": "system prompt leakage",
+      "hss_coverage": "partial",
+      "evidence": "redteam prompt-security"
+    },
+    {
+      "ss_analyzer": "static_patterns_memory_poisoning",
+      "capability": "memory poisoning",
+      "hss_coverage": "full",
+      "evidence": "modules/security_extensions/memory_poisoning_detector.py"
+    },
+    {
+      "ss_analyzer": "static_patterns_tool_misuse",
+      "capability": "tool misuse",
+      "hss_coverage": "partial",
+      "evidence": "mcp_analyzer + runtime guard"
+    },
+    {
+      "ss_analyzer": "static_patterns_rogue_agent",
+      "capability": "rogue agent",
+      "hss_coverage": "partial",
+      "evidence": "agent_handoff_security_invariants"
+    },
+    {
+      "ss_analyzer": "static_patterns_ssrf",
+      "capability": "ssrf",
+      "hss_coverage": "partial",
+      "evidence": "may exist in rules/yara; no dedicated module name"
+    },
+    {
+      "ss_analyzer": "static_patterns_harmful_content",
+      "capability": "harmful content",
+      "hss_coverage": "partial",
+      "evidence": "content_hardening"
+    },
+    {
+      "ss_analyzer": "static_patterns_agent_snooping",
+      "capability": "agent snooping",
+      "hss_coverage": "full",
+      "evidence": "detector/modules/agent_snooping.py"
+    },
+    {
+      "ss_analyzer": "behavioral_ast",
+      "capability": "behavioral AST",
+      "hss_coverage": "full",
+      "evidence": "detector/modules/ast_analyzer.py"
+    },
+    {
+      "ss_analyzer": "behavioral_taint_tracking",
+      "capability": "taint tracking",
+      "hss_coverage": "full",
+      "evidence": "detector/modules/taint_tracker.py"
+    },
+    {
+      "ss_analyzer": "static_yara",
+      "capability": "yara signatures",
+      "hss_coverage": "full",
+      "evidence": "yara_scanner + 4 rule files"
+    },
+    {
+      "ss_analyzer": "mcp_least_privilege",
+      "capability": "MCP least privilege",
+      "hss_coverage": "full",
+      "evidence": "core/mcp_runtime_security.py + bridge"
+    },
+    {
+      "ss_analyzer": "mcp_tool_poisoning",
+      "capability": "MCP tool poisoning",
+      "hss_coverage": "full",
+      "evidence": "detector/modules/mcp_analyzer.py + bridge"
+    },
+    {
+      "ss_analyzer": "mcp_rug_pull",
+      "capability": "MCP rug pull",
+      "hss_coverage": "full",
+      "evidence": "detector/test_mcp_rug_pull.py / mcp modules"
+    },
+    {
+      "ss_analyzer": "osv_client",
+      "capability": "OSV live lookup",
+      "hss_coverage": "full",
+      "evidence": "detector/modules/osv_client.py + bridge --project"
+    },
+    {
+      "ss_analyzer": "semantic_developer_intent",
+      "capability": "LLM semantic intent",
+      "hss_coverage": "missing",
+      "evidence": "no LLM multi-provider semantic stage like SS"
+    },
+    {
+      "ss_analyzer": "semantic_quality_policy",
+      "capability": "LLM quality policy",
+      "hss_coverage": "missing",
+      "evidence": "no equivalent LLM semantic node"
+    },
+    {
+      "ss_analyzer": "semantic_security_discovery",
+      "capability": "LLM security discovery",
+      "hss_coverage": "missing",
+      "evidence": "no equivalent LLM semantic node"
+    },
+    {
+      "ss_analyzer": "static_runner",
+      "capability": "static runner orchestration",
+      "hss_coverage": "partial",
+      "evidence": "unified_scan + agent_scan_pipeline; different shape"
+    },
+    {
+      "ss_analyzer": "pattern_defaults",
+      "capability": "pattern defaults registry",
+      "hss_coverage": "partial",
+      "evidence": "rules/config distributed"
+    }
+  ],
+  "feature_matrix": [
+    {
+      "feature": "cli_scan",
+      "title": "skillspector scan CLI",
+      "hss_coverage": "partial",
+      "evidence": "HSS has doctor/smoke/bridge/API diag, not full skill-dir scan CLI parity"
+    },
+    {
+      "feature": "baseline_suppression",
+      "title": "baseline / FP suppression",
+      "hss_coverage": "missing",
+      "evidence": "SS suppression.py + baseline command"
+    },
+    {
+      "feature": "sarif_output",
+      "title": "SARIF reporter",
+      "hss_coverage": "full",
+      "evidence": "modules/security_extensions/sarif_reporter.py"
+    },
+    {
+      "feature": "batch_multi_skill",
+      "title": "batch / multi-skill scan",
+      "hss_coverage": "missing",
+      "evidence": "SS multi_skill.py"
+    },
+    {
+      "feature": "mcp_server_mode",
+      "title": "MCP server transport",
+      "hss_coverage": "missing",
+      "evidence": "SS mcp_server.py FastMCP"
+    },
+    {
+      "feature": "llm_providers",
+      "title": "multi LLM providers",
+      "hss_coverage": "missing",
+      "evidence": "SS providers: anthropic, anthropic_proxy, antigravity_cli, bedrock, claude_cli, codex_cli, gemini_cli, nv_build, openai"
+    },
+    {
+      "feature": "risk_scoring",
+      "title": "risk scoring engine",
+      "hss_coverage": "full",
+      "evidence": "modules/security_extensions/risk_scoring_engine.py"
+    },
+    {
+      "feature": "trigger_abuse",
+      "title": "trigger abuse detector",
+      "hss_coverage": "full",
+      "evidence": "modules/security_extensions/trigger_abuse_detector.py"
+    },
+    {
+      "feature": "skillspector_bridge",
+      "title": "fusion bridge",
+      "hss_coverage": "full",
+      "evidence": "scripts/skillspector_bridge.py v1 + tests + doctor + API"
+    }
+  ],
+  "residuals": [
+    {
+      "id": "baseline_suppression",
+      "title": "baseline / FP suppression",
+      "coverage": "missing",
+      "note": "SS suppression.py + baseline command",
+      "priority": "P1"
+    },
+    {
+      "id": "batch_multi_skill",
+      "title": "batch / multi-skill scan",
+      "coverage": "missing",
+      "note": "SS multi_skill.py",
+      "priority": "P2"
+    },
+    {
+      "id": "mcp_server_mode",
+      "title": "MCP server transport",
+      "coverage": "missing",
+      "note": "SS mcp_server.py FastMCP",
+      "priority": "P2"
+    },
+    {
+      "id": "llm_providers",
+      "title": "multi LLM providers",
+      "coverage": "missing",
+      "note": "SS providers: anthropic, anthropic_proxy, antigravity_cli, bedrock, claude_cli, codex_cli, gemini_cli, nv_build, openai",
+      "priority": "P2"
+    },
+    {
+      "id": "semantic_developer_intent",
+      "title": "LLM semantic intent",
+      "coverage": "missing",
+      "note": "no LLM multi-provider semantic stage like SS",
+      "priority": "P2"
+    },
+    {
+      "id": "semantic_quality_policy",
+      "title": "LLM quality policy",
+      "coverage": "missing",
+      "note": "no equivalent LLM semantic node",
+      "priority": "P2"
+    },
+    {
+      "id": "semantic_security_discovery",
+      "title": "LLM security discovery",
+      "coverage": "missing",
+      "note": "no equivalent LLM semantic node",
+      "priority": "P2"
+    }
+  ],
+  "bridge_sample_report": {
+    "version": "skillspector-bridge-1",
+    "checked_at": "2026-07-23T02:22:13.425918Z",
+    "ok": true,
+    "tool_count": 2,
+    "mcp_summary": {
+      "total_tools": 2,
+      "total_findings": 2,
+      "severity_counts": {
+        "high": 2
+      },
+      "critical_findings": 0,
+      "high_findings": 2,
+      "tools_with_blocking_findings": [
+        "sec-file-reader",
+        "report-agent"
+      ],
+      "runtime_allowed_tools": [
+        "sec-file-reader",
+        "report-agent"
+      ],
+      "tool_results": [
+        {
+          "tool_name": "sec-file-reader",
+          "mcp_findings": 1,
+          "runtime_allowed": true,
+          "runtime_findings": [],
+          "runtime_blocking_findings": [],
+          "vulnerability_count": 0,
+          "vulnerability_blocking": false,
+          "findings": [
+            {
+              "rule_id": "LP1",
+              "category": "MCP Least Privilege",
+              "severity": "high",
+              "description": "Tool declares dangerous capability: 'file_write'",
+              "confidence": 0.82,
+              "source_field": "capabilities",
+              "mitigation": "Replace 'file_write' with a narrow resource-scoped permission",
+              "matched_text": "file_write"
+            }
+          ]
+        },
+        {
+          "tool_name": "report-agent",
+          "mcp_findings": 1,
+          "runtime_allowed": true,
+          "runtime_findings": [],
+          "runtime_blocking_findings": [],
+          "vulnerability_count": 0,
+          "vulnerability_blocking": false,
+          "findings": [
+            {
+              "rule_id": "LP1",
+              "category": "MCP Least Privilege",
+              "severity": "high",
+              "description": "Tool declares dangerous capability: 'file_write'",
+              "confidence": 0.82,
+              "source_field": "capabilities",
+              "mitigation": "Replace 'file_write' with a narrow resource-scoped permission",
+              "matched_text": "file_write"
+            }
+          ]
+        }
+      ]
+    },
+    "vulnerability_summary": {
+      "total": 0,
+      "high_or_critical": 0,
+      "by_severity": {},
+      "blocked_by_policy": false,
+      "vulns": []
+    }
+  },
+  "gate_metrics": {
+    "code_files": 578,
+    "test_files": 12,
+    "entrypoints": 4,
+    "smoke_targets": 8,
+    "domain_mappings": 5,
+    "crosscutting_modules": 3,
+    "mapped_crosscutting_modules": 3,
+    "unreviewed_external_refs": 0
+  }
+}

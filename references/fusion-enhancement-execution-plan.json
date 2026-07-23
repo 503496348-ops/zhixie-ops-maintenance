@@ -1,16 +1,16 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-22T00:09:08.020708",
+  "generated_at": "2026-07-23T10:29:03.689831",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 23,
+    "total_candidates": 26,
     "by_triage": {
-      "可融合候选": 13,
+      "可融合候选": 15,
       "观察/人工复核": 5,
-      "仅记录": 5
+      "仅记录": 6
     }
   },
   "items": [
@@ -65,7 +65,7 @@
       ],
       "triage": "可融合候选",
       "score": 7,
-      "status": "implemented",
+      "status": "recorded",
       "audit_total": 9.1,
       "audit_tech": 8,
       "missing_features": [],
@@ -74,30 +74,7 @@
       ],
       "evidence": [
         "code2rich/agentwaker-wechat-official-account-operator status=可融合候选 score=7",
-        "products=['artipen']",
-        "PR: https://github.com/503496348-ops/artipen/pull/2",
-        "P0: wechat_api + build_article_payload + editorial_risk_control + validate_visual_package",
-        "P1: signal_collect_feeds + signal_collect_github_projects + signal_rank + performance-framework"
-      ]
-    },
-    {
-      "repo": "NVIDIA/SkillSpector",
-      "category": "安全检测",
-      "products": [
-        "hermes-security-suite"
-      ],
-      "triage": "可融合候选",
-      "score": 6,
-      "status": "implemented",
-      "audit_total": 9.6,
-      "audit_tech": 8,
-      "missing_features": [],
-      "recommended_actions": [
-        "先完成 commit 语义回放，确认可复用模块后逐条提交"
-      ],
-      "evidence": [
-        "NVIDIA/SkillSpector status=可融合候选 score=6",
-        "products=['hermes-security-suite']"
+        "products=['artipen']"
       ]
     },
     {
@@ -121,6 +98,46 @@
       ]
     },
     {
+      "repo": "crewAIInc/crewAI",
+      "category": "多Agent协作",
+      "products": [
+        "barren-order"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "crewAIInc/crewAI status=可融合候选 score=6",
+        "products=['barren-order']"
+      ]
+    },
+    {
+      "repo": "huggingface/diffusers",
+      "category": "视频剪辑",
+      "products": [
+        "ideasphere"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "huggingface/diffusers status=可融合候选 score=6",
+        "products=['ideasphere']"
+      ]
+    },
+    {
       "repo": "langgenius/dify",
       "category": "智能体健康",
       "products": [
@@ -139,6 +156,26 @@
       "evidence": [
         "langgenius/dify status=可融合候选 score=6",
         "products=['hermes-doctor', 'pipixia-doctor']"
+      ]
+    },
+    {
+      "repo": "excalidraw/excalidraw",
+      "category": "飞书白板设计+PPT",
+      "products": [
+        "nichecraft"
+      ],
+      "triage": "可融合候选",
+      "score": 6,
+      "status": "pending_review",
+      "audit_total": 8.8,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "excalidraw/excalidraw status=可融合候选 score=6",
+        "products=['nichecraft']"
       ]
     },
     {
@@ -422,6 +459,30 @@
       ],
       "evidence": [
         "AUTOMATIC1111/stable-diffusion-webui status=仅记录 score=-5",
+        "products=['fractovision']"
+      ]
+    },
+    {
+      "repo": "Comfy-Org/ComfyUI",
+      "category": "多媒体生成",
+      "products": [
+        "fractovision"
+      ],
+      "triage": "仅记录",
+      "score": -5,
+      "status": "recorded",
+      "audit_total": 8.7,
+      "audit_tech": 6,
+      "missing_features": [
+        "Web框架",
+        "数据库"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）"
+      ],
+      "evidence": [
+        "Comfy-Org/ComfyUI status=仅记录 score=-5",
         "products=['fractovision']"
       ]
     },
