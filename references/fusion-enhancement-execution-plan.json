@@ -1,16 +1,16 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-23T10:29:03.689831",
+  "generated_at": "2026-07-23T11:29:25.696134",
   "source": {
     "audit_report": "/root/projects/zhixie-ops-maintenance/references/audit-report.json",
     "candidate_pool": "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
   },
   "summary": {
-    "total_candidates": 26,
+    "total_candidates": 28,
     "by_triage": {
-      "可融合候选": 15,
+      "可融合候选": 16,
       "观察/人工复核": 5,
-      "仅记录": 6
+      "仅记录": 7
     }
   },
   "items": [
@@ -34,6 +34,29 @@
       "evidence": [
         "EverMind-AI/Raven status=可融合候选 score=8",
         "products=['hermes-doctor', 'pipixia-doctor', 'mindriver']"
+      ]
+    },
+    {
+      "repo": "AIPMAndy/dna-memory",
+      "category": "智能体上下文",
+      "products": [
+        "hermes-doctor",
+        "pipixia-doctor",
+        "mindriver",
+        "neverend"
+      ],
+      "triage": "可融合候选",
+      "score": 8,
+      "status": "pending_review",
+      "audit_total": 9.1,
+      "audit_tech": 8,
+      "missing_features": [],
+      "recommended_actions": [
+        "先完成 commit 语义回放，确认可复用模块后逐条提交"
+      ],
+      "evidence": [
+        "AIPMAndy/dna-memory status=可融合候选 score=8",
+        "products=['hermes-doctor', 'pipixia-doctor', 'mindriver', 'neverend']"
       ]
     },
     {
@@ -368,6 +391,36 @@
       "evidence": [
         "jokecamp/FootballData status=观察/人工复核 score=2",
         "products=['football-predictor', 'worldcup-predictor']"
+      ]
+    },
+    {
+      "repo": "NeuraSea/agentic-ocr",
+      "category": "内容分析",
+      "products": [],
+      "triage": "仅记录",
+      "score": 2,
+      "status": "recorded",
+      "audit_total": 0.0,
+      "audit_tech": 0,
+      "missing_features": [
+        "API集成",
+        "数据处理",
+        "机器学习",
+        "Web框架",
+        "数据库",
+        "文件处理",
+        "CLI工具",
+        "测试"
+      ],
+      "recommended_actions": [
+        "补齐可复用 API/服务能力边界，先补充 HTTP 输入输出契约与异常码策略",
+        "补齐持久化落库与迁移脚本（至少持久化关键指标与证据凭证）",
+        "补齐模型推理链路/评分链路的最小闭环，并补充 smoke 测试",
+        "补齐 CLI / 入口参数文档，增加 install/test/help 的一致性"
+      ],
+      "evidence": [
+        "NeuraSea/agentic-ocr status=仅记录 score=2",
+        "products=[]"
       ]
     },
     {
