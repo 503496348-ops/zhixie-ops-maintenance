@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-28T02:56:30Z",
+  "method": "latest commit + changed files + target product capability gap",
+  "sources": [
+    "/root/projects/zhixie-ops-maintenance/references/competitor-latest-commit-evidence-2026-07-28.json",
+    "/tmp/fusion-audit-20260728-products/*/product_convergence.json",
+    "/root/.hermes/shared/skills/product-repo-monitor/references/competitor-candidate-pool.json"
+  ],
+  "summary": {
+    "audited": 9,
+    "actionable": 2,
+    "watch": 2,
+    "no_fusion": 5,
+    "by_priority": {
+      "P0": 1,
+      "P1": 1,
+      "P2": 2,
+      "N/A": 5
+    }
+  },
+  "items": [
+    {
+      "repo": "NVIDIA/SkillSpector",
+      "head_sha": "34f60308522f45447cd343da0aad77bcea308ad4",
+      "classification": "可融合",
+      "priority": "P0",
+      "triage": "可融合候选",
+      "status": "pending_review",
+      "score": 6,
+      "reason": "2.5.0 新增执行核算、检查账本、抑制与报告闭环；现有 HSS 已有 SkillSpector bridge，但缺少逐检查 attempted/completed/skipped/suppressed 的完整性核算，直接影响“扫描成功”真值。",
+      "gap": "扫描执行完整性与抑制可解释性",
+      "target": "hermes-security-suite",
+      "files": [
+        "src/skillspector/inspection_ledger.py",
+        "src/skillspector/nodes/finalize_inspection_ledger.py",
+        "src/skillspector/suppression.py",
+        "src/skillspector/nodes/report.py",
+        "tests/test_inspection_ledger.py"
+      ]
+    },
+    {
+      "repo": "vrtmrz/obsidian-livesync",
+      "head_sha": "b22c1bd777e7673cf3b9baee185b31f4db773e0f",
+      "classification": "可融合",
+      "priority": "P1",
+      "triage": "可融合候选",
+      "status": "pending_review",
+      "score": 4,
+      "reason": "LiveSync 1.0 合并带来 CLI/P2P compose smoke 与 harness CI。NeverEnd 已有快照比对和冲突检测，不应复制同步引擎；只提炼真实双端/P2P 故障注入与重连验收契约。",
+      "gap": "真实双端/P2P 传输与重连验收",
+      "target": "neverend",
+      "files": [
+        ".github/workflows/cli-p2p-compose-smoke.yml",
+        ".github/workflows/harness-ci.yml",
+        "src/lib/src/replication/trystero/P2PReplicatorCore.ts"
+      ]
+    },
+    {
+      "repo": "langgenius/dify",
+      "head_sha": "6f8ed69ee15f9a2e7189ca066275e973d091d1e9",
+      "classification": "观察",
+      "priority": "P2",
+      "triage": "观察/人工复核",
+      "status": "watching",
+      "score": 1,
+      "reason": "最新提交仅修复 MCP output_schema 可选字段兼容；hermes-doctor/pipixia-doctor 当前未发现 MCP/output_schema 接入点，先保留为未来协议兼容回归样例。",
+      "gap": "当前无直接缺口，未来 MCP 适配时复用",
+      "target": "hermes-doctor,pipixia-doctor",
+      "files": [
+        "api/core/tools/mcp_tool/tool.py",
+        "api/tests/unit_tests/tools/test_mcp_tool.py"
+      ]
+    },
+    {
+      "repo": "scrapy/scrapy",
+      "head_sha": "f3693aa8ba7be410c5d892eaf5d11580d6a969b2",
+      "classification": "观察",
+      "priority": "P2",
+      "triage": "观察/人工复核",
+      "status": "watching",
+      "score": 1,
+      "reason": "近期为缓存 DNS 端口与递归/媒体报告修复；对 EnergSolve 采集稳定性有间接参考，但未形成现有链路的可证缺口。",
+      "gap": "仅在启用 Scrapy 式长连接采集后触发",
+      "target": "energsolve",
+      "files": [
+        "scrapy/resolver.py",
+        "tests/test_resolver.py"
+      ]
+    },
+    {
+      "repo": "crewAIInc/crewAI",
+      "head_sha": "97981ed31b62940e4035b7e00f3347a71a16ad01",
+      "classification": "无需融合",
+      "priority": "N/A",
+      "triage": "仅记录",
+      "status": "recorded",
+      "score": 0,
+      "reason": "WaitTool 是阻塞式等待工具；BarrenOrder 已具备持久化暂停/审批、恢复指纹、超时重试和工作流 resume，直接引入反而退化。",
+      "gap": "已有更强等价能力",
+      "target": "barren-order",
+      "files": [
+        "lib/crewai-tools/src/crewai_tools/tools/wait_tool/wait_tool.py"
+      ]
+    },
+    {
+      "repo": "getzep/zep",
+      "head_sha": "0436eb393c7366f571e99d7b3c28281202cf3211",
+      "classification": "无需融合",
+      "priority": "N/A",
+      "triage": "仅记录",
+      "status": "recorded",
+      "score": 0,
+      "reason": "最新核心变化是 Slack 作者 real_name 解析与评估文档，不对应 doctor 产品的上下文诊断缺口。",
+      "gap": "无",
+      "target": "hermes-doctor,pipixia-doctor",
+      "files": [
+        "ingestion/src/zep_ingest/loaders/slack.py",
+        "ingestion/tests/test_slack_loader.py"
+      ]
+    },
+    {
+      "repo": "huggingface/diffusers",
+      "head_sha": "2dabcc9aa08aa5f6d82392dee5cbe93803cc5791",
+      "classification": "无需融合",
+      "priority": "N/A",
+      "triage": "仅记录",
+      "status": "recorded",
+      "score": 0,
+      "reason": "caption dropout 与 aspect ratio buckets 属于 LoRA 训练脚本增强；IdeaSphere 当前不是训练平台，缺少产品级收益。",
+      "gap": "无",
+      "target": "ideasphere",
+      "files": [
+        "examples/dreambooth/train_dreambooth_lora_krea2.py",
+        "examples/dreambooth/train_dreambooth_lora_qwen_image.py"
+      ]
+    },
+    {
+      "repo": "huggingface/transformers",
+      "head_sha": "77f69441c3382519eb6aac33fb7117c92df7a224",
+      "classification": "无需融合",
+      "priority": "N/A",
+      "triage": "仅记录",
+      "status": "recorded",
+      "score": 0,
+      "reason": "最新为 Mamba 模块化修复和 Kimi 转换清理，未触发 MindDistill 的内容蒸馏能力缺口。",
+      "gap": "无",
+      "target": "minddistill",
+      "files": [
+        "src/transformers/models/falcon_mamba/modular_falcon_mamba.py",
+        "utils/modular_model_converter.py"
+      ]
+    },
+    {
+      "repo": "tldraw/tldraw",
+      "head_sha": "e857c8e412bef005cec63bef6c30807fab255ff7",
+      "classification": "无需融合",
+      "priority": "N/A",
+      "triage": "仅记录",
+      "status": "recorded",
+      "score": 0,
+      "reason": "最新为 dotcom Browser Run 缩略图管线去重，属于上游站点内务，不对应 NicheCraft 白板/PPT 能力。",
+      "gap": "无",
+      "target": "nichecraft",
+      "files": [
+        "apps/dotcom/client/scripts/browser-run-thumbnail.ts",
+        "apps/dotcom/sync-worker/src/routes/tla/getOgImage.ts"
+      ]
+    }
+  ]
+}
