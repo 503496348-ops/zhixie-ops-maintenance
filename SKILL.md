@@ -1,35 +1,48 @@
 ---
 name: zhixie-ops-maintenance
-description: 智械工坊-OPS维护：产品仓库日报、竞品监控、产品质量门禁、cron/no_agent 运维、夜间只读审计与融合候选分诊的一体化维护技能。遇到智械工坊 OPS、产品日报、竞品日报、产品审计、cron 故障、no_agent token hygiene、仓库发布门禁、远端干净 clone 复验时都应使用。
-triggers:
-  - 产品仓库日报
-  - 仓库监控
+description: "\u667A\u68B0\u5DE5\u574A-OPS\u7EF4\u62A4\uFF1A\u4EA7\u54C1\u4ED3\u5E93\
+  \u65E5\u62A5\u3001\u7ADE\u54C1\u76D1\u63A7\u3001\u4EA7\u54C1\u8D28\u91CF\u95E8\u7981\
+  \u3001cron/no_agent \u8FD0\u7EF4\u3001\u591C\u95F4\u53EA\u8BFB\u5BA1\u8BA1\u4E0E\
+  \u878D\u5408\u5019\u9009\u5206\u8BCA\u7684\u4E00\u4F53\u5316\u7EF4\u62A4\u6280\u80FD\
+  \u3002\u9047\u5230\u667A\u68B0\u5DE5\u574A OPS\u3001\u4EA7\u54C1\u65E5\u62A5\u3001\
+  \u7ADE\u54C1\u65E5\u62A5\u3001\u4EA7\u54C1\u5BA1\u8BA1\u3001cron \u6545\u969C\u3001\
+  no_agent token hygiene\u3001\u4ED3\u5E93\u53D1\u5E03\u95E8\u7981\u3001\u8FDC\u7AEF\
+  \u5E72\u51C0 clone \u590D\u9A8C\u65F6\u90FD\u5E94\u4F7F\u7528\u3002"
+license: MIT
+metadata:
+  triggers:
+  - "\u4EA7\u54C1\u4ED3\u5E93\u65E5\u62A5"
+  - "\u4ED3\u5E93\u76D1\u63A7"
   - repo monitor
-  - 产品日报
-  - 竞品监控
-  - 竞品持续监控
+  - "\u4EA7\u54C1\u65E5\u62A5"
+  - "\u7ADE\u54C1\u76D1\u63A7"
+  - "\u7ADE\u54C1\u6301\u7EED\u76D1\u63A7"
   - competitor monitor
-  - 产品质量审计
-  - 产品审计
+  - "\u4EA7\u54C1\u8D28\u91CF\u5BA1\u8BA1"
+  - "\u4EA7\u54C1\u5BA1\u8BA1"
   - product audit
-  - SKILL.md质量检查
-  - 技术特性检查
-  - 夜间产品进化
-  - 夜间自主修复
-  - 早餐日报
-  - ABCD评分
-  - P0风险
-  - 产品真实交付评分
-  - 智械工坊OPS维护
-  - 智械工坊-OPS维护
-  - OPS维护
+  - "SKILL.md\u8D28\u91CF\u68C0\u67E5"
+  - "\u6280\u672F\u7279\u6027\u68C0\u67E5"
+  - "\u591C\u95F4\u4EA7\u54C1\u8FDB\u5316"
+  - "\u591C\u95F4\u81EA\u4E3B\u4FEE\u590D"
+  - "\u65E9\u9910\u65E5\u62A5"
+  - "ABCD\u8BC4\u5206"
+  - "P0\u98CE\u9669"
+  - "\u4EA7\u54C1\u771F\u5B9E\u4EA4\u4ED8\u8BC4\u5206"
+  - "\u667A\u68B0\u5DE5\u574AOPS\u7EF4\u62A4"
+  - "\u667A\u68B0\u5DE5\u574A-OPS\u7EF4\u62A4"
+  - "OPS\u7EF4\u62A4"
   - no_agent token hygiene
-  - cron三层诊断
-  - 远端干净clone验证
-  - 产品质量门禁
-  - 仓库发布门禁
-version: "6.1"
+  - "cron\u4E09\u5C42\u8BCA\u65AD"
+  - "\u8FDC\u7AEF\u5E72\u51C0clone\u9A8C\u8BC1"
+  - "\u4EA7\u54C1\u8D28\u91CF\u95E8\u7981"
+  - "\u4ED3\u5E93\u53D1\u5E03\u95E8\u7981"
+  version: '6.1'
+  governance_migrated_keys:
+  - triggers
+  - version
 ---
+
 
 # 产品仓库监控
 
